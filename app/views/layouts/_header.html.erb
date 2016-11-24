@@ -1,0 +1,31 @@
+    <div class="top-bar">
+      <div class="top-bar-left">
+        <ul class="menu">
+          <li class="menu-text" style="padding-top:0px; padding-bottom:0px;"><%= link_to root_path, :style => 'height:0px; padding: 0px 0px 0px 0px' do%><%= image_tag "logo.png", size:"87x34" %><%end%></li>
+
+        </ul>
+      </div>
+      <div class="top-bar-right">
+          <ul class="menu">
+              
+              <li>
+                  <%= link_to cart_path(@cart.id) do%>
+                  <i class="fi-shopping-cart"></i>
+                  Моя корзина
+                  (<%= render 'layouts/cart_count' %>)
+                  <%end%>
+              </li>
+              
+
+            <%if signed_in?%>
+              <li><%=link_to current_user.email, edit_user_registration_path%></li>
+              <li><%=link_to "Выйти", destroy_user_session_path, method: :delete%></li>
+            <%else%>
+              <li><%=link_to "Регистрация", new_user_registration_path%></li>
+              <li><%=link_to "Войти", new_user_session_path%></li>
+            <%end%>
+          </ul>
+      </div>
+    </div>
+
+ 

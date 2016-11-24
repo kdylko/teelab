@@ -1,0 +1,18 @@
+  var payHandler = function () {
+        //требуется библиотека jquery
+        var widget = new cp.CloudPayments();
+        widget.charge({ // options
+                publicId: 'pk_2cdd5b0bd7978802123946d757d4f',
+                description: 'Оплата в teelab.ru',
+                amount: <%= @cart.total_price %>, //сумма
+                currency: 'RUB',
+                invoiceId: '1234567', //номер заказа
+                accountId: 'user@example.com', //плательщик
+            },
+            function (options) { 
+              $("#new_order").trigger('submit.rails');
+            },
+            function (reason, options) { // fail
+                //действие при неуспешном платеже
+            });
+    };

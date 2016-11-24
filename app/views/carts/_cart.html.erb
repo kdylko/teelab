@@ -1,0 +1,26 @@
+
+<br>
+    <!-- You can now combine a row and column if you just need a 12 column row -->
+    <div class="row columns">
+      <nav aria-label="You are here:" role="navigation">
+        <ul class="breadcrumbs">
+          <li><%= link_to 'Главная', store_index_path %></li>
+          
+          <li>
+            <span class="">Моя корзина</span> 
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+<h2>Моя корзина</h2>
+<table>
+  <%= render(cart.line_items) %>
+   <tr class="total_line">
+     <td colspan="2">Total</td>
+     <td class="total_cell"><%= number_to_currency(cart.total_price) %></td>
+   </tr>
+</table>
+<%= button_to "Checkout", new_order_path, method: :get %>
+<%= button_to 'Empty cart', cart, method: :delete,
+    data: { confirm: 'Are you sure?' } %>

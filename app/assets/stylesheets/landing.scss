@@ -1,0 +1,237 @@
+// Place all the styles related to the landing controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+// Animated infocard
+
+$menu-icon-size: 4rem;
+$menu-icon-color: #333;
+$menu-link-height: 6.25rem;
+$menu-link-color: #fff;
+$menu-link-border: 1px solid rgba(255,255,255, .5);
+
+.toggle-menu {
+  position:relative;
+  font-size: $menu-icon-size;
+  z-index: 5000;
+  color: $menu-icon-color;
+  top: -0.5rem;
+  left: 1.5rem;
+  transition: all 0.4s ease-in-out;
+  
+  &:hover {
+    transition: all 0.4s ease-in-out;
+    color: lighten($menu-icon-color, 30%);
+  }
+}
+
+.overlay-menu {
+  position: absolute;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height:100%;
+  margin:0;
+  padding: 5rem 0 0;
+  opacity: 1;
+  list-style: none;
+  background: black;
+  background-size: cover;
+  text-align: center;
+   transform: perspective(200px) translateX(0) rotateX(0);
+  transition: all 400ms cubic-bezier(1.000, -0.400, 0.440, 0.985);
+  
+  li {
+    font-size: 1.5rem;
+  }
+  
+  a {
+    display: block;
+    color: $menu-link-color;
+    font-weight: bold;
+    height: $menu-link-height;
+    line-height: 6.25rem;
+    border-bottom: $menu-link-border;
+    text-decoration: none;
+    
+    &:hover {
+      background-color: darken(dodgerblue, 3%);
+    }
+  }
+  
+  &.is-open ~ .toggle-menu {
+    display: inline-block;
+    transition: all 0.4s ease-in-out;
+    transform: rotate(135deg);
+    color: lighten($menu-icon-color, 100%);
+  }
+}
+
+.is-open {
+  top: 0;
+  opacity: 1;
+  transform: perspective(200px) translateX(0) rotateX(0);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.service {
+	width: 100%;
+	height: 320px;
+	margin: 80px 0;
+	text-align: center;
+	border: 1px solid #ddd;
+	-webkit-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+  
+  .service-icon-box {
+    position: relative;
+    top: 100px;
+    display: inline-block;
+    margin-bottom: 40px;
+    padding: 10px;
+    background: white;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+  }
+  
+  .service-heading {
+    position: relative;
+    top: 80px;
+    -webkit-transition: all 600ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transition: all 600ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  .service-description {
+    width: 80%;
+    margin: 0 auto;
+    opacity: 0;
+    -webkit-transition: all 600ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transition: all 600ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    -webkit-transform: scale(0);
+    -ms-transform: scale(0);
+    transform: scale(0);
+  }
+  
+  .service-icon-box > img.service-icon {
+	  width: 40px;
+  }
+
+  &:hover {
+	  border-color: #00a8ff;
+  }
+  
+  &:hover .service-icon-box {
+	  top: -30px;
+  }
+  
+  &:hover .service-heading {
+	  top: -30px;
+  }
+  
+  &:hover .service-description {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+// Mobile-First Product Benefits
+
+.benefits{
+    margin-top: 50px;
+hr{
+    width: 70%;
+    border: 1px solid #ccc;
+  }
+  h5{
+    font-weight: 300;
+  }
+  p{
+    color: #666;
+    font-weight: 300;
+  }
+  .benefit{
+    margin-top: 30px;
+  }
+  
+  .icon{
+    font-size: 40px;
+    color: #ccc;
+  }
+  }
+ // testimonial
+
+ h2 {
+  margin-top: 40px;
+  font-weight: 200;
+  color: #333;
+}
+
+.centered-text {
+  text-align: center;
+}
+
+.quote-marks {
+  font-size: 100px;
+  font-family: Garamond;
+  color: #777;
+}
+
+.move-right {
+  position: relative;
+  text-align: right;
+}
+
+.quote {
+  border-radius: 5px;
+  p {
+    font-weight: 300;
+  }
+}
+
+@media only screen and (max-width: 40em) {
+  .quote p {
+    padding-left: 20px;
+  }
+}
+
+.student {
+  margin-left: 25px;
+  margin-bottom: 80px;
+  .photo {
+    background-color: #ccc;
+    border-radius: 100px;
+    width: 70px;
+    height: 70px;
+    float: left;
+    margin-right: 15px;
+  }
+  p {
+    position: relative;
+    top: 5px;
+    &:nth-child(2) {
+      font-size: 16px;
+      font-weight: 500;
+      margin-bottom: 0;
+    }
+    &:nth-child(3) {
+      font-size: 14px;
+      font-weight: 400;
+      color: #777;
+    }
+  }
+}

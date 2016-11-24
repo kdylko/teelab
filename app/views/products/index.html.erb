@@ -1,0 +1,56 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Products</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Url name</th>
+      <th>Price</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td><%= product.title %></td>
+        <td><%= product.description %></td>
+        <td><%= product.url_name %></td>
+        <td><%= product.price %></td>
+        <td><%= link_to 'Show', user_product_path(product.user_id,product) %></td>
+        <td><%= link_to 'Edit', edit_user_product_path(product.user_id,product) %></td>
+        <td><%= link_to 'Destroy', user_product_path(product.user_id,product), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Product', new_user_product_path %> 
+
+<h4 class="column">Featured Products</h4>
+<div class="column">
+  <ul class="movies-grid no-bullet row">
+    <% @products.each do |product| %>
+      <li class="large-3 medium-4 small-12 column">
+        <div class="movie-card padly">
+          <%= link_to user_product_path(product.user_id,product), class: "poster" do %>
+            
+          <% end %>
+          <div class="movie-info ell glassy-bg padmy padlx">
+            <div class="title">
+              <h6><%= product.title %> </h6>
+            </div>
+            <p class="left price label movie-label radius">$ <%= product.price %></p>
+        
+            
+          </div>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+</div>

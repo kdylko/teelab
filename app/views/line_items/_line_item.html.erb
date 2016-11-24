@@ -1,0 +1,7 @@
+     <tr>
+      <td width="150"><%= image_tag line_item.product.images.first.photo, class: "thumbnail", size: "100x100" %></td>
+      <td width="50"><i class="fi-arrow-up"></i> <%= line_item.quantity %>&times; <i class="fi-arrow-down"></i></td>
+      <td ><%= line_item.product.title %></td>
+    
+      <td class="item_price"><%= number_to_currency(line_item.total_price) %></td>
+     </tr>
