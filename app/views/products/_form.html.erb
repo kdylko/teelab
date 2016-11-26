@@ -30,6 +30,7 @@
     <div class="field">
     <%= f.label :style_id %><br>
     <%= f.collection_select :style_id, Style.order(:name),:id,:name, include_blank: false %>
+    <%= f.hidden_field :category, value: 'blogger' %>
   </div>
   <div class="field">
     <%= f.label :images  %><br>

@@ -22,10 +22,10 @@
 $primary-color: #008cba;
 
 .item-wrapper {
-  padding: 20px;
+  padding: 5px;
   border: 2px solid #efefef;
   border-radius: 7px;
-  margin-top: 40px;
+  margin-top: 10px;
   
   &:hover {
     .img-wrapper {
@@ -37,7 +37,7 @@ $primary-color: #008cba;
 }
 
 .img-wrapper {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   position: relative;
   overflow: hidden;
 

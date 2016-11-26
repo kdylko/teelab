@@ -30,9 +30,13 @@ gem 'paperclip',    '~> 5.0.0'
 # gem 'zurb-foundation', '~> 4.3.2'
 gem 'foundation-rails'
 gem 'foundation-icons-sass-rails'
+gem 'google-webfonts-rails'
+
 
 gem 'devise'
 
+
+gem 'formtastic', '~> 3.0'
 
 gem 'owlcarousel-rails'
 gem 'cloud_payments'

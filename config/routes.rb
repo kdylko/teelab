@@ -3,8 +3,9 @@ Rails.application.routes.draw do
  
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
+
   get 'landing/index'
-    get 'landing/three'
+  get 'landing/three'
 
   resources :orders
   resources :line_items, only: [:new, :create, :edit, :update, :destroy]
@@ -17,7 +18,11 @@ Rails.application.routes.draw do
 
 
   devise_for :users, path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'register' }
-  
+  resources :admin do
+     resources :products do
+      resources :images
+    end
+  end
   
   resources :users do
     resources :products do
@@ -41,7 +46,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'store#index' 
+  root 'landing#three' 
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
