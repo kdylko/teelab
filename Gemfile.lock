@@ -86,6 +86,8 @@ GEM
       capistrano (~> 3.1)
       sshkit (~> 1.2)
     capistrano-harrow (0.5.3)
+    capistrano-linked-files (1.2.0)
+      capistrano (~> 3.1)
     capistrano-passenger (0.2.0)
       capistrano (~> 3.0)
     capistrano-rails (1.2.0)
@@ -289,6 +291,7 @@ DEPENDENCIES
   better_errors
   byebug
   capistrano
+  capistrano-linked-files
   capistrano-passenger
   capistrano-rails
   capistrano-rvm
@@ -305,7 +308,7 @@ DEPENDENCIES
   jquery-validation-rails
   mysql2
   owlcarousel-rails
-  paperclip (~> 5.0.0)
+  paperclip
   quiet_assets
   rails (= 4.2.6)
   rvm-capistrano

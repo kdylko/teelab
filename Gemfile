@@ -25,7 +25,9 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
-gem 'paperclip',    '~> 5.0.0'
+# file upload
+gem 'paperclip'
+
 
 # gem 'zurb-foundation', '~> 4.3.2'
 gem 'foundation-rails'
@@ -55,6 +57,7 @@ gem 'capistrano-passenger'
 gem 'rvm-capistrano'
 gem 'capistrano'
 gem 'capistrano-secrets-yml'
+gem 'capistrano-linked-files'
 
 group :development do
   gem 'better_errors'
