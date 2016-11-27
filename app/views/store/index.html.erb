@@ -48,20 +48,19 @@
       <% if product.category == 'new_year' %>
 
         <div class="column">
-          <div class="item-wrapper">
-              <div class="img-wrapper">
+          
+              
                 <%= link_to store_path(product.id), class: "poster" do %>    
                 <%= image_tag product.images.first.photo, class: "thumbnail" %>
                 <% end %>
-              </div>
+              
             <h5><%= product.title %></h5>
             <p style="margin-bottom:3px"><%= product.price %> руб.</p>
-          </div>
+          
           <a href="#" class="button small expanded hollow">Добавить в корзину</a>
         </div>
       <% end %>
       <% end %>
-
     </div>
 
     <hr>
