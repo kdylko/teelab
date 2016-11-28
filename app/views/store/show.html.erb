@@ -1,12 +1,5 @@
-<!doctype html>
-<html class="no-js" lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Foundation | Welcome</title>
 
-  </head>
-  <body>
+
     
 
 
@@ -38,49 +31,27 @@
         <h3><%= @product.title %></h3>
         <p><%= @product.description %></p>
 <!-- Tabs -->
-    <legend>Фасон</legend>
+  <%= form_tag({controller: "line_items", action: "create"}, method: "post", class: "form") do %>
+   <%= hidden_field_tag :product_id,  @product.id %>
+
+      <%= select_tag "size_id", options_from_collection_for_select(@size, "id", "name"), class: "button small split no-pip" %>
+      <%= submit_tag "добавить в корзину", class: "button expand add-to-cart" %>
+  <% end %>
+     
+          <%= button_to "Checkout", new_order_path, method: :get, class: "button expand add-to-cart" %>
+    
+
+
+
+
+
     <ul class="tabs" data-tabs id="example-tabs">
-      <% i=1 %>
-      <% @products.style.gender.each do |gender| %>
-      <li class="tabs-title is-active"><%= link_to "#panel"&i do %><%= gender.name %><% end %></li>
-      <li class="tabs-title is-active"><a href="#panel1" aria-selected="true">Женский фасон </a></li>
-      <li class="tabs-title"><a href="#panel2">Мужской фасон</a></li>
-      <li class="tabs-title"><a href="#panel3">Унисекс</a></li>
+
+      
+      
     </ul>
       <div class="tabs-content" data-tabs-content="example-tabs">
-        <div class="tabs-panel is-active" id="panel1">
-                      <div class="row">
-                        <fieldset class="large-6 columns">
-                          <legend>Размер</legend>
-                          <input type="radio" name="pokemon" value="Red" id="pokemonRed" required><label for="pokemonRed">XS</label>
-                          <input type="radio" name="pokemon" value="Blue" id="pokemonBlue"><label for="pokemonBlue">S</label>
-                          <input type="radio" name="pokemon" value="Yellow" id="pokemonYellow"><label for="pokemonYellow">M</label>
-                        </fieldset>
-                      </div>
 
-        </div>
-        <div class="tabs-panel" id="panel2">
-                      <div class="row">
-                        <fieldset class="large-6 columns">
-                          <legend>Размер</legend>
-                          <input type="radio" name="pokemon" value="Red" id="pokemonRed" required><label for="pokemonRed">XS</label>
-                          <input type="radio" name="pokemon" value="Blue" id="pokemonBlue"><label for="pokemonBlue">S</label>
-                          <input type="radio" name="pokemon" value="Yellow" id="pokemonYellow"><label for="pokemonYellow">M</label>
-                        </fieldset>
-                      </div>
-
-        </div>
-          <div class="tabs-panel" id="panel3">
-                      <div class="row">
-                        <fieldset class="large-6 columns">
-                          <legend>Размер</legend>
-                          <input type="radio" name="pokemon" value="Red" id="pokemonRed" required><label for="pokemonRed">XS</label>
-                          <input type="radio" name="pokemon" value="Blue" id="pokemonBlue"><label for="pokemonBlue">S</label>
-                          <input type="radio" name="pokemon" value="Yellow" id="pokemonYellow"><label for="pokemonYellow">M</label>
-                        </fieldset>
-                      </div>
-
-        </div>
       </div>
 
 
@@ -93,10 +64,7 @@
           </div>
         </div>
 
-        <div class="row columns button-group">
-          <%= button_to 'Add to Cart', line_items_path(product_id: product.id), :method => :post, class: "button expand add-to-cart" %>
-          <%= button_to "Checkout", new_order_path, method: :get, class: "button expand add-to-cart" %>
-        </div>
+
 
         <div class="small secondary expanded button-group">
             <a class="button">Facebook</a>
@@ -223,6 +191,6 @@
 
     
 
-  </body>
-</html>
+
+
 

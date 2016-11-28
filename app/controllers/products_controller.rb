@@ -12,7 +12,7 @@ class ProductsController < ApplicationController
   # GET /products/1
   # GET /products/1.json
   def show
-    @product = Product.find(params[:id])
+    @product = Product.friendly.find(params[:id])
     @style = Style.find(@product.style_id)
     @gender = Gender.all.select { |m| m.style_id == @style.id }
     @size = Size.where("style_id = ?", @style.id)
@@ -54,7 +54,7 @@ class ProductsController < ApplicationController
   # PATCH/PUT /products/1
   # PATCH/PUT /products/1.json
   def update
-    @user = User.find(params[:user_id])
+    @user = User.friendly.find(params[:user_id])
     @product.user_id = current_user.id if current_user  
     
     respond_to do |format|
@@ -89,7 +89,7 @@ class ProductsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_product
-      @product = Product.find(params[:id])
+      @product = Product.friendly.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

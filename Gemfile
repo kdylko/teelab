@@ -34,10 +34,12 @@ gem 'foundation-rails'
 gem 'foundation-icons-sass-rails'
 gem 'google-webfonts-rails'
 
+#to change urls
+gem 'friendly_id'
 
 gem 'devise'
 
-
+#forms builder
 gem 'formtastic', '~> 3.0'
 
 gem 'owlcarousel-rails'

@@ -9,7 +9,7 @@ class StoreController < ApplicationController
   end
    def show
   	
-		@product = Product.find(params[:id])
+		@product = Product.friendly.find(params[:id])
 		
   end
 

@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
   
  
+  get 'support/aboutus'
+  get 'support/help'
+  get 'support/contact'
+  get 'support/offer'
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
@@ -13,7 +18,7 @@ Rails.application.routes.draw do
     resources :line_items
   end
 
-  get 'store/index'
+  get 'store/index' => 'store#index'
 
 
 
@@ -30,9 +35,9 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :styles do
-    resources :genders do
-      resources :sizes
+  resources :styles, only: [:new, :create, :edit, :update, :destroy] do
+    resources :genders, only: [:new, :create, :edit, :update, :destroy] do
+      resources :sizes, only: [:new, :create, :edit, :update, :destroy]
     end
   end
 
@@ -40,6 +45,7 @@ Rails.application.routes.draw do
   resources :store, :controller => "products"
 
 
+  
 
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -50,7 +56,8 @@ Rails.application.routes.draw do
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
-
+  get ':id' => 'products#show'
+  get 'blogger/index' => 'landing#index'
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 

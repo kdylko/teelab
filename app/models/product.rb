@@ -1,4 +1,6 @@
 class Product < ActiveRecord::Base
+	extend FriendlyId
+	friendly_id :url_name
 	belongs_to :style
 	has_many :images, dependent: :destroy, :autosave => true
 	has_many :line_items
