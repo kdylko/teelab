@@ -31,11 +31,11 @@
         <h3><%= @product.title %></h3>
         <p><%= @product.description %></p>
 <!-- Tabs -->
-  <%= form_tag({controller: "line_items", action: "create"}, method: "post", class: "form") do %>
+  <%= form_tag({controller: "line_items", action: "create"}, method: "post", remote: true, class: "form") do %>
    <%= hidden_field_tag :product_id,  @product.id %>
 
       <%= select_tag "size_id", options_from_collection_for_select(@size, "id", "name"), class: "button small split no-pip" %>
-      <%= submit_tag "добавить в корзину", class: "button expand add-to-cart" %>
+      <%= submit_tag "добавить в корзину", remote: true, class: "button expand add-to-cart" %>
   <% end %>
      
           <%= button_to "Checkout", new_order_path, method: :get, class: "button expand add-to-cart" %>

@@ -4,6 +4,7 @@ class Product < ActiveRecord::Base
 	belongs_to :style
 	has_many :images, dependent: :destroy, :autosave => true
 	has_many :line_items
+	has_many :sizes, through: :style
 	before_destroy :ensure_not_referenced_by_any_line_item
 	belongs_to :user
 	accepts_nested_attributes_for :images, :reject_if => lambda { |t| t['image'].nil? }

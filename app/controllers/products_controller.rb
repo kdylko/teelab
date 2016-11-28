@@ -54,7 +54,7 @@ class ProductsController < ApplicationController
   # PATCH/PUT /products/1
   # PATCH/PUT /products/1.json
   def update
-    @user = User.friendly.find(params[:user_id])
+    @user = User.find(params[:user_id])
     @product.user_id = current_user.id if current_user  
     
     respond_to do |format|

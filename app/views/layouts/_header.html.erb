@@ -12,7 +12,9 @@
                     <%= link_to cart_path(@cart.id) do%>
                     <i class="fi-shopping-cart"></i>
                     Моя корзина
-                    (<%= render 'layouts/cart_count' %>)
+                    <span id="cart_count" class="cart-count">
+                    <%= render 'layouts/cart_count' %>
+                    </span>
                     <%end%>
                 </li>
 

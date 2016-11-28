@@ -25,11 +25,26 @@
       <% if product.category == 'blogger' %>
         <div class="column">
             <%= link_to store_path(product.id), class: "poster" do %>
+            <% if product.images.present? %>
             <%= image_tag product.images.first.photo, class: "thumbnail" %>
+            <% end %>
             <% end %>
           <h5><%= product.title %></h5>
           <p style="margin-bottom:3px"><%= product.price %> руб.</p>
-          <%= button_to 'Добавить в корзину', line_items_path(product_id: product.id), :method => :post, class: "button expand add-to-cart"%>
+
+
+          <button class="button expand add-to-cart" type="button" data-toggle="example-dropdown">Добавить в корзину</button>
+            <div class="dropdown-pane" id="example-dropdown" data-dropdown data-auto-focus="true">
+              Выберите размер
+              <%= form_tag({controller: "line_items", action: "create"}, method: "post", class: "form") do %>
+                 <%= hidden_field_tag :product_id,  product.id %>
+
+                    <%= select_tag "size_id", options_from_collection_for_select(product.sizes, "id", "name"), class: "button small split no-pip" %>
+                    <%= submit_tag "Выбрать", class: "button expand add-to-cart" %>
+              <% end %>
+            </div>
+
+
         </div>
          <% end %>
       <% end %>
@@ -57,7 +72,19 @@
             <h5><%= product.title %></h5>
             <p style="margin-bottom:3px"><%= product.price %> руб.</p>
           
-          <a href="#" class="button small expanded hollow">Добавить в корзину</a>
+            
+            <button class="button expand add-to-cart" type="button" data-toggle="example-dropdown" data-remote="true">Добавить в корзину</button>
+            <div class="dropdown-pane" id="example-dropdown" data-dropdown data-auto-focus="true">
+              Выберите размер
+              <%= form_tag({controller: "line_items", action: "create"}, method: "post", remote: true, class: "form") do %>
+                 <%= hidden_field_tag :product_id,  product.id %>
+
+                    <%= select_tag "size_id", options_from_collection_for_select(product.sizes, "id", "name"),  remote: true, class: "button small split no-pip" %>
+                    <%= submit_tag "Выбрать", remote: true, class: "button expand add-to-cart" %>
+              <% end %>
+            </div>
+
+
         </div>
       <% end %>
       <% end %>

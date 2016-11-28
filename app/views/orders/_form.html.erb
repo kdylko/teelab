@@ -1,40 +1,41 @@
-<%= form_for(@order) do |f|  %>
-  <% if @order.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@order.errors.count, "error") %> prohibited this order from being saved:</h2>
 
-      <ul>
-      <% @order.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+  <%= form_for(@order) do |f|  %>
+    <% if @order.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@order.errors.count, "error") %> prohibited this order from being saved:</h2>
+
+        <ul>
+        <% @order.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      
+      <%= f.text_field :name, :placeholder=>'ФИО', :required => true%>
     </div>
-  <% end %>
-
-  <div class="field">
-    
-    <%= f.text_field :name, :placeholder=>'ФИО', :required => true%>
-  </div>
-  <div class="field">
-
-    <%= f.text_area :address, :placeholder=>'Москва, ул. Строителей, д 5, кв 89',:required => true, class: "radius" %>
-  </div>
-  <div class="field">
-
-    <%= f.text_field :email, :placeholder=>'email@email.com',:required => true , :pattern =>  "[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" %>
-  </div>
     <div class="field">
 
-    <%= f.text_field :phone, :placeholder=>'+7 909 909 0909', :required => true, :pattern =>  "^([0|\+[0-9]{1,5})?([1-9][0-9]{9})$" %>
-  </div>
-      <div class="field">
-        <%= f.hidden_field :order_client_id, value: @order_client_id %>
+      <%= f.text_area :address, :placeholder=>'Москва, ул. Строителей, д 5, кв 89',:required => true, class: "radius" %>
+    </div>
+    <div class="field">
 
-    <%= f.submit :submit %>
-  </div>
+      <%= f.text_field :email, :placeholder=>'email@email.com',:required => true , :pattern =>  "[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" %>
+    </div>
+      <div class="field">
+
+      <%= f.text_field :phone, :placeholder=>'+7 909 909 0909', :required => true, :pattern =>  "^([0|\+[0-9]{1,5})?([1-9][0-9]{9})$" %>
+    </div>
+        <div class="field">
+          <%= f.hidden_field :order_client_id, value: @order_client_id %>
+
+      <%= f.submit :submit %>
+    </div>
 
   
-<% end %>
+  <% end %>
 
 
 
