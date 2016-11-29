@@ -1,5 +1,5 @@
 class OrderNotifier < ApplicationMailer
-	default from: 'Sam Ruby <depot@example.com>'
+	default from: 'Teelab.ru <order@teelab.ru>'
 
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:
@@ -7,8 +7,9 @@ class OrderNotifier < ApplicationMailer
   #   en.order_notifier.received.subject
   #
   def received(order)
-    @greeting = "Hi"
-
-    mail to: order.email, subject: 'Подтверждение заказа в Teelab.ru'
+    
+    @order = Order.first
+    @delivery = Delivery.all
+    mail to: @order.email, subject: 'Заказ в Teelab.ru'
   end
 end

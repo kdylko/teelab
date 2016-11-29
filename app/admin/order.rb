@@ -3,7 +3,7 @@ ActiveAdmin.register Order do
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
-permit_params :name, :address, :email, :phone, :order_clientid
+permit_params :name, :address, :email, :phone, :order_clientid, :delivery_id
 #
 # or
 #

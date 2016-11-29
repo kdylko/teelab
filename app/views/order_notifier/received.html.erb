@@ -1,5 +1,81 @@
-<h1>OrderNotifier#received</h1>
+<style type="text/css">
+  body,
+  html, 
+  .body {
+    background: #f3f3f3 !important;
+  }
+</style>
 
-<p>
-  <%= @greeting %>, find me in app/views/order_notifier/received.html.erb
-</p>
+<container>
+
+  <spacer size="16"></spacer>
+
+  <row>
+    <columns>
+      <h1>Спасибо за заказ на нашей платформе.</h1>
+      <p>Спасибо за Ваш заказ. Миссией нашей компании является создание возможностей для людей создавать что-то новое, красивое, востребованное. И мы не видим возможным выполнения нашей миссии без первоклассного качества наших товаров и услуг. Особое внимание мы уделяем материалам и фасонам всех наших изделий.</p>
+
+      <spacer size="16"></spacer>
+
+      <callout class="secondary">
+        <row>
+          <columns large="6">
+            <p>
+              <strong>Email</strong><br/>
+              <%= @order.email %>
+            </p>
+            <p>
+              <strong>Номер заказа</strong><br/>
+              <%= @order.order_clientid %>
+            </p>
+          </columns>
+          <columns large="6">
+            <p>
+              <strong>Метод доставки</strong><br/>
+              <%= @delivery.find(@order.delivery_id).name %><br/>
+              <strong>Shipping Address</strong><br/>
+              <%= @order.address %>
+            </p>
+          </columns>
+        </row>
+      </callout>
+
+      <h4>Order Details</h4>
+
+      <table class="">
+        <tr><th>Товар</th><th>Размер</th><th>#</th><th>Цена</th></tr>
+        <% @order.line_items.each do |item| %>
+        <tr><td><%= item.product.title %></td><td><%= item.size.name %></td><td><%= item.quantity %></td><td><%= item.total_price %></td></tr>
+        <% end %>
+        <tr>
+          <td colspan="2"><b>Всего</b></td>
+          <td></td>
+          <td><%= @order.order_sum %></td>
+        </tr>
+      </table>
+
+      <hr/>
+
+      <h4>What's Next?</h4>
+
+      <p>Our carrier raven will prepare your order for delivery. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi necessitatibus itaque debitis laudantium doloribus quasi nostrum distinctio suscipit, magni soluta eius animi voluptatem qui velit eligendi quam praesentium provident culpa?</p>
+    </columns>
+  </row>
+  <row class="footer text-center">
+    <columns large="3">
+      <img src="http://placehold.it/170x30" alt="">
+    </columns>
+    <columns large="3">
+      <p>
+        Call us at 800.555.1923<br/>
+        Email us at support@discount.boat
+      </p>
+    </columns>
+    <columns large="3">
+      <p>
+        123 Maple Rd<br/>
+        Campbell, CA 95112
+      </p>
+    </columns>
+  </row>
+</container>

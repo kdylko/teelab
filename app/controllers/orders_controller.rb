@@ -23,7 +23,7 @@ class OrdersController < ApplicationController
     end
    
     @order = Order.new
-    @order_client_id = Time.now.strftime("%d%m%Y").to_s+@cart.id.to_s
+    @order_clientid = Time.now.strftime("%d%m%Y").to_s+@cart.id.to_s
     @delivery= Delivery.all
   end
 
@@ -86,6 +86,6 @@ class OrdersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_params
-      params.require(:order).permit(:name, :address, :email, :phone, :order_clientid, :delivery)
+      params.require(:order).permit(:name, :address, :email, :phone, :order_clientid, :delivery_id)
     end
 end

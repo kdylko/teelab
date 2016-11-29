@@ -66,9 +66,9 @@ Rails.application.configure do
 
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    address: 'smtp.teelab.ru',
+    address: 'http://151.248.117.33.hosting.reg.ru',
     port: 587,
-    domain: 'teelab.ru',
+    domain: 'myshout.ru',
     authentication: 'plain',
     user_name: 'order',
     password: 'loveorder@11',

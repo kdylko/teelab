@@ -32,64 +32,46 @@
         <p><%= @product.description %></p>
 <!-- Tabs -->
   <%= form_tag({controller: "line_items", action: "create"}, method: "post", remote: true, class: "form") do %>
-   <%= hidden_field_tag :product_id,  @product.id %>
-
-      <%= select_tag "size_id", options_from_collection_for_select(@size, "id", "name"), class: "button small split no-pip" %>
-      <%= submit_tag "добавить в корзину", remote: true, class: "button expand add-to-cart" %>
-  <% end %>
-     
-          <%= button_to "Checkout", new_order_path, method: :get, class: "button expand add-to-cart" %>
-    
-
-
-
-
-
-    <ul class="tabs" data-tabs id="example-tabs">
-
-      
-      
-    </ul>
-      <div class="tabs-content" data-tabs-content="example-tabs">
-
-      </div>
-
-
-         <div class="row">
+      <%= hidden_field_tag :product_id,  @product.id %>
+      <p>Выберите размер</p>
+      <%= select_tag "size_id", options_from_collection_for_select(@size, "id", "name"), class: " small " %>
+ 
+        <hr>
+        <div class="row">
           <div class="small-3 columns">
-            <label for="middle-label" class="middle">Цена</label>
+            <p for="middle-label" class="middle">Цена</p>
           </div>
           <div class="small-9 columns">
-            <label for="middle-label" class="middle"><%= @product.price %></label>
+            <p for="middle-label" class="middle"><%= @product.price %></p>
           </div>
         </div>
+        <hr>
 
 
+      <%= submit_tag "Добавить в корзину", remote: true, class: "button expand add-to-cart" %>
+  <% end %>
+      <%= button_to "Перейти к оплате", new_order_path, method: :get, class: "button expand add-to-cart" %>
 
-        <div class="small secondary expanded button-group">
-            <a class="button">Facebook</a>
-            <a class="button">Twitter</a>
-            <a class="button">Yo</a>
-          </div>
+
         </div>
     </div>
 
     <div class="column row">
       <hr>
       <ul class="tabs" data-tabs id="example-tabs">
-        <li class="tabs-title is-active"><a href="#panel4" aria-selected="true">Reviews</a></li>
+        <li class="tabs-title is-active"><a href="#panel4" aria-selected="true">Доставка</a></li>
         <li class="tabs-title"><a href="#panel5">Таблица размеров</a></li>
       </ul>
       <div class="tabs-content" data-tabs-content="example-tabs">
         <div class="tabs-panel is-active" id="panel4">
-          <h4>Reviews</h4>
+          <h4>Условия доставки</h4>
           <div class="media-object stack-for-small">
             <div class="media-object-section">
               <img class="thumbnail" src="http://placehold.it/200x200">
             </div>
             <div class="media-object-section">
-              <h5>Mike Stevenson</h5>
-              <p>I'm going to improvise. Listen, there's something you should know about me... about inception. An idea is like a virus, resilient, highly contagious. The smallest seed of an idea can grow. It can grow to define or destroy you.</p>
+              <h5>Самовывоз</h5>
+              <p>Самостоятельно забрать покупку можно у нас в офисе по адресу: Трехгорная Мануфактура 11/15, вбудние дни с 10 утра и до 7 вечера.</p>
             </div>
           </div>
           <div class="media-object stack-for-small">
@@ -97,24 +79,11 @@
               <img class="thumbnail" src="http://placehold.it/200x200">
             </div>
             <div class="media-object-section">
-              <h5>Mike Stevenson</h5>
-              <p>I'm going to improvise. Listen, there's something you should know about me... about inception. An idea is like a virus, resilient, highly contagious. The smallest seed of an idea can grow. It can grow to define or destroy you</p>
+              <h5>Курьерская доставка</h5>
+              <p>Курьерескую доставку осуществляет наш партнер компания DPD. Доставка осуществляется в короткие сроки во все города таможенного союза. В том числе: Беларусь, Казахстан, Армения.</p>
             </div>
           </div>
-          <div class="media-object stack-for-small">
-            <div class="media-object-section">
-              <img class="thumbnail" src="http://placehold.it/200x200">
-            </div>
-            <div class="media-object-section">
-              <h5>Mike Stevenson</h5>
-              <p>I'm going to improvise. Listen, there's something you should know about me... about inception. An idea is like a virus, resilient, highly contagious. The smallest seed of an idea can grow. It can grow to define or destroy you</p>
-            </div>
-          </div>
-          <label>
-            My Review
-            <textarea placeholder="None"></textarea>
-          </label>
-          <button class="button">Submit Review</button>
+
         </div>
         <div class="tabs-panel" id="panel5">
 
