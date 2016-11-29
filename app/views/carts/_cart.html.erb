@@ -12,31 +12,31 @@
         </ul>
       </nav>
     </div>
-<div class="small-12 small-centered large-7 large-centered collumn">
-<h2>Корзина</h2>
-<table class="">
-       <thead>
-      <tr>
-        <th >Фото</th>
-        <th >Кол-во</th>
-        <th >Модель</th>
-        <th >Фасон</th>
-        <th >Размер</th>
-        <th >Цена</th>
-        <th >Убрать</th>
-      </tr>
-   </thead>
-  <%= render(cart.line_items) %>
-   <tr class="">
-     <td colspan="2">Всего</td>
-     <td ></td>
-     <td ></td>
-     <td ></td>
-     
-     <td class=""><%= number_to_currency(cart.total_price) %></td>
-     <td ></td>
-   </tr>
- </body>
-</table>
-<%= button_to "Перейти к оплате", new_order_path, method: :get, class: "button expand add-to-cart" %>
+<div class="small-12 small-centered large-7 large-centered column">
+  <h2>Корзина</h2>
+  <table class="text-center responsive">
+         <thead >
+        <tr>
+          <th class="text-center">Кол-во</th>
+          <th class="text-center">Фото</th>
+          <th class="text-center">Модель</th>
+          <th class="text-center">Фасон</th>
+          <th class="text-center">Размер</th>
+          <th class="text-center">Цена</th>
+          <th class="text-center">Убрать</th>
+        </tr>
+     </thead>
+    <%= render(cart.line_items) %>
+     <tr class="">
+       <td colspan="2">Всего</td>
+       <td ></td>
+       <td ></td>
+       <td ></td>
+       
+       <td class=""><%= number_to_currency(cart.total_price) %></td>
+       <td ></td>
+     </tr>
+   </body>
+  </table>
+  <%= button_to "Перейти к оплате", new_order_path, method: :get, class: "button expand add-to-cart" %>
 </div>

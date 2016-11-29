@@ -2,8 +2,9 @@
 
      <tbody>
      <tr>
-		<td width="150"><% if line_item.product.images.present? %><%= image_tag line_item.product.images.first.photo, class: "thumbnail", size: "100x100" %> <% end %></td>
-		<td ><%= line_item.quantity %>&times; </td>
+     	<td ><%= line_item.quantity %>&times; </td>
+		<td class="align-center align-middle"><% if line_item.product.images.present? %><%= image_tag line_item.product.images.first.photo, class: "thumbnail", size: "100x100" %> <% end %></td>
+		
 		<td ><%= line_item.product.title %></td>
 		<td ><%= line_item.product.style.name %></td>
 		<td ><%= line_item.size.name %></td>
