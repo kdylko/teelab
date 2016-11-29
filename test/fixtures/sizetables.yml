@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  size_id: MyString
+  size_name: MyString
+  w_sh: MyString
+  w_ch: MyString
+  height: MyString
+
+two:
+  size_id: MyString
+  size_name: MyString
+  w_sh: MyString
+  w_ch: MyString
+  height: MyString

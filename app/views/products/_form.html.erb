@@ -12,33 +12,34 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :title %><br>
+    <%= f.label 'Название кампании' %>
     <%= f.text_field :title %>
   </div>
   <div class="field">
-    <%= f.label :description %><br>
+    <%= f.label 'Описание' %>
     <%= f.text_area :description %>
   </div>
   <div class="field">
-    <%= f.label :url_name %><br>
+    <%= f.label 'URL' %>
     <%= f.text_field :url_name %>
   </div>
   <div class="field">
-    <%= f.label :price %><br>
+    <%= f.label 'Цена' %>
     <%= f.text_field :price %>
   </div>
     <div class="field">
-    <%= f.label :style_id %><br>
+    <%= f.label 'Фасон' %>
     <%= f.collection_select :style_id, Style.order(:name),:id,:name, include_blank: false %>
     <%= f.hidden_field :category, value: 'blogger' %>
   </div>
   <div class="field">
-    <%= f.label :images  %><br>
+    <%= f.label 'Загрузка изображения'  %>
     <%= file_field_tag "photos[]", type: :file, multiple: true %>
   </div>
   
 
   <div class="actions">
+    <%= f.label 'Создать продукт'  %>
     <%= f.submit %>
   </div>
 <% end %>

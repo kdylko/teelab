@@ -32,6 +32,7 @@ gem 'paperclip'
 # gem 'zurb-foundation', '~> 4.3.2'
 gem 'foundation-rails'
 gem 'foundation-icons-sass-rails'
+gem 'joyride_foundation', '~> 0.0.2'
 gem 'google-webfonts-rails'
 
 #to change urls

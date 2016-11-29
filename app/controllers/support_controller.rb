@@ -13,4 +13,7 @@ class SupportController < ApplicationController
 
   def offer
   end
+
+  def pricing
+  end
 end

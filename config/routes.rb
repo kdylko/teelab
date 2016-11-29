@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get 'support/help'
   get 'support/contact'
   get 'support/offer'
+    get 'support/pricing'
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
