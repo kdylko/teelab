@@ -28,6 +28,11 @@
 
       <%= f.text_field :phone, :placeholder=>'+7 909 909 0909', :required => true, :pattern =>  "^([0|\+[0-9]{1,5})?([1-9][0-9]{9})$" %>
     </div>
+    <div class="field">
+
+      
+      <%= f.select :delivery_id, options_from_collection_for_select(@delivery, :id, :name) %>
+    </div>
         <div class="field">
           <%= f.hidden_field :order_client_id, value: @order_client_id %>
 

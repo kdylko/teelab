@@ -5,6 +5,7 @@ class Product < ActiveRecord::Base
 	has_many :images, dependent: :destroy, :autosave => true
 	has_many :line_items
 	has_many :sizes, through: :style
+	has_many :orders, through: :line_items
 	before_destroy :ensure_not_referenced_by_any_line_item
 	belongs_to :user
 	accepts_nested_attributes_for :images, :reject_if => lambda { |t| t['image'].nil? }
@@ -13,7 +14,9 @@ class Product < ActiveRecord::Base
 	validates :title, uniqueness: true
 	validates :url_name, uniqueness: true, format: { with: /\A[a-z]+\z/, message: 'только строчные буквы' }
 
-
+	def item_count
+		orders.to_a.sum { |item| item.order_count}
+	end
 
 	private
 	# убеждаемся в отсутствии товарных позиций, ссылающихся на данный товар

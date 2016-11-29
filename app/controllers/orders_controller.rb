@@ -1,6 +1,6 @@
 class OrdersController < ApplicationController
   include CurrentCart
-
+  
   before_action :set_cart, only: [:new, :create]
   before_action :set_order, only: [:show, :edit, :update, :destroy]
 
@@ -24,6 +24,7 @@ class OrdersController < ApplicationController
    
     @order = Order.new
     @order_client_id = Time.now.strftime("%d%m%Y").to_s+@cart.id.to_s
+    @delivery= Delivery.all
   end
 
   # GET /orders/1/edit
@@ -85,6 +86,6 @@ class OrdersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_params
-      params.require(:order).permit(:name, :address, :email, :phone, :order_clientid)
+      params.require(:order).permit(:name, :address, :email, :phone, :order_clientid, :delivery)
     end
 end

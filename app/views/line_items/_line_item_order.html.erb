@@ -1,0 +1,20 @@
+
+
+     <tbody>
+     <tr>
+
+	
+		<td ><%= line_item.product.title %></td>
+		<td ><%= line_item.product.style.name %></td>
+		<td ><%= line_item.size.name %></td>	
+		<td ><%= line_item.quantity %>&times; </td>
+		<td class="item_price"><%= number_to_currency(line_item.total_price) %></td>
+		<td >
+			<button >
+			
+				<span aria-hidden="true"><%= link_to '&times;'.html_safe, line_item_path(line_item.id), :method => :delete, id: "delete" %></span>
+	    	</button>
+	    </td>
+     </tr>
+ 
+

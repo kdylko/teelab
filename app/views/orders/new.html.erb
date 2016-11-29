@@ -1,9 +1,44 @@
 <% javascript_include_tag "https://widget.cloudpayments.ru/bundles/cloudpayments" %>
 <div class="row">
-    <div class="form-container  small-12  medium-12 large-4 columns">
-    
+    <div class="form-container  small-12  medium-5 large-5 medium-offset-1 large-offset-1 columns ">
+        <br>
+        <h3>Информация о заказе</h3>
+        <br>
+        <table>
+          <thead>
+            <tr>
+                <th >Фото</th>
+                <th >Кол-во</th>
+                <th >Модель</th>
+                <th >Фасон</th>
+                <th >Размер</th>
+                <th >Цена</th>
+                <th >Убрать</th>
+            </tr>
+          </thead>
+          <tbody>
+            <%= render(@cart.line_items) %>
+            <tr class="">
+                 <td >Доставка</td>
+                 <td ></td>
+                 <td ></td>
+                 <td ></td>
+                 <td ></td>
+                 <td ><%= @delivery.name %></td>
+                 <td ></td>
+            </tr>
+            <tr class="">
+                 <td colspan="2">Всего</td>
+                 <td ></td>
+                 <td ></td>
+                 <td ></td>
+                 <td class=""><%= number_to_currency(@cart.total_price) %></td>
+                 <td ></td>
+            </tr>
+          </tbody>
+        </table>
     </div>
-    <div class="form-container  small-12  medium-12 large-4 columns">
+    <div class="form-container  small-12  medium-5 large-5 columns end">
     <br>
     <h3>Оформление заказа</h3>
     <br>

@@ -9,13 +9,13 @@
     </div>
     <div class="medium-9 columns">
     <div class="tabs-content vertical" data-tabs-content="example-vert-tabs">
-      <div class="tabs-panel is-active" id="panel1v">
+      <div class="tabs-panel is-active small-10 medium-8 large-8 form-container" id="panel1v">
          <h3>Личный кабинет</h3>
             <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
               <%= devise_error_messages! %>
 
               <div class="field">
-                <%= f.label :email %><br />
+                <%= f.label :email %><br/>
                 <%= f.email_field :email, autofocus: true %>
               </div>
 
@@ -63,6 +63,7 @@
                     <td><%= product.description %></td>
                     <td><%= product.url_name %></td>
                     <td><%= product.price %></td>
+                    <td><%= product.item_count %></td>
                     <td><%= link_to 'Show', user_product_path(product.user_id,product) %></td>
                     <td><%= link_to 'Edit', edit_user_product_path(product.user_id,product) %></td>
                   </tr>
