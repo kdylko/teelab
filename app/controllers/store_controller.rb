@@ -4,6 +4,8 @@ class StoreController < ApplicationController
   def index
   	
 		@products = Product.order(:id)
+        @blogger = Product.all.where(category: ["blogger"])
+    @newyear = Product.all.where(category: ["new_year"])
 		
 		
   end

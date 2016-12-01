@@ -314,6 +314,7 @@ DEPENDENCIES
   joyride_foundation (~> 0.0.2)
   jquery-rails
   jquery-turbolinks
+  jquery-ui-rails
   jquery-validation-rails
   mysql2
   owlcarousel-rails

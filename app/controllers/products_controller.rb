@@ -7,6 +7,8 @@ class ProductsController < ApplicationController
   # GET /products.json
   def index
     @products = Product.all
+    @blogger = Product.all.where(category: ["blogger"])
+    @newyear = Product.all.where(category: ["new_year"])
   end
 
   # GET /products/1
@@ -16,6 +18,7 @@ class ProductsController < ApplicationController
     @style = Style.find(@product.style_id)
     @gender = Gender.all.select { |m| m.style_id == @style.id }
     @size = Size.where("style_id = ?", @style.id)
+
 
   end
 
