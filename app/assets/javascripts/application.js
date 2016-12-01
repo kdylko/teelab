@@ -17,7 +17,6 @@
 //= require jquery.validate.additional-methods
 //= require owl.carousel
 //= require foundation
-//= require foundation/app
 
 //= require_tree .
 
