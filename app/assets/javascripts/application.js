@@ -14,11 +14,12 @@
 //= require jquery_ujs
 //= require jquery.validate
 //= require jquery.validate.additional-methods
-
+//= require owl.carousel
 //= require foundation
 
 //= require_tree .
-//= require owl.carousel
+
+
 
 
 $(function(){ $(document).foundation(); });

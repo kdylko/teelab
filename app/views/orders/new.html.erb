@@ -1,19 +1,19 @@
 <% javascript_include_tag "https://widget.cloudpayments.ru/bundles/cloudpayments" %>
 <div class="row">
-    <div class="form-container  small-12  medium-5 large-5 medium-offset-1 large-offset-1 columns ">
+    <div class="form-container  small-12  medium-6 large-6 medium-offset-1 large-offset-1 columns ">
         <br>
         <h3>Информация о заказе</h3>
         <br>
-        <table class="responsive">
+        <table class="responsive text-center">
           <thead>
             <tr>
-                <th >Кол-во</th>
-                <th >Фото</th>
-                <th >Модель</th>
-                <th >Фасон</th>
-                <th >Размер</th>
-                <th >Цена</th>
-                <th >Убрать</th>
+                <th class="text-center">Кол-во</th>
+                <th class="text-center">Фото</th>
+                <th class="text-center">Модель</th>
+                <th class="text-center">Фасон</th>
+                <th class="text-center">Размер</th>
+                <th class="text-center">Цена</th>
+                <th class="text-center">Убрать</th>
             </tr>
           </thead>
           <tbody>
@@ -24,16 +24,15 @@
                  <td ></td>
                  <td ></td>
                  <td ></td>
-                 <td ><%= @delivery.name %></td>
+                 <td id="deliv"></td>
                  <td ></td>
             </tr>
             <tr class="">
-                 <td colspan="2">Всего</td>
-                 <td ></td>
-                 <td ></td>
-                 <td ></td>
-                 <td class=""><%= number_to_currency(@cart.total_price) %></td>
-                 <td ></td>
+                 <td colspan="1">Всего</td>
+              
+                 <td colspan="4"></td>
+                 <td colspan="1" id="total"></td>
+                 <td colspan="1"></td>
             </tr>
           </tbody>
         </table>
@@ -48,7 +47,32 @@
 
 
 <%= javascript_tag do %>
+
+
+  $('select').change(refresh);
+
   
+      function priceChanger() {
+       var a = document.getElementById('order_delivery_price').value;
+       a = Number(a);
+       return a;
+      }
+
+      function total() {
+        return priceChanger() + <%= @cart.total_price %>;
+      }
+
+      function refresh() {
+        document.getElementById('total').innerHTML = total();
+        document.getElementById('deliv').innerHTML = priceChanger();
+      }
+      $( document ).ready(function() {
+        document.getElementById('total').innerHTML = total();
+        document.getElementById('deliv').innerHTML = priceChanger();
+      });
+  
+
+ 
   var payHandler = function () {
 
     
@@ -56,7 +80,7 @@
         widget.charge({ // options
                 publicId: 'pk_2cdd5b0bd7978802123946d757d4f',
                 description: 'Оплата в teelab.ru',
-                amount: <%= @cart.total_price %>, //сумма
+                amount: total(), //сумма
                 currency: 'RUB',
                 invoiceId: '<%= @order_clientid %>', //номер заказа
 
@@ -66,14 +90,17 @@
             },
             function (reason, options) { 
             });
-    };
+  };
+
+
 
     $("#sb").on("click", function() {
         if ($("#new_order").valid()) {
+
             payHandler();
         }
 
-});
+    });
 
     
 

@@ -29,6 +29,7 @@
     
       <div class="medium-6 large-5 columns">
         <h3><%= @product.title %></h3>
+        <p><%= @product.style.name %></p> <br>
         <p><%= @product.description %></p>
 <!-- Tabs -->
   <%= form_tag({controller: "line_items", action: "create"}, method: "post", remote: true, class: "form") do %>
@@ -48,7 +49,7 @@
         <hr>
 
 
-      <%= submit_tag "Добавить в корзину", remote: true, class: "button expand add-to-cart" %>
+      <%= submit_tag "Добавить в корзину", remote: true, :onclick => "alert('Товар успешно добавлен в корзину')", class: "button expand add-to-cart" %>
   <% end %>
       <%= button_to "Перейти к оплате", new_order_path, method: :get, class: "button expand add-to-cart" %>
 
@@ -67,7 +68,7 @@
           <h4>Условия доставки</h4>
           <div class="media-object stack-for-small">
             <div class="media-object-section">
-              <img class="thumbnail" src="http://placehold.it/200x200">
+              <%= image_tag 'map.jpg', size: "200x200", class: "thumbnail" %>
             </div>
             <div class="media-object-section">
               <h5>Самовывоз</h5>

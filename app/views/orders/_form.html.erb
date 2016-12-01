@@ -31,10 +31,14 @@
     <div class="field">
 
       
-      <%= f.select :delivery_id, options_from_collection_for_select(@delivery, :id, :name) %>
+      <%= f.select :delivery_price, options_from_collection_for_select(@delivery, :price, :name, :id), id: "sel" %>
     </div>
+  <%-# commented line   <div class="field"> -%>
+   <%-#       <%= f.hidden_field :total_amount, value: @order_clientid -%>
+   <%-#   </div> -%>
         <div class="field">
           <%= f.hidden_field :order_clientid, value: @order_clientid %>
+
 
       <%= f.submit :submit %>
     </div>
