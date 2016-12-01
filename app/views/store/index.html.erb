@@ -31,8 +31,8 @@
           <p style="margin-bottom:3px"><%= product.price %> руб.</p>
 
 
-          <button class="button expand add-to-cart" type="button" data-toggle="<%= product.id -%>">Добавить в корзину</button>
-            <div class="dropdown-pane" id="<%= product.id -%>" data-dropdown data-auto-focus="true">
+          <button class="button expand add-to-cart" type="button" data-toggle="<%= product.id %>">Добавить в корзину</button>
+            <div class="dropdown-pane" id="<%= product.id %>" data-dropdown data-auto-focus="true">
               Выберите размер
               <%= form_tag({controller: "line_items", action: "create"}, method: "post", remote: true, class: "form") do %>
                  <%= hidden_field_tag :product_id,  product.id %>
@@ -73,8 +73,8 @@
             <p style="margin-bottom:3px"><%= product.price %> руб.</p>
           
             
-            <button class="button expand add-to-cart" type="button" data-toggle="<%= product.id -%>" data-remote="true">Добавить в корзину</button>
-            <div class="dropdown-pane" id="<%= product.id -%>" data-dropdown data-auto-focus="true">
+            <button class="button expand add-to-cart" type="button" data-toggle="<%= product.id %>" data-remote="true">Добавить в корзину</button>
+            <div class="dropdown-pane" id="<%= product.id %>" data-dropdown data-auto-focus="true">
               Выберите размер
               <%= form_tag({controller: "line_items", action: "create"}, method: "post", remote: true, class: "form") do %>
                  <%= hidden_field_tag :product_id,  product.id %>
