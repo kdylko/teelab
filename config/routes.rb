@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
 
   get 'landing/index'
+  get 'landing/devel'
   get 'landing/three'
   get 'store/intelligence'
 

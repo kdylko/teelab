@@ -32,7 +32,7 @@
           <columns large="6">
             <p>
               <strong>Метод доставки</strong><br/>
-              <%= @delivery.find(@order.delivery_id).name %><br/>
+              <%= @delivery.find(@order.delivery_price).name %><br/>
               <strong>Shipping Address</strong><br/>
               <%= @order.address %>
             </p>
