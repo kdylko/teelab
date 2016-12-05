@@ -116,6 +116,7 @@ GEM
       execjs
     coffee-script-source (1.10.0)
     concurrent-ruby (1.0.2)
+    coupon_code (0.0.2)
     debug_inspector (0.0.2)
     devise (4.2.0)
       bcrypt (~> 3.0)
@@ -304,6 +305,7 @@ DEPENDENCIES
   capistrano-secrets-yml
   cloud_payments
   coffee-rails (~> 4.1.0)
+  coupon_code
   devise
   formtastic (~> 3.0)
   foundation-icons-sass-rails

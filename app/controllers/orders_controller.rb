@@ -38,6 +38,7 @@ class OrdersController < ApplicationController
     @order = Order.new(order_params)
     @order.add_line_items_from_cart(@cart)
     @delivery = Delivery.all
+    @order.user_id = current_user.id if current_user
 
     respond_to do |format|
       if @order.save

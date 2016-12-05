@@ -5,6 +5,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   has_many :products
   accepts_nested_attributes_for :products, :reject_if => lambda { |t| t['product'].nil? }
+  has_many :orders
+  accepts_nested_attributes_for :orders, :reject_if => lambda { |t| t['product'].nil? }
   
 
 end

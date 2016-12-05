@@ -5,13 +5,15 @@ Rails.application.routes.draw do
   get 'support/help'
   get 'support/contact'
   get 'support/offer'
-    get 'support/pricing'
+  get 'support/pricing'
+  get 'support/blog'
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
   get 'landing/index'
   get 'landing/three'
+  get 'store/intelligence'
 
   resources :orders
   resources :line_items, only: [:new, :create, :edit, :update, :destroy]

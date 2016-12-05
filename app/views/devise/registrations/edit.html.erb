@@ -1,14 +1,16 @@
 <br>
-<div class="row collapse">
-  <div class="medium-3 columns">
-    <ul class="tabs vertical" id="example-vert-tabs" data-tabs>
+<div class="row   ">
+  <div class="medium-3 large-3 columns">
+    <ul class="tabs vertical" id="example-tabs" data-tabs>
       <li class="tabs-title is-active"><a href="#panel1v" aria-selected="true">Личные данные</a></li>
-      <li class="tabs-title"><a href="#panel2v">Кампании</a></li>
+      <li class="tabs-title"><a href="#panel2v">Мои заказы</a></li>
+      <li class="tabs-title"><a href="#panel3v">Кампании</a></li>
 
     </ul>
-    </div>
-    <div class="medium-9 columns">
-    <div class="tabs-content vertical" data-tabs-content="example-vert-tabs">
+    <br>
+  </div>
+  <div class="medium-9 columns" style="min-height: 50vh;">  
+    <div class="tabs-content" data-tabs-content="example-tabs">
       <div class="tabs-panel is-active small-10 medium-8 large-8 form-container" id="panel1v">
          <h3>Личный кабинет</h3>
             <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
@@ -24,11 +26,11 @@
               <% end %>
 
               <div class="field">
-                <%= f.label :Пароль %> <i>(leave blank if you don't want to change it)</i><br />
+                <%= f.label :Пароль %> <i>(Оставьте пустым если не хотите менять)</i><br />
                 <%= f.password_field :password, autocomplete: "off" %>
                 <% if @minimum_password_length %>
-                  <br />
-                  <em><%= @minimum_password_length %> characters minimum</em>
+                  
+                  <em>Минимум <%= @minimum_password_length %> знаков</em>
                 <% end %>
               </div>
 
@@ -38,49 +40,102 @@
               </div>
 
               <div class="field">
-                <%= f.label :'Введите текущий пароль' %> <i>(we need your current password to confirm your changes)</i><br />
+                <%= f.label :'Введите текущий пароль' %> <i>(Нам нужен Ваш текущий пароль чтобы подтвердить изменения)</i><br />
                 <%= f.password_field :current_password, autocomplete: "off" %>
               </div>
 
               <div class="actions">
-                <%= f.submit "Update" %>
+                <%= f.submit "Обновить данные", class: "button" %>
               </div>
             <% end %>
-              <h3>Cancel my account</h3>
+              <h3>Удалить аккаунт</h3>
 
-              <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+              <p><%= button_to "Удалить аккаунт", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "button" %></p>
 
-              <%= link_to "Back", :back %>   
       </div>
-
       <div class="tabs-panel" id="panel2v">
+         <h3>Мои заказы</h3>
+         <table class="responsive">
+            <thead>
+              <tr>
+                <th>Номер</th>
+                <th>Дата</th>
+                <th>Адрес</th>
+                <th>Сумма</th>
+                <th>Доставка</th>
+                <th>Инфо о заказе</th>
+              </tr>
+            </thead>
+            <tbody>
+            <% @user.orders.each do |order| %> 
+              <tr>
+                <td><%= order.order_clientid %></td>
+                <td><%= order.created_at %></td>
+                <td><%= order.address %></td>
+                <td><%= order.order_amount %></td>
+                <td><%= order.delivery_price %></td>
+                <td>
+                  <% order.line_items.each do |item| %>
+                  <%= item.quantity %>x  
+                  <%= item.product.title %><br>
+                  <%= item.product.style.name %><br>
+                  <%= item.size.name %><br><br>
+                  <% end %>
+
+
+                </td>
+              </tr>
+            <% end %>  
+            </tbody>
+          </table>
+      </div>
+      <% if @user.caccess == true %>
+      <div class="tabs-panel" id="panel3v">
             <h3>Созданные кампании</h3>
-              <div class="row">
+           <table class="responsive">
+            <thead>
+              <tr>
+                <th>Название</th>
+                <th class="text-center">Описание</th>
+                <th class="text-center">Url</th>
+                <th class="text-center">Цена</th>
+                <th class="text-center">Продано шт.</th>
+                <th class="text-center">Показать</th>
+                <th class="text-center">Изменить</th>
+                <th class="text-center">Удалить</th>
+              </tr>
+            </thead>
+            <tbody>
+
               <% @user.products.each do |product| %>
-              <div class="callout" data-closable>
+
                   <tr>
                     <td><%= product.title %></td>
-                    <td><%= product.description %></td>
-                    <td><%= product.url_name %></td>
-                    <td><%= product.price %></td>
-                    <td><%= product.item_count %></td>
-                    <td><%= link_to 'Show', user_product_path(product.user_id,product) %></td>
-                    <td><%= link_to 'Edit', edit_user_product_path(product.user_id,product) %></td>
+                    <td class="text-center"><%= product.description %></td>
+                    <td class="text-center"><%= product.url_name %></td>
+                    <td class="text-center"><%= product.price %></td>
+                    <td class="text-center"><%= product.item_count %></td>
+                    <td class="text-center"><%= link_to 'Показать', user_product_path(product.user_id,product) %></td>
+                    <td class="text-center"><%= link_to 'Изменить', edit_user_product_path(product.user_id,product) %></td>
+                    <td class="text-center"><%= link_to '&times;'.html_safe, user_product_path(@user, product), :method => :delete %></td>
                   </tr>
-                <button class="close-button" aria-label="Close alert" type="button">
-                  
-                  <span aria-hidden="true"><%= link_to '&times;'.html_safe, user_product_path(@user, product), :method => :delete %></span>
-                  </button>
-              </div>
+
               <% end %> 
-            </div>  
+            </tbody>
+           </table>
+         
               <h3>Создать новую кампании</h3>           
               <div class="actions">
                 <%= button_to 'Создать кампанию', new_user_product_path(user_id: current_user.id), :method => :get, class: "button expand add-to-cart" %> 
               </div>
               
       </div>
-
+      <% else %>
+        <div class="tabs-panel" id="panel3v">
+          <p>Свяжитесь с нами, чтобы получить доступ к созданию кампаний <br>
+          collaboration@teelab.ru </p>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>

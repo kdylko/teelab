@@ -30,6 +30,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # file upload
 gem 'paperclip'
 
+# Coupon code
+gem 'coupon_code'
 
 # gem 'zurb-foundation', '~> 4.3.2'
 gem 'foundation-rails'

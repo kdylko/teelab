@@ -16,4 +16,7 @@ class SupportController < ApplicationController
 
   def pricing
   end
+
+  def blog
+  end
 end

@@ -38,6 +38,7 @@
    <%-#   </div> -%>
         <div class="field">
           <%= f.hidden_field :order_clientid, value: @order_clientid %>
+          <%= f.hidden_field :order_amount, value: @cart.total_price %>
 
 
       <%= f.submit :submit %>

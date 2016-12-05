@@ -17,5 +17,13 @@ class StoreController < ApplicationController
     @size = Size.where("style_id = ?", @style.id)
 		
   end
+    def intelligence
+    
+    @products = Product.order(:id)
+        @blogger = Product.all.where(category: ["blogger"])
+    @newyear = Product.all.where(category: ["new_year"])
+    
+    
+  end
 
 end
