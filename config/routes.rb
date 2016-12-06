@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'support/offer'
   get 'support/pricing'
   get 'support/blog'
+  get 'support/confirm'
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
@@ -14,6 +15,7 @@ Rails.application.routes.draw do
   get 'landing/index'
   get 'landing/devel'
   get 'landing/three'
+
   get 'store/intelligence'
 
   resources :orders
@@ -56,7 +58,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'landing#three' 
+  root 'landing#devel' 
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

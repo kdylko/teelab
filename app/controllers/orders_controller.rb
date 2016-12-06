@@ -31,6 +31,9 @@ class OrdersController < ApplicationController
   def edit
   end
 
+  def confirm
+  end
+
   # POST /orders
   # POST /orders.json
   def create
@@ -45,8 +48,7 @@ class OrdersController < ApplicationController
         Cart.destroy(session[:cart_id])
         session[:cart_id] = nil
         OrderNotifier.received(@order).deliver
-        format.html { redirect_to root_path, notice:
-            'Thank you for your order.' }
+        format.html { redirect_to support_confirm_path}
         format.json { render :show, status: :created, location: @order }
       else
         

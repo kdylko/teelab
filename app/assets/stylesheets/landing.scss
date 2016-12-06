@@ -33,7 +33,7 @@ $menu-link-border: 1px solid rgba(255,255,255, .5);
   left: 0;
   bottom: 0;
   right: 0;
-  width: 100%;
+  width: auto;
   height:100%;
   margin:0;
   padding: 0 0 0;
@@ -42,7 +42,7 @@ $menu-link-border: 1px solid rgba(255,255,255, .5);
   background: black;
   background-size: cover;
   text-align: center;
-   transform: perspective(200px) translateX(0) rotateX(0);
+  transform: perspective(200px) translateX(0) rotateX(0);
   transition: all 400ms cubic-bezier(1.000, -0.400, 0.440, 0.985);
   
   li {
