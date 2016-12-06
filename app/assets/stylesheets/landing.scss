@@ -3,6 +3,8 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 // For Three landing page
+
+
 // Animated infocard
 
 $menu-icon-size: 4rem;
@@ -80,7 +82,7 @@ $menu-link-border: 1px solid rgba(255,255,255, .5);
 
 
 .hero1 {
-  background: image-url("IMG_3804.jpg") no-repeat center center;
+  background: image-url("01.jpg") no-repeat center center;
   background-size: cover;
   height: 70vh;
   margin-bottom: 0rem;
@@ -239,6 +241,11 @@ hr{
   .profile-info {
     padding: 1rem;
     h4 {
+      margin-top: 0;
+      text-align: center;
+      text-transform: uppercase;
+    }
+    h3 {
       margin-top: 0;
       text-align: center;
       text-transform: uppercase;
