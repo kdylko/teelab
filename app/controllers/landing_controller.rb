@@ -17,7 +17,7 @@ class LandingController < ApplicationController
   def resolve_layout
     case action_name
     when "index"
-      "landing"
+      "application"
     else 
       "landdev"
     end
