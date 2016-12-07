@@ -22,7 +22,7 @@
       <% @intelligence.each_with_index do |product, index| %> 
 
           <% if index < 4 %>
-            <div class="column" >
+            <div class="column" style="-webkit-hyphens: auto;" >
                 <%= link_to store_path(product.id), class: "poster" do %>
                 <% if product.images.present? %>
                 <%= image_tag product.images.first.photo(:thumb), class: "thumbnail" %>

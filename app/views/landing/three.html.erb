@@ -1,11 +1,13 @@
-<div class="row menu_container">
-	<div class="large-12 medium-12 small-12 text-center column menu_three blog">
+<div class="row menu_container" style="font-family: 'Playfair Display SC', serif;">
+	<div class="large-10 medium-12 small-12 large-centered text-left column menu_three blog">
 		<%= link_to 'ДЛЯ БЛОГГЕРОВ', blogger_index_path%>
 	</div>
-	<div class="large-12 medium-12 small-12 text-center column menu_three store">
+	<div class="large-10 medium-12 small-12 large-centered text-left column menu_three store">
 		<%= link_to 'ДЛЯ ПОКУПАТЕЛЕЙ', store_index_path%>
 	</div>
-	<div class="large-12 medium-12 small-12 text-center column menu_three individ">
-		<%= link_to 'ИНДИВИДУАЛЬНЫЕ ЗАКАЗЫ'%>
+	<div class="large-10 medium-12 small-12 large-centered text-left column menu_three individ">
+		<%= link_to ('ИНДИВИДУАЛЬНЫЕ<br>ЗАКАЗЫ').html_safe%>
+	</div>
+	<div class="column">
 	</div>
 </div>

@@ -23,14 +23,15 @@ $menu-link-border: 1px solid rgba(255,255,255, .5);
 }
 .blog{
     background: image-url("08w800.jpg") no-repeat center center;
-    background-size: contain; 
+    background-size: cover; 
   a {
       display: block;
       color: #white;
       font-weight: bold;
       height: 100%;
-      line-height: 15rem;
+      line-height: 2rem;
       text-decoration: none;
+      padding-top: 13rem;
 
       
       &:hover {
@@ -40,34 +41,41 @@ $menu-link-border: 1px solid rgba(255,255,255, .5);
 }
 .store{
     background: image-url("3921w800.jpg") no-repeat center center;
-    background-size: contain;
+    background-size: cover; 
 
   a {
       display: block;
-      color: #white;
       font-weight: bold;
       height: 100%;
-      line-height: 15rem;
+      line-height: 2rem;
+      padding-top: 13rem;
       text-decoration: none;
+      color: #000;
 
-      
+      &:visited {
+        color: #D8D8D8;
+      }
+
       &:hover {
+        color: #fff;
         background-color: transparent(dodgerblue, 3%);
       }
   }
+
 
 }
 
 .individ {
     background: image-url("16w800.jpg") no-repeat center center;
-    background-size: contain; 
+    background-size: cover;  
   a {
       display: block;
       color: #white;
       font-weight: bold;
       height: 100%;
-      line-height: 15rem;
+      line-height: 2rem;
       text-decoration: none;
+      padding-top: 11rem;
 
       
       &:hover {
@@ -98,8 +106,8 @@ $menu-link-border: 1px solid rgba(255,255,255, .5);
   text-align: center;
   opacity: 0.9;
   border-radius: 50%;
-  height: 10rem;
-  width: 10rem;
+  height: 12rem;
+  width: 12rem;
   @media only screen and (min-width: 64.063em) {
     margin: 0 auto;
     margin-top: 2rem;
