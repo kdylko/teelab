@@ -36,8 +36,12 @@ gem 'coupon_code'
 # gem 'zurb-foundation', '~> 4.3.2'
 gem 'foundation-rails'
 gem 'foundation-icons-sass-rails'
+gem 'foundation_emails'
 gem 'joyride_foundation', '~> 0.0.2'
 gem 'google-webfonts-rails'
+gem 'inky-rb', require: 'inky'
+gem 'premailer-rails'
+
 
 #to change urls
 gem 'friendly_id'
