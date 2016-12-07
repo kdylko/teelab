@@ -1,8 +1,4 @@
 
-
-    
-
-
     <br>
     <!-- You can now combine a row and column if you just need a 12 column row -->
     <div class="row columns">
@@ -49,7 +45,7 @@
         <hr>
 
 
-      <%= submit_tag "Добавить в корзину", remote: true, class: "button expand add-to-cart" %>
+      <%= submit_tag "Добавить в корзину", remote: true, :onclick => "alert('Товар успешно добавлен в корзину')", class: "button expand add-to-cart" %>
   <% end %>
       <%= button_to "Перейти к оплате", new_order_path, method: :get, class: "button expand add-to-cart" %>
 
@@ -68,7 +64,7 @@
           <h4>Условия доставки</h4>
           <div class="media-object stack-for-small">
             <div class="media-object-section">
-              <%= image_tag 'map.jpg', class: "thumbnail" %>
+              <%= image_tag 'map.jpg', size: "200x200", class: "thumbnail" %>
             </div>
             <div class="media-object-section">
               <h5>Самовывоз</h5>
