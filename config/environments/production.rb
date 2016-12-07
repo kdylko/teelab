@@ -66,12 +66,12 @@ Rails.application.configure do
 
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    address: 'smtp.gmail.com',
-    port: 587,
+    address: 'smtp.yandex.com',
+    port: 465,
     domain: 'teelab.ru',
     authentication: 'plain',
-    user_name: 'kd@teelab.ru',
-    password: '15Tikos@89',
+    user_name: 'order@teelab.ru',
+    password: 'loveteelab1011',
     enable_starttls_auto: true
   }
 
