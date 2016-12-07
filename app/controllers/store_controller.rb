@@ -20,9 +20,9 @@ class StoreController < ApplicationController
     def intelligence
     
     @products = Product.order(:id)
-        @blogger = Product.all.where(category: ["blogger"])
+    @blogger = Product.all.where(category: ["blogger"])
     @newyear = Product.all.where(category: ["new_year"])
-    
+    @intelligence = Product.all.where(category: ["intelligence"])    
     
   end
 

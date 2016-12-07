@@ -30,7 +30,7 @@
     <div class="field">
     <%= f.label 'Фасон' %>
     <%= f.collection_select :style_id, Style.order(:name),:id,:name, include_blank: false %>
-    <%= f.hidden_field :category, value: 'blogger' %>
+    <%= f.hidden_field :category, value: 'all' %>
   </div>
   <div class="field">
     <%= f.label 'Загрузка изображения'  %>

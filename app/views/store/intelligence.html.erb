@@ -19,13 +19,13 @@
 
 
     <div class="row small-up-2 large-up-4">
-      <% @blogger.each_with_index do |product, index| %> 
-        <% if product.category == 'intelligence' %>
+      <% @intelligence.each_with_index do |product, index| %> 
+
           <% if index < 4 %>
             <div class="column" >
                 <%= link_to store_path(product.id), class: "poster" do %>
                 <% if product.images.present? %>
-                <%= image_tag product.images.first.photo(:medium), class: "thumbnail" %>
+                <%= image_tag product.images.first.photo(:thumb), class: "thumbnail" %>
                 <% end %>
                 <% end %>
               <h5><%= product.title %></h5>
@@ -75,7 +75,7 @@
             </div>
 
           <% end %>
-         <% end %>
+
         <% end %> 
     </div>
 

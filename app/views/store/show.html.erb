@@ -1,4 +1,5 @@
 
+
     <br>
     <!-- You can now combine a row and column if you just need a 12 column row -->
     <div class="row columns">
@@ -17,7 +18,7 @@
       <div class="medium-6 columns">
         <div class="owl-carousel" id="owl">
             <% @product.images.each do |image| %>
-            <div><%= image_tag image.photo %></div>
+            <div><%= image_tag image.photo(:medium) %></div>
             <% end %>
           </div> 
         </div>
@@ -26,11 +27,11 @@
       <div class="medium-6 large-5 columns">
         <h3><%= @product.title %></h3>
         <p><%= @product.style.name %></p> <br>
-        <p><%= @product.description %></p>
+        <p><%= @product.description %></p> <br>
 <!-- Tabs -->
   <%= form_tag({controller: "line_items", action: "create"}, method: "post", remote: true, class: "form") do %>
       <%= hidden_field_tag :product_id,  @product.id %>
-      <p>Выберите размер</p>
+      <p class="product__size-description">Выберите размер:</p>
       <%= select_tag "size_id", options_from_collection_for_select(@size, "id", "name"), class: " small " %>
  
         <hr>
@@ -45,9 +46,9 @@
         <hr>
 
 
-      <%= submit_tag "Добавить в корзину", remote: true, :onclick => "alert('Товар успешно добавлен в корзину')", class: "button expand add-to-cart" %>
+      <%= submit_tag "Добавить в корзину", remote: true, :onclick => "alert('Товар успешно добавлен в корзину')", class: "button expand add-to-cart product__button" %>
   <% end %>
-      <%= button_to "Перейти к оплате", new_order_path, method: :get, class: "button expand add-to-cart" %>
+      <%= button_to "Перейти к оплате", new_order_path, method: :get, class: "button expand add-to-cart product__button" %>
 
 
         </div>
@@ -61,23 +62,32 @@
       </ul>
       <div class="tabs-content" data-tabs-content="example-tabs">
         <div class="tabs-panel is-active" id="panel4">
-          <h4>Условия доставки</h4>
+          <h4>Виды доставки:</h4>
           <div class="media-object stack-for-small">
             <div class="media-object-section">
-              <%= image_tag 'map.jpg', size: "200x200", class: "thumbnail" %>
+              <%= image_tag 'map.jpg', size: "150x100", class: "" %>
             </div>
             <div class="media-object-section">
               <h5>Самовывоз</h5>
-              <p>Самостоятельно забрать покупку можно у нас в офисе по адресу: Трехгорная Мануфактура 11/15, вбудние дни с 10 утра и до 7 вечера.</p>
+              <p>Самостоятельно забрать покупку можно у нас в офисе по адресу: Трехгорная Мануфактура 11/15, в будние дни с 10 утра и до 7 вечера.</p>
             </div>
           </div>
           <div class="media-object stack-for-small">
             <div class="media-object-section">
-              <img class="thumbnail" src="http://placehold.it/200x200">
+              
             </div>
             <div class="media-object-section">
               <h5>Курьерская доставка</h5>
               <p>Курьерескую доставку осуществляет наш партнер компания DPD. Доставка осуществляется в короткие сроки во все города таможенного союза. В том числе: Беларусь, Казахстан, Армения.</p>
+            </div>
+          </div>
+          <div class="media-object stack-for-small">
+            <div class="media-object-section">
+             
+            </div>
+            <div class="media-object-section">
+              <h5>Доставка Почтой России</h5>
+              <p>В среднем, Почта России осуществляет доставку в срок от 7 до 14 дней в ближайшее к Вам отделение.</p>
             </div>
           </div>
 

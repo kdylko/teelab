@@ -4,16 +4,19 @@
         <button class="orbit-previous" aria-label="previous"><span class="show-for-sr">Previous Slide</span>&#9664;</button>
         <button class="orbit-next" aria-label="next"><span class="show-for-sr">Next Slide</span>&#9654;</button>
         <li class="orbit-slide is-active">
-          <%= image_tag '3811w1.jpg' %>        
+          <%= link_to store_intelligence_path do %>
+          <%= image_tag '3811w1.jpg' %> 
+          <% end %>     
         </li>
         <li class="orbit-slide">
-          <img src="http://placehold.it/2000x750">
+          <%= link_to store_intelligence_path do %>
+          <%= image_tag '15w.jpg' %>
+          <% end %>  
         </li>
         <li class="orbit-slide">
-          <img src="http://placehold.it/2000x750">
-        </li>
-        <li class="orbit-slide">
-          <img src="http://placehold.it/2000x750">
+          <%= link_to store_intelligence_path do %>
+          <%= image_tag 'IMG_4746.JPG' %>
+          <% end %>  
         </li>
       </ul>
     </div>
@@ -32,7 +35,7 @@
             <div class="column" >
                 <%= link_to store_path(product.id), class: "poster" do %>
                 <% if product.images.present? %>
-                <%= image_tag product.images.first.photo(:medium), class: "thumbnail" %>
+                <%= image_tag product.images.first.photo(:thumb), class: "thumbnail" %>
                 <% end %>
                 <% end %>
               <h5><%= product.title %></h5>
@@ -112,7 +115,7 @@
           
               
                 <%= link_to store_path(product.id), class: "poster" do %>    
-                <%= image_tag product.images.first.photo(:medium), class: "thumbnail" %>
+                <%= image_tag product.images.first.photo(:thumb), class: "thumbnail" %>
                 <% end %>
               
             <h5><%= product.title %></h5>
