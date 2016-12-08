@@ -46,7 +46,7 @@ class ProductsController < ApplicationController
         params[:photos].each { |photo|
           @product.images.create(photo: photo)}
         end
-        format.html { redirect_to user_product_path(@product.user, @product), notice: 'Product was successfully created.' }
+        format.html { redirect_to user_product_path(@product.user, @product) }
         format.json { render :show, status: :created, location: @product }
       else
         format.html { render :new }
@@ -70,7 +70,7 @@ class ProductsController < ApplicationController
         params[:photos].each { |photo|
           @product.images.create(photo: photo)}
         end
-        format.html { redirect_to :back, notice: 'Product was successfully updated.' }
+        format.html { redirect_to :back}
         format.json { render :show, status: :ok, location: @product }
       else
         format.html { render :edit }
@@ -85,7 +85,7 @@ class ProductsController < ApplicationController
     @product.destroy
 
     respond_to do |format|
-      format.html { redirect_to :back, notice: 'Product was successfully destroyed.' }
+      format.html { redirect_to :back }
       format.json { head :no_content }
     end
   end

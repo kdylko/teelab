@@ -1,7 +1,5 @@
 <style>
-    .emailContent{
-        font-family:'circe', 'Helvetica Neue', Helvetica, sans-serif;
-    }
+
 row{
    font-family: 'circe' !important;
 
@@ -54,7 +52,7 @@ row{
       <table class="" style="font-family: circe">
         <tr><th style="font-family: circe">Товар</th><th style="font-family: circe">Размер</th><th style="font-family: circe">#</th><th style="font-family: circe">Цена</th></tr>
         <% @order.line_items.each do |item| %>
-        <tr><td style="font-family: circe"><%= item.product.title %></td><td style="font-family: circe"><%= item.size.name %></td><td style="font-family: circe"><%= item.quantity %></td><td style="font-family: circe"><%= item.total_price %> руб.</td></tr>
+        <tr><td style="font-family: circe"><%= item.product.title %></td><td style="font-family: circe"><%= item.size.name %><br><% if item.color.present? %><%= item.color.name %><% end %></td><td style="font-family: circe"><%= item.quantity %></td><td style="font-family: circe"><%= item.total_price %> руб.</td></tr>
         <% end %>
         <tr>
           <td colspan="2" style="font-family: circe"><b style="font-family: circe">Доставка</b></td>
