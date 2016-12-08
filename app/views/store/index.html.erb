@@ -6,6 +6,7 @@
         <li class="orbit-slide is-active">
           <%= link_to store_intelligence_path do %>
           <%= image_tag '3811w1.jpg' %> 
+          <figcaption class="orbit-caption">Узнайте больше!</figcaption>
           <% end %>     
         </li>
         <li class="orbit-slide">
@@ -110,6 +111,87 @@
 
       <% @newyear.each_with_index do |product, index| %> 
       <% if product.category == 'new_year' %>
+      <% if index < 6 %>
+        <div class="column" style="-webkit-hyphens: auto;" >
+          
+              
+                <%= link_to store_path(product.id), class: "poster" do %>    
+                <%= image_tag product.images.first.photo(:thumb), class: "thumbnail" %>
+                <% end %>
+              
+            <h5><%= product.title %></h5>
+            <p><%= product.style.name %></p>
+            <p style="margin-bottom:3px"><%= product.price %> руб.</p>
+          
+            
+            <button class="button expand add-to-cart" type="button" data-toggle="<%= product.url_name %>">Добавить в корзину</button>
+            <div class="dropdown-pane" id="<%= product.url_name %>" data-dropdown data-auto-focus="true">
+              Выберите размер
+              <%= form_tag({controller: "line_items", action: "create"}, method: "post", remote: true, class: "form") do %>
+                 <%= hidden_field_tag :product_id,  product.id %>
+
+                    <%= select_tag "size_id", options_from_collection_for_select(product.style.sizes, "id", "name"),  remote: true,:onclick => "alert('Товар успешно добавлен в корзину')", class: "button small split no-pip" %>
+                    <%= submit_tag "Выбрать", remote: true, :onclick => "alert('Товар успешно добавлен в корзину')", class: "button expand add-to-cart" %>
+              <% end %>
+            </div>
+
+
+        </div>
+        <% else %>
+        <div class="column elseh1" style="display:none">
+          
+              
+                <%= link_to store_path(product.id), class: "poster" do %>    
+                <%= image_tag product.images.first.photo(:medium), class: "thumbnail" %>
+                <% end %>
+              
+            <h5><%= product.title %></h5>
+            <p><%= product.style.name %></p>
+            <p style="margin-bottom:3px"><%= product.price %> руб.</p>
+          
+            
+            <button class="button expand add-to-cart" type="button" data-toggle="<%= product.url_name %>">Добавить в корзину</button>
+            <div class="dropdown-pane" id="<%= product.url_name %>" data-dropdown data-auto-focus="true">
+              Выберите размер
+              <%= form_tag({controller: "line_items", action: "create"}, method: "post", remote: true, class: "form") do %>
+                 <%= hidden_field_tag :product_id,  product.id %>
+
+                    <%= select_tag "size_id", options_from_collection_for_select(product.style.sizes, "id", "name"),  remote: true,:onclick => "alert('Товар успешно добавлен в корзину')", class: "button small split no-pip" %>
+                    <%= submit_tag "Выбрать", remote: true, :onclick => "alert('Товар успешно добавлен в корзину')", class: "button expand add-to-cart" %>
+              <% end %>
+            </div>
+
+
+        </div>
+
+
+
+      <% end %>
+      <% end %>
+      <% end %>
+    </div>
+
+    <div class="row columns show-more1">
+       <a class="show-more__button"> Показать еще  <i class="fi-arrow-down"></i></a>
+       <a style="display:none" class="show-more__button"> Скрыть  <i class="fi-arrow-up"></i></a>
+    </div>
+
+    <hr>
+
+
+
+
+
+
+     <div class="row column text-center">
+      <h2>Бланковые вещи (без нанесений)</h2>
+      <hr>
+    </div>
+
+    <div class="row small-up-2 medium-up-3 large-up-5">
+
+      <% @blank.each_with_index do |product, index| %> 
+      <% if product.category == 'blank' %>
       <% if index < 6 %>
         <div class="column" style="-webkit-hyphens: auto;" >
           
