@@ -51,6 +51,9 @@
                      <%= hidden_field_tag :product_id,  product.id %>
 
                         <%= select_tag "size_id", options_from_collection_for_select(product.style.sizes, "id", "name"), remote: true, class: " small split no-pip" %>
+                        <% if product.colors.present? %>
+                              <%= select_tag "color_id", options_from_collection_for_select(product.colors, "id", "name"),  remote: true, class: " small " %>
+                        <% end %>
                         <%= submit_tag "Выбрать", remote: true, :onclick => "alert('Товар успешно добавлен в корзину')",  class: "button expand add-to-cart" %>
 
                   <% end %>
@@ -77,6 +80,9 @@
                      <%= hidden_field_tag :product_id,  product.id %>
 
                         <%= select_tag "size_id", options_from_collection_for_select(product.style.sizes, "id", "name"), remote: true, class: " small split no-pip" %>
+                        <% if product.colors.present? %>
+                              <%= select_tag "color_id", options_from_collection_for_select(product.colors, "id", "name"),  remote: true, class: " small " %>
+                        <% end %>
                         <%= submit_tag "Выбрать", remote: true, :onclick => "alert('Товар успешно добавлен в корзину')",  class: "button expand add-to-cart" %>
 
                   <% end %>
@@ -132,6 +138,9 @@
                  <%= hidden_field_tag :product_id,  product.id %>
 
                     <%= select_tag "size_id", options_from_collection_for_select(product.style.sizes, "id", "name"),  remote: true,:onclick => "alert('Товар успешно добавлен в корзину')", class: "button small split no-pip" %>
+                        <% if product.colors.present? %>
+                              <%= select_tag "color_id", options_from_collection_for_select(product.colors, "id", "name"),  remote: true, class: " small " %>
+                        <% end %>
                     <%= submit_tag "Выбрать", remote: true, :onclick => "alert('Товар успешно добавлен в корзину')", class: "button expand add-to-cart" %>
               <% end %>
             </div>
@@ -159,6 +168,9 @@
                  <%= hidden_field_tag :product_id,  product.id %>
 
                     <%= select_tag "size_id", options_from_collection_for_select(product.style.sizes, "id", "name"),  remote: true,:onclick => "alert('Товар успешно добавлен в корзину')", class: "button small split no-pip" %>
+                        <% if product.colors.present? %>
+                              <%= select_tag "color_id", options_from_collection_for_select(product.colors, "id", "name"),  remote: true, class: " small " %>
+                        <% end %>
                     <%= submit_tag "Выбрать", remote: true, :onclick => "alert('Товар успешно добавлен в корзину')", class: "button expand add-to-cart" %>
               <% end %>
             </div>
@@ -215,6 +227,9 @@
                  <%= hidden_field_tag :product_id,  product.id %>
 
                     <%= select_tag "size_id", options_from_collection_for_select(product.style.sizes, "id", "name"),  remote: true,:onclick => "alert('Товар успешно добавлен в корзину')", class: "button small split no-pip" %>
+                        <% if product.colors.present? %>
+                              <%= select_tag "color_id", options_from_collection_for_select(product.colors, "id", "name"),  remote: true, class: " small " %>
+                        <% end %>
                     <%= submit_tag "Выбрать", remote: true, :onclick => "alert('Товар успешно добавлен в корзину')", class: "button expand add-to-cart" %>
               <% end %>
             </div>
@@ -243,6 +258,9 @@
                  <%= hidden_field_tag :product_id,  product.id %>
 
                     <%= select_tag "size_id", options_from_collection_for_select(product.style.sizes, "id", "name"),  remote: true,:onclick => "alert('Товар успешно добавлен в корзину')", class: "button small split no-pip" %>
+                        <% if product.colors.present? %>
+                              <%= select_tag "color_id", options_from_collection_for_select(product.colors, "id", "name"),  remote: true, class: " small " %>
+                        <% end %>
                     <%= submit_tag "Выбрать", remote: true, :onclick => "alert('Товар успешно добавлен в корзину')", class: "button expand add-to-cart" %>
               <% end %>
             </div>
