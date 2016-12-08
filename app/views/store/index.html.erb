@@ -115,10 +115,11 @@
         <div class="column" style="-webkit-hyphens: auto;" >
           
               
-                <%= link_to store_path(product.id), class: "poster" do %>    
-                <%= image_tag product.images.first.photo(:thumb), class: "thumbnail" %>
+                <%= link_to store_path(product.id), class: "poster" do %>  
+                <% if product.images.present? %>  
+                  <%= image_tag product.images.first.photo(:thumb), class: "thumbnail" %>
+                  <% end %>
                 <% end %>
-              
             <h5><%= product.title %></h5>
             <p><%= product.style.name %></p>
             <p style="margin-bottom:3px"><%= product.price %> руб.</p>
@@ -142,9 +143,10 @@
           
               
                 <%= link_to store_path(product.id), class: "poster" do %>    
-                <%= image_tag product.images.first.photo(:medium), class: "thumbnail" %>
+                <% if product.images.present? %> 
+                  <%= image_tag product.images.first.photo(:medium), class: "thumbnail" %>
+                  <% end %>
                 <% end %>
-              
             <h5><%= product.title %></h5>
             <p><%= product.style.name %></p>
             <p style="margin-bottom:3px"><%= product.price %> руб.</p>
@@ -196,10 +198,11 @@
         <div class="column" style="-webkit-hyphens: auto;" >
           
               
-                <%= link_to store_path(product.id), class: "poster" do %>    
-                <%= image_tag product.images.first.photo(:thumb), class: "thumbnail" %>
-                <% end %>
-              
+                <%= link_to store_path(product.id), class: "poster" do %> 
+                <% if product.images.present? %>    
+                  <%= image_tag product.images.first.photo(:thumb), class: "thumbnail" %>
+                  <% end %>
+                <% end %>              
             <h5><%= product.title %></h5>
             <p><%= product.style.name %></p>
             <p style="margin-bottom:3px"><%= product.price %> руб.</p>
@@ -222,8 +225,10 @@
         <div class="column elseh1" style="display:none">
           
               
-                <%= link_to store_path(product.id), class: "poster" do %>    
-                <%= image_tag product.images.first.photo(:medium), class: "thumbnail" %>
+                <%= link_to store_path(product.id), class: "poster" do %>
+                <% if product.images.present? %>     
+                  <%= image_tag product.images.first.photo(:medium), class: "thumbnail" %>
+                  <% end %>
                 <% end %>
               
             <h5><%= product.title %></h5>
