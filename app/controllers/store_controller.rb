@@ -17,6 +17,7 @@ class StoreController < ApplicationController
     @gender = Gender.all.select { |m| m.style_id == @style.id }
     @size = Size.where("style_id = ?", @style.id)
     @color = Color.where("styleid = ?", @style.id)
+    @sizetable = Sizetable.where("style_id = ?", @style.id)
 		
   end
     def intelligence

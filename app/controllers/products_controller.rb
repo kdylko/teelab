@@ -19,6 +19,7 @@ class ProductsController < ApplicationController
     @color = Color.where("styleid = ?", @style.id)
     @gender = Gender.all.select { |m| m.style_id == @style.id }
     @size = Size.where("style_id = ?", @style.id)
+    @sizetable = Sizetable.where("style_id = ?", @style.id)
 
 
   end

@@ -237,7 +237,7 @@
 
         </div>
         <% else %>
-        <div class="column elseh1" style="display:none">
+        <div class="column elseh2" style="display:none">
           
               
                 <%= link_to store_path(product.id), class: "poster" do %>
@@ -275,7 +275,7 @@
       <% end %>
     </div>
 
-    <div class="row columns show-more1">
+    <div class="row columns show-more2">
        <a class="show-more__button"> Показать еще  <i class="fi-arrow-down"></i></a>
        <a style="display:none" class="show-more__button"> Скрыть  <i class="fi-arrow-up"></i></a>
     </div>
@@ -295,6 +295,12 @@ $( ".show-more1 a" ).click(function() {
   
   $('.elseh1').toggle();
   $(".show-more1 a").toggle();
+  
+});
+$( ".show-more2 a" ).click(function() {
+  
+  $('.elseh2').toggle();
+  $(".show-more2 a").toggle();
   
 });
 
