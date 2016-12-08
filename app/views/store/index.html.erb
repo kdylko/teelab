@@ -108,12 +108,12 @@
 
 
 
-    <div class="row column text-center">
+    <div class="row column text-center hide">
       <h2>Другое</h2>
       <hr>
     </div>
 
-    <div class="row small-up-2 medium-up-3 large-up-6">
+    <div class="row small-up-2 medium-up-3 large-up-6 hide">
 
       <% @newyear.each_with_index do |product, index| %> 
       <% if product.category == 'new_year' %>
@@ -185,7 +185,7 @@
       <% end %>
     </div>
 
-    <div class="row columns show-more1">
+    <div class="row columns show-more1 hide">
        <a class="show-more__button"> Показать еще  <i class="fi-arrow-down"></i></a>
        <a style="display:none" class="show-more__button"> Скрыть  <i class="fi-arrow-up"></i></a>
     </div>
