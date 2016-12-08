@@ -99,23 +99,29 @@
 
             
 
-                             <table class="table">
+                             <table class="table responsive">
                               <thead>
+                              <% @sizetable.each_with_index do |sizetable, index| %>
+                              <% if index < 1 %>
                               <tr> 
-                                <th> Размер </th>
-                                <th> Ширина в плечах, см.</th>
-                                <th> Обхват груди, см. </th>
-                                <th> Высота, см. </th>
+                                <th> <%= sizetable.size_name %> </th>
+                                <th> <%= sizetable.w_sh %> </th>
+                                <th> <%= sizetable.w_ch %></th>
+                                <th> <%= sizetable.height %> </th>
                               </tr>
+                              <% end %>
+                              <% end %>
                               </thead>
                               <tbody>
-                              <% @product.style.sizetables.each do |sizetable| %>
+                              <% @sizetable.each_with_index do |sizetable, index| %>
+                              <% if index > 0 %>
                               <tr> 
                                 <td> <%= sizetable.size_name %> </td>
                                 <td> <%= sizetable.w_sh %> </td>
                                 <td> <%= sizetable.w_ch %></td>
                                 <td> <%= sizetable.height %> </td>
                               </tr>
+                              <% end %>
                               <% end %>
                               </tbody>
                            </table>
