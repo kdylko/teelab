@@ -6,6 +6,8 @@ class Product < ActiveRecord::Base
 	has_many :line_items
 	has_many :sizes, through: :style
 	has_many :orders, through: :line_items
+	has_many :colors, through: :product_colors
+	has_many :product_colors
 	before_destroy :ensure_not_referenced_by_any_line_item
 	belongs_to :user
 	accepts_nested_attributes_for :images, :reject_if => lambda { |t| t['image'].nil? }

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161204233219) do
+ActiveRecord::Schema.define(version: 20161207233511) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -47,6 +47,13 @@ ActiveRecord::Schema.define(version: 20161204233219) do
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
 
   create_table "carts", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "colors", force: :cascade do |t|
+    t.string   "name"
+    t.string   "style_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -96,6 +103,7 @@ ActiveRecord::Schema.define(version: 20161204233219) do
     t.datetime "updated_at",             null: false
     t.integer  "quantity",   default: 1
     t.integer  "order_id"
+    t.integer  "color_id"
   end
 
   add_index "line_items", ["cart_id"], name: "index_line_items_on_cart_id"
@@ -114,6 +122,13 @@ ActiveRecord::Schema.define(version: 20161204233219) do
     t.integer  "delivery_price"
     t.integer  "user_id"
     t.integer  "order_amount"
+  end
+
+  create_table "product_colors", force: :cascade do |t|
+    t.string   "product_id"
+    t.string   "color_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "products", force: :cascade do |t|

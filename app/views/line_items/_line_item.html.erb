@@ -7,7 +7,7 @@
 		
 		<td ><%= line_item.product.title %></td>
 		<td ><%= line_item.product.style.name %></td>
-		<td ><%= line_item.size.name %></td>
+		<td ><%= line_item.size.name %><br><% if line_item.color.present? %><%= line_item.color.name %><% end %></td>
 		<td class="item_price"><%= line_item.total_price %> руб.</td>
 		<td >
 			<button >

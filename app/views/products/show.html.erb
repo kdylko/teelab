@@ -33,6 +33,9 @@
       <%= hidden_field_tag :product_id,  @product.id %>
       <p class="product__size-description">Выберите размер:</p>
       <%= select_tag "size_id", options_from_collection_for_select(@size, "id", "name"), class: " small " %>
+      <% if @product.colors.present? %>
+            <%= select_tag "colorid", options_from_collection_for_select(@product.colors, "id", "name"), class: "small" %>
+      <% end %>
  
         <hr>
         <div class="row">

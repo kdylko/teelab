@@ -2,12 +2,12 @@ class Cart < ActiveRecord::Base
 	has_many :line_items, dependent: :destroy
 	accepts_nested_attributes_for :line_items, :reject_if => lambda { |t| t['line_item'].nil? }
 
-	def add_product(product_id, size_id)
-	    current_item = line_items.find_by(product_id: product_id, size_id: size_id)
+	def add_product(product_id, size_id, color_id)
+	    current_item = line_items.find_by(product_id: product_id, size_id: size_id, color_id: color_id)
 	    if current_item
 	         current_item.quantity += 1
 	    else
-	         current_item = line_items.build(product_id: product_id, size_id: size_id)
+	         current_item = line_items.build(product_id: product_id, size_id: size_id, color_id: color_id)
 	    end
 	    current_item
  	end
