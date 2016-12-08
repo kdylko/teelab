@@ -4,7 +4,7 @@ class Product < ActiveRecord::Base
 	belongs_to :style
 	has_many :images, dependent: :destroy, :autosave => true
 	has_many :line_items
-	has_many :sizes, through: :style
+
 	has_many :orders, through: :line_items
 	has_many :colors, through: :product_colors
 	has_many :product_colors
