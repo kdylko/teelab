@@ -68,7 +68,7 @@
                   <%= form_tag({controller: "line_items", action: "create"}, method: "post", remote: true, class: "form") do %>
                      <%= hidden_field_tag :product_id,  product.id %>
 
-                        <%= select_tag "size_id", options_from_collection_for_select(product.sizes, "id", "name"), remote: true, class: " small split no-pip" %>
+                        <%= select_tag "size_id", options_from_collection_for_select(product.style.sizes, "id", "name"), remote: true, class: " small split no-pip" %>
                         <% if product.colors.present? %>
                               <%= select_tag "color_id", options_from_collection_for_select(product.colors, "id", "name"),  remote: true, class: " small " %>
                         <% end %>
