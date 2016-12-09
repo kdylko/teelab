@@ -4,14 +4,14 @@
 
 
   <div class="row">
-    <div class="large-6 large-push-0 columns" style="padding-top: 5vh;">
+    <div class="large-6 large-push-0 columns" style="padding-top: 5vh; ">
       <div class="circle-bg quote-1">
-        <p>Мы знаем что у Вас<br>миллион идей.</p>
+        <p style="font-size:20px;">Мы знаем что у Вас<br>миллион идей.</p>
       </div>
     </div>
-    <div class="large-6 large-pull-0 columns">
+    <div class="large-6 large-pull-0 columns" >
       <div class="circle-bg quote-2">
-        <p>Часть из них, мы поможем реализовать.</p>
+        <p style="font-size:20px;">Часть из них, мы поможем реализовать.</p>
       </div>
     </div>
   </div>
@@ -40,7 +40,7 @@
 <section class="benefits">
   <div class="row">
     <div class="small-12 large-4 columns benefit">
-      <i class="fi-shopping-cart icon"></i>
+      <i class="fi-star icon"></i>
       <h5> Создайте свой собственный дизайн </h5>
       <hr>
       <p> Мы поможем вам разместить его на одном из наших продуктов. </p>
@@ -49,11 +49,11 @@
       <i class="fi-shopping-cart icon"></i>
       <h5> Закажите образец для себя и не забудьте сделать фото для своей аудитории. </h5>
       <hr>
-      <p> Мы произведем и отправим вам ваше собственное изделие, чтобы вы могли сами убедится в его качестве перед тем как советовать его тем кто вас любит. </p>
+      <p> Мы произведем и отправим вам ваше собственное изделие, чтобы вы могли сами убедится в его качестве, перед тем как советовать его тем, кто вас любит. </p>
     </div>
     <div class="small-12 large-4 columns benefit">
-      <i class="fi-pricetag-multiple icon"></i>
-      <h5> Создайте в своем кабинет коллаборацию с нами и загрузите туда фото </h5>
+      <i class="fi-upload-cloud icon"></i>
+      <h5> Создайте в своем кабинет коллаборацию и загрузите туда фото </h5>
       <hr>
       <p> Это займет у вас не более 5 минут, после чего ваш товар появится у нас на сайте и станет доступным для заказа. </p>
     </div>
@@ -69,10 +69,10 @@
       <i class="fi-credit-card icon"></i>
       <h5> Загрузите свои банковские реквизиты и выводите прибыль</h5>
       <hr>
-      <p> Загрузите свои банковские реквизиты и мы запросите вывод прибыли тогда, когда посчитаете нужным. С условиями начисления прибыли можно ознакомиться <%= link_to 'здесь', support_offer_path, class: "lead" %> </p>
+      <p> Загрузите свои банковские реквизиты и мы запросите вывод прибыли тогда, когда посчитаете нужным. С условиями начисления прибыли можно ознакомиться <%= link_to 'здесь', support_offer_path, class: "lead" %>. </p>
     </div>
     <div class="small-12 large-4 columns benefit">
-      <i class="fi-map icon"></i>
+      <i class="fi-torsos-all icon"></i>
       <h5> Становитесь нашими партнерами </h5>
       <hr>
       <p> Для наших постоянных партнеров у нас индивидуальных подход, доступ к экспериментальным моделям, специальные условия сотрудничества. </p>
@@ -89,6 +89,46 @@
     
     <div class="row">
       <div class="medium-4 columns">
+        <div class="profile-card">
+          <%= image_tag 'hoody_haki.png' %>
+          
+          <div class="profile-info">
+            <h3 class="subheader">Худи</h3>
+               <p>85%хлопок, 15% пэ<br>Необычный крой с рельефами и внутренними карманами.<br>Цвета: чёрный, белый, хаки, бордовый.<br>Фасон: унисекс.<br></p>
+            <p><%= link_to 'Узнать больше', store_path(@product.first.id) %> | <%= link_to 'Пример', store_path(@product.second.id) %> </p>
+
+          </div>
+        </div>
+      </div>
+      <div class="medium-4 columns">
+        <div class="profile-card">
+          <%= image_tag 'cropshot.png' %>
+          <div class="profile-info">
+          <h3 class="subheader">Кропшот</h3>
+            <p>85%хлопок, 15% пэ<br>Толстовка для дома, спорта, отдыха.<br>Свободный крой, классно смотрится с топом.<br>Цвета: чёрный, белый, хаки, бордовый.<br>Размер: onesize.<br></p>
+            <p><%= link_to 'Узнать больше', store_path(@product.first.id) %> | <%= link_to 'Пример', store_path(@product.second.id) %> </p>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="medium-4 columns">
+        <div class="profile-card">
+          <%= image_tag 'swshred.png' %>
+          <div class="profile-info">
+            <h3 class="subheader">Свитшот Basic</h3>
+               <p>85%хлопок, 15% пэ<br>Базовая модель из утеплённого хлопка.<br>Цвета: чёрный, белый, хаки, бордовый.<br>Фасон: унисекс.<br></p>
+            <p><%= link_to 'Узнать больше', store_path(@product.first.id) %> | <%= link_to 'Пример', store_path(@product.second.id) %> </p>
+            
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+ <!-- футболки 
+    <div class="row">
+
+            <div class="medium-4 columns">
         <div class="profile-card">
           <%= image_tag 'mockup_hoody.png' %>
           
@@ -111,44 +151,16 @@
           </div>
         </div>
       </div>
-      <div class="medium-4 columns">
-        <div class="profile-card">
-          <%= image_tag 'swshred.png' %>
-          <div class="profile-info">
-            <h3 class="subheader">Свитшот Basic</h3>
-               <p>85%хлопок, 15% пэ<br>Базовая модель из утеплённого хлопка.<br>Цвета: чёрный, белый, хаки, бордовый.<br>Фасон: унисекс.<br></p>
-            <p><%= link_to 'Узнать больше', store_path(@product.first.id) %> | <%= link_to 'Пример', store_path(@product.second.id) %> </p>
-            
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
 
-    <div class="row">
-      <div class="medium-4 columns">
-        <div class="profile-card">
-          <%= image_tag 'hoody_haki.png' %>
-          
-          <div class="profile-info">
-            <h3 class="subheader">Худи</h3>
-               <p>85%хлопок, 15% пэ<br>Необычный крой с рельефами и внутренними карманами.<br>Цвета: чёрный, белый, хаки, бордовый.<br>Фасон: унисекс.<br></p>
-            <p><%= link_to 'Узнать больше', store_path(@product.first.id) %> | <%= link_to 'Пример', store_path(@product.second.id) %> </p>
+-->
 
-          </div>
-        </div>
-      </div>
-      <div class="medium-4 columns">
-        <div class="profile-card">
-          <%= image_tag 'mockup_hoody.png' %>
-          <div class="profile-info">
-          <h3 class="subheader">Кропшот</h3>
-            <p>85%хлопок, 15% пэ<br>Толстовка для дома, спорта, отдыха.<br>Свободный крой, классно смотрится с топом.<br>Цвета: чёрный, белый, хаки, бордовый.<br>Размер: onesize.<br></p>
-            <p><%= link_to 'Узнать больше', store_path(@product.first.id) %> | <%= link_to 'Пример', store_path(@product.second.id) %> </p>
 
-          </div>
-        </div>
-      </div>
+
+
+
+
+
+
 
     </div>
 
