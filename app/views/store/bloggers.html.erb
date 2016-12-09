@@ -1,4 +1,4 @@
-<% content_for :title, "Intelligence" %>
+<% content_for :title, "Bloggers" %>
 <br>
     <!-- You can now combine a row and column if you just need a 12 column row -->
     <div class="row columns">
@@ -7,22 +7,22 @@
           <li><%= link_to 'Главная', store_index_path %></li>
           
           <li>
-            <span class="">Intelligence </span>
+            <span class="">Дизайны Блоггеров </span>
           </li>
         </ul>
       </nav>
     </div>
 
     <div class="row column text-center">
-      <h2 >Intelligence</h2>
+      <h2 >Дизайны Блоггеров</h2>
       <hr>
     </div>
 
 
     <div class="row small-up-2 large-up-4">
-      <% @intelligence.each_with_index do |product, index| %> 
+      <% @bloggers.each_with_index do |product, index| %> 
 
-          <% if index < 8 %>
+
             <div class="column" style="-webkit-hyphens: auto;" >
                 <%= link_to store_path(product.id), class: "poster" do %>
                 <% if product.images.present? %>
@@ -51,45 +51,13 @@
 
 
             </div>
-          <% else %>
-            <div class="column elseh" style="display:none">
-                <%= link_to store_path(product.id), class: "poster" do %>
-                <% if product.images.present? %>
-                <%= image_tag product.images.first.photo(:medium), class: "thumbnail" %>
-                <% end %>
-                <% end %>
-              <h5><%= product.title %></h5>
-              <p><%= product.style.name %></p>
-              <p style="margin-bottom:3px"><%= product.price %> руб.</p>
 
 
-              <button class="button expand add-to-cart" type="button" data-toggle="<%= product.url_name %>">Добавить в корзину</button>
-                <div class="dropdown-pane" id="<%= product.url_name %>" data-dropdown data-auto-focus="true">
-                  Выберите размер
-                  <%= form_tag({controller: "line_items", action: "create"}, method: "post", remote: true, class: "form") do %>
-                     <%= hidden_field_tag :product_id,  product.id %>
-
-                        <%= select_tag "size_id", options_from_collection_for_select(product.style.sizes, "id", "name"), remote: true, class: " small split no-pip" %>
-                        <% if product.colors.present? %>
-                              <%= select_tag "color_id", options_from_collection_for_select(product.colors, "id", "name"),  remote: true, class: " small " %>
-                        <% end %>
-                        <%= submit_tag "Выбрать", remote: true, :onclick => "alert('Товар успешно добавлен в корзину')",  class: "button expand add-to-cart" %>
-
-                  <% end %>
-                </div>
-
-
-            </div>
-
-          <% end %>
 
         <% end %> 
     </div>
 
-    <div class="row columns show-more">
-       <a> Показать еще </a>
-       <a style="display:none"> Скрыть </a>
-    </div>
+
 
 
 

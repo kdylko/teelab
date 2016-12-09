@@ -9,6 +9,7 @@ class ProductsController < ApplicationController
     @products = Product.all
     @blogger = Product.all.where(category: ["blogger"])
     @newyear = Product.all.where(category: ["new_year"])
+    @intelligence = Product.all.where(category: ["intelligence"]) 
   end
 
   # GET /products/1
@@ -20,6 +21,7 @@ class ProductsController < ApplicationController
     @gender = Gender.all.select { |m| m.style_id == @style.id }
     @size = Size.where("style_id = ?", @style.id)
     @sizetable = Sizetable.where("style_id = ?", @style.id)
+    @intelligence = Product.all.where(category: ["intelligence"]) 
 
 
   end

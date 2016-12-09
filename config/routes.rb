@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   get 'landing/three'
 
   get 'store/intelligence'
+  get 'store/bloggers'
 
   resources :orders
   resources :line_items, only: [:new, :create, :edit, :update, :destroy]

@@ -7,6 +7,7 @@ class StoreController < ApplicationController
         @blogger = Product.all.where(category: ["blogger"])
     @newyear = Product.all.where(category: ["new_year"])
         @blank = Product.all.where(category: ["blank"]) 
+    @intelligence = Product.all.where(category: ["intelligence"]) 
 		
 		
   end
@@ -26,6 +27,16 @@ class StoreController < ApplicationController
     @blogger = Product.all.where(category: ["blogger"])
     @newyear = Product.all.where(category: ["new_year"])
     @intelligence = Product.all.where(category: ["intelligence"]) 
+
+
+     
+  end
+  def bloggers
+    
+    @products = Product.order(:id)
+    @blogger = Product.all.where(category: ["blogger"])
+    @newyear = Product.all.where(category: ["new_year"])
+    @bloggers = Product.all.where(category: ["blogger", "all"]) 
 
 
      
