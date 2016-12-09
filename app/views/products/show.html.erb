@@ -27,7 +27,12 @@
       <div class="medium-6 large-5 columns">
         <h3><%= @product.title %></h3>
         <p><%= @product.style.name %></p> <br>
-        <p><%= @product.description %></p> <br>
+        <% if @product.description.present? %>
+          <p><%= @product.description %></p> <br>
+        <% end %>
+        <% if @product.style.description.present? %>
+          <p><%= @product.style.description %></p> <br>
+        <% end %>
 <!-- Tabs -->
   <%= form_tag({controller: "line_items", action: "create"}, method: "post", remote: true, class: "form") do %>
       <%= hidden_field_tag :product_id,  @product.id %>

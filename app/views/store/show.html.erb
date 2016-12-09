@@ -28,6 +28,7 @@
         <h3><%= @product.title %></h3>
         <p><%= @product.style.name %></p> <br>
         <p><%= @product.description %></p> <br>
+        <p><%= @product.style.description %></p> <br>
 <!-- Tabs -->
   <%= form_tag({controller: "line_items", action: "create"}, method: "post", remote: true, class: "form") do %>
       <%= hidden_field_tag :product_id,  @product.id %>
