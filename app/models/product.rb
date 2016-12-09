@@ -14,7 +14,7 @@ class Product < ActiveRecord::Base
 	validates :title, :url_name, presence: true
 	validates :price, numericality: {greater_than_or_equal_to: 0.10}
 	validates :title, uniqueness: true
-	validates :url_name, uniqueness: true, format: { with: /\A[a-z]+\z/, message: 'только строчные буквы' }
+	validates :url_name, uniqueness: true, format: { with: /\A[_a-z]+\z/, message: 'только строчные буквы' }
 
 	def item_count
 		orders.to_a.sum { |item| item.order_count}
