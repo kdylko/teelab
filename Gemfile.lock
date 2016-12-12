@@ -187,6 +187,8 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.6.4)
       mime-types (>= 1.16, < 4)
+    meta-tags (2.4.0)
+      actionpack (>= 3.2.0, <= 5.1.0)
     mime-types (3.1)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2016.0521)
@@ -336,6 +338,7 @@ DEPENDENCIES
   jquery-turbolinks
   jquery-ui-rails
   jquery-validation-rails
+  meta-tags
   mysql2
   owlcarousel-rails
   paperclip

@@ -42,6 +42,8 @@ gem 'google-webfonts-rails'
 gem 'inky-rb', require: 'inky'
 gem 'premailer-rails'
 
+# SEO
+gem 'meta-tags'
 
 #to change urls
 gem 'friendly_id'
