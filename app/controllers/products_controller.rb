@@ -23,6 +23,11 @@ class ProductsController < ApplicationController
     @sizetable = Sizetable.where("style_id = ?", @style.id)
     @intelligence = Product.all.where(category: ["intelligence"]) 
 
+    set_meta_tags title: @product.title,
+                  description: @product.description,
+                  keywords: 'футболки, худи, свитшоты, толстовки',
+                  image_src: @product.images.first.photo(:thumb)
+
 
   end
 

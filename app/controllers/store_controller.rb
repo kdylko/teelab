@@ -9,7 +9,9 @@ class StoreController < ApplicationController
         @blank = Product.all.where(category: ["blank"]) 
     @intelligence = Product.all.where(category: ["intelligence"]) 
 
-
+    set_meta_tags title: 'Купить футболки, свитшоты, толстовки и худи',
+                  description: 'Купить футболки, свитшоты, толстовки и худи с уникальным дизайном без вложений',
+                  keywords: 'футболка, толстовка, свитшот, худи, с принтами, дизайн, блоггер, купить'
 
 		
   end
@@ -21,6 +23,11 @@ class StoreController < ApplicationController
     @size = Size.where("style_id = ?", @style.id)
     @color = Color.where("styleid = ?", @style.id)
     @sizetable = Sizetable.where("style_id = ?", @style.id)
+
+    set_meta_tags title: 'sdf',
+                  description: @product.description,
+                  keywords: 'футболки, худи, свитшоты, толстовки',
+                  image_src: @product.images.first.photo(:thumb)
 		
   end
     def intelligence
@@ -29,7 +36,9 @@ class StoreController < ApplicationController
     @blogger = Product.all.where(category: ["blogger"])
     @newyear = Product.all.where(category: ["new_year"])
     @intelligence = Product.all.where(category: ["intelligence"]) 
-    
+    set_meta_tags title: 'Купить новогодние футболки, свитшоты, толстовки и худи',
+                  description: 'Купить новогодние футболки, свитшоты, толстовки и худи с уникальным дизайном без вложений',
+                  keywords: 'новогодние, новогодние принты, подарки на новый год, футболка, толстовка, свитшот, худи, с принтами, дизайн, купить'
 
      
   end
@@ -39,6 +48,9 @@ class StoreController < ApplicationController
     @blogger = Product.all.where(category: ["blogger"])
     @newyear = Product.all.where(category: ["new_year"])
     @bloggers = Product.all.where(category: ["blogger", "all"]) 
+    set_meta_tags title: 'Купить футболки, свитшоты, толстовки и худи',
+                  description: 'Купить футболки, свитшоты, толстовки и худи с уникальным дизайном без вложений',
+                  keywords: 'футболка, толстовка, свитшот, худи, с принтами, дизайн, блоггер, купить'
 
 
      
