@@ -44,6 +44,7 @@ gem 'premailer-rails'
 
 # SEO
 gem 'meta-tags'
+gem "dynamic_sitemaps"
 
 #to change urls
 gem 'friendly_id'

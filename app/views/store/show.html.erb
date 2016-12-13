@@ -18,7 +18,7 @@
       <div class="medium-6 columns">
         <div class="owl-carousel" id="owl">
             <% @product.images.each do |image| %>
-            <div><%= image_tag image.photo(:medium) %></div>
+            <div><%= image_tag image.photo(:medium), style: "background: linear-gradient(to top, #bcbcbe, #bcbcbe);" %></div>
             <% end %>
           </div> 
         </div>

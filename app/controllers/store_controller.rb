@@ -8,7 +8,11 @@ class StoreController < ApplicationController
     @newyear = Product.all.where(category: ["new_year"])
         @blank = Product.all.where(category: ["blank"]) 
     @intelligence = Product.all.where(category: ["intelligence"]) 
-		
+
+    set_meta_tags title: 'Купить футболки, свитшоты, толстовки и худи',
+                  description: 'Купить футболки, свитшоты, толстовки и худи с уникальным дизайном без вложений',
+                  keywords: 'футболка, толстовка, свитшот, худи, с принтами, дизайн, блоггер, купить',
+
 		
   end
    def show
@@ -27,6 +31,9 @@ class StoreController < ApplicationController
     @blogger = Product.all.where(category: ["blogger"])
     @newyear = Product.all.where(category: ["new_year"])
     @intelligence = Product.all.where(category: ["intelligence"]) 
+    set_meta_tags title: 'Купить новогодние футболки, свитшоты, толстовки и худи',
+                  description: 'Купить новогодние футболки, свитшоты, толстовки и худи с уникальным дизайном без вложений',
+                  keywords: 'новогодние, новогодние принты, подарки на новый год, футболка, толстовка, свитшот, худи, с принтами, дизайн, купить',
 
 
      

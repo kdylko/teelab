@@ -281,7 +281,7 @@
               
                 <%= link_to store_path(product.id), class: "poster" do %> 
                 <% if product.images.present? %>    
-                  <%= image_tag product.images.first.photo(:thumb), class: "thumbnail" %>
+                  <%= image_tag product.images.first.photo(:thumb), class: "thumbnail", style: "background: linear-gradient(to top, #bcbcbe, #bcbcbe);" %>
                   <% end %>
                 <% end %>              
             <h5><%= product.title %></h5>
