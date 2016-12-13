@@ -15,7 +15,9 @@ class LandingController < ApplicationController
     set_meta_tags title: 'Купить или создать футболки, свитшоты, толстовки и худи',
                   description: 'Купить или создать и начать продавать футболки, свитшоты, толстовки и худи с уникальным дизайном без вложений',
                   keywords: 'футболка, толстовка, свитшот, худи, с принтами, дизайн, блоггер, создать, купить',
-                  image_src: 'sound.jpg'
+                  og: {
+                    image: 'sound.jpg'
+                  }
   end
    def devel
   end
