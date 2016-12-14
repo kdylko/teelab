@@ -32,7 +32,7 @@
           </div>
           <% if @instuser.present? %>
             <div class=" large-9 medium-9 small-9 text-right column align-self-middle">
-              <p>Designed by <%= @user[0][:username] %>  &nbsp  <%= image_tag @user[0][:profile_picture], size: "40x40", style: "border-radius:50%;" %></p>
+              <p>Designed by <%= @product.instagram_name %>  &nbsp  <%= image_tag @user[0][:profile_picture], size: "40x40", style: "border-radius:50%;" %></p>
             </div>
             <% end %>
         </div>
