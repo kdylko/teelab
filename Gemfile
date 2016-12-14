@@ -33,6 +33,9 @@ gem 'paperclip'
 # Coupon code
 gem 'coupon_code'
 
+# instagram
+gem 'instagram'
+
 # gem 'zurb-foundation', '~> 4.3.2'
 gem 'foundation-rails'
 gem 'foundation-icons-sass-rails'

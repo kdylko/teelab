@@ -23,6 +23,9 @@ class ProductsController < ApplicationController
     @sizetable = Sizetable.where("style_id = ?", @style.id)
     @intelligence = Product.all.where(category: ["intelligence"]) 
 
+    @client = Instagram.client
+    @user = @client.user
+
     set_meta_tags title: @product.title,
                   description: @product.description,
                   keywords: 'футболки, худи, свитшоты, толстовки',

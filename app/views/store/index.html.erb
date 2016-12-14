@@ -37,7 +37,7 @@
             <div class="column" style="-webkit-hyphens: auto;" >
                 <%= link_to store_path(product.id), class: "poster" do %>
                 <% if product.images.present? %>
-                <%= image_tag product.images.first.photo(:thumb), class: "thumbnail" %>
+                <%= image_tag product.images.first.photo(:thumb), class: "thumbnail", style: "background: linear-gradient(to top, #bcbcbe, #bcbcbe);" %>
                 <% end %>
                 <% end %>
               <h5><%= product.title %></h5>
@@ -98,7 +98,7 @@
             <div class="column" style="-webkit-hyphens: auto;" >
                 <%= link_to store_path(product.id), class: "poster" do %>
                 <% if product.images.present? %>
-                <%= image_tag product.images.first.photo(:thumb), class: "thumbnail" %>
+                <%= image_tag product.images.first.photo(:thumb), class: "thumbnail", style: "background: linear-gradient(to top, #bcbcbe, #bcbcbe);" %>
                 <% end %>
                 <% end %>
               <h5><%= product.title %></h5>
@@ -127,7 +127,7 @@
             <div class="column elseh" style="display:none">
                 <%= link_to store_path(product.id), class: "poster" do %>
                 <% if product.images.present? %>
-                <%= image_tag product.images.first.photo(:medium), class: "thumbnail" %>
+                <%= image_tag product.images.first.photo(:medium), class: "thumbnail", style: "background: linear-gradient(to top, #bcbcbe, #bcbcbe);" %>
                 <% end %>
                 <% end %>
               <h5><%= product.title %></h5>
@@ -192,7 +192,7 @@
               
                 <%= link_to store_path(product.id), class: "poster" do %>  
                 <% if product.images.present? %>  
-                  <%= image_tag product.images.first.photo(:thumb), class: "thumbnail" %>
+                  <%= image_tag product.images.first.photo(:thumb), class: "thumbnail", style: "background: linear-gradient(to top, #bcbcbe, #bcbcbe);" %>
                   <% end %>
                 <% end %>
             <h5><%= product.title %></h5>
@@ -222,7 +222,7 @@
               
                 <%= link_to store_path(product.id), class: "poster" do %>    
                 <% if product.images.present? %> 
-                  <%= image_tag product.images.first.photo(:medium), class: "thumbnail" %>
+                  <%= image_tag product.images.first.photo(:medium), class: "thumbnail", style: "background: linear-gradient(to top, #bcbcbe, #bcbcbe);" %>
                   <% end %>
                 <% end %>
             <h5><%= product.title %></h5>
@@ -311,7 +311,7 @@
               
                 <%= link_to store_path(product.id), class: "poster" do %>
                 <% if product.images.present? %>     
-                  <%= image_tag product.images.first.photo(:medium), class: "thumbnail" %>
+                  <%= image_tag product.images.first.photo(:medium), class: "thumbnail", style: "background: linear-gradient(to top, #bcbcbe, #bcbcbe);" %>
                   <% end %>
                 <% end %>
               

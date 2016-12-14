@@ -20,45 +20,58 @@
             <div><%= image_tag image.photo(:medium), style: "background: linear-gradient(to top, #bcbcbe, #bcbcbe);" %></div>
             <% end %>
           </div> 
-        </div>
+      </div>
 
     
       <div class="medium-6 large-5 columns">
         <h3><%= @product.title %></h3>
-        <p><%= @product.style.name %></p> <br>
+
+        <div class="row align-middle" >
+          <div class=" large-3 medium-3 small-3 column align-self-middle">
+            <p ><%= @product.style.name %></p> 
+            
+          </div>
+          <div class=" large-9 medium-9 small-9 text-right column align-self-middle">
+            <p>Designed by <%= @user.username %> <%= image_tag @user.profile_picture, size: "40x40", style: "border-radius:50%;" %></p>
+          </div>
+        </div>
+          <br>
+
+
         <% if @product.description.present? %>
           <p><%= @product.description %></p> <br>
         <% end %>
         <% if @product.style.description.present? %>
           <p><%= @product.style.description %></p> <br>
         <% end %>
-<!-- Tabs -->
-  <%= form_tag({controller: "line_items", action: "create"}, method: "post", remote: true, class: "form") do %>
-      <%= hidden_field_tag :product_id,  @product.id %>
-      <p class="product__size-description">Выберите размер:</p>
-      <%= select_tag "size_id", options_from_collection_for_select(@size, "id", "name"), class: " small " %>
-      <% if @product.colors.present? %>
-            <%= select_tag "colorid", options_from_collection_for_select(@product.colors, "id", "name"), class: "small" %>
+    <!-- Tabs -->
+      <%= form_tag({controller: "line_items", action: "create"}, method: "post", remote: true, class: "form") do %>
+          <%= hidden_field_tag :product_id,  @product.id %>
+          <p class="product__size-description">Выберите размер:</p>
+          <%= select_tag "size_id", options_from_collection_for_select(@size, "id", "name"), class: " small " %>
+          <% if @product.colors.present? %>
+                <%= select_tag "colorid", options_from_collection_for_select(@product.colors, "id", "name"), class: "small" %>
+          <% end %>
+     
+            <hr>
+            <div class="row">
+              <div class="small-3 columns">
+                <p for="middle-label" class="middle">Цена</p>
+              </div>
+              <div class="small-9 columns">
+                <p for="middle-label" class="middle"><%= @product.price %> руб.</p>
+              </div>
+            </div>
+            <hr>
+
+
+          <%= submit_tag "Добавить в корзину", remote: true, :onclick => "alert('Товар успешно добавлен в корзину')", class: "button expand add-to-cart product__button" %>
       <% end %>
- 
-        <hr>
-        <div class="row">
-          <div class="small-3 columns">
-            <p for="middle-label" class="middle">Цена</p>
-          </div>
-          <div class="small-9 columns">
-            <p for="middle-label" class="middle"><%= @product.price %> руб.</p>
-          </div>
-        </div>
-        <hr>
+          <%= button_to "Перейти к оплате", new_order_path, method: :get, class: "button expand add-to-cart product__button" %>
 
 
-      <%= submit_tag "Добавить в корзину", remote: true, :onclick => "alert('Товар успешно добавлен в корзину')", class: "button expand add-to-cart product__button" %>
-  <% end %>
-      <%= button_to "Перейти к оплате", new_order_path, method: :get, class: "button expand add-to-cart product__button" %>
+    </div>
 
-
-        </div>
     </div>
 
     <div class="column row">
