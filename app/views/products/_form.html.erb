@@ -33,6 +33,10 @@
     <%= f.hidden_field :category, value: 'all' %>
   </div>
   <div class="field">
+    <%= f.label 'Ваш username в инстаграм (для того чтобы было видно что Вы создали дизайн)' %>
+    <%= f.text_field :instagram_name %>
+  </div>
+  <div class="field">
     <%= f.label 'Загрузка изображения'  %>
     <%= file_field_tag "photos[]", type: :file, multiple: true %>
   </div>

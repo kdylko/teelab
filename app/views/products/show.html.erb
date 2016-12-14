@@ -27,13 +27,14 @@
         <h3><%= @product.title %></h3>
 
         <div class="row align-middle" >
-          <div class=" large-3 medium-3 small-3 column align-self-middle">
-            <p ><%= @product.style.name %></p> 
-            
+          <div class=" large-3 medium-3 small-3 column align-self-middle" >
+            <p style="line-height:2.5rem;"><%= @product.style.name %></p> 
           </div>
-          <div class=" large-9 medium-9 small-9 text-right column align-self-middle">
-            <p>Designed by <%= @user.username %> <%= image_tag @user.profile_picture, size: "40x40", style: "border-radius:50%;" %></p>
-          </div>
+          <% if @instuser.present? %>
+            <div class=" large-9 medium-9 small-9 text-right column align-self-middle">
+              <p>Designed by <%= @user[0][:username] %>  &nbsp  <%= image_tag @user[0][:profile_picture], size: "40x40", style: "border-radius:50%;" %></p>
+            </div>
+            <% end %>
         </div>
           <br>
 

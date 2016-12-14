@@ -23,8 +23,14 @@ class ProductsController < ApplicationController
     @sizetable = Sizetable.where("style_id = ?", @style.id)
     @intelligence = Product.all.where(category: ["intelligence"]) 
 
-    @client = Instagram.client
-    @user = @client.user
+    if @product.instagram_name.present?
+      @client = Instagram.client
+      @user = Instagram.user_search(@product.instagram_name)
+      if !@user.nil?
+        @instuser = @user
+      end
+
+    end
 
     set_meta_tags title: @product.title,
                   description: @product.description,
@@ -109,6 +115,6 @@ class ProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:title, :description, :url_name, :price, :photos, :user_id, :style_id, :category)
+      params.require(:product).permit(:title, :description, :url_name, :price, :photos, :user_id, :style_id, :category, :instagram_name)
     end
 end

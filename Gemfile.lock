@@ -340,6 +340,7 @@ DEPENDENCIES
   foundation_emails
   friendly_id
   google-webfonts-rails
+  hashie
   inky-rb
   instagram
   jbuilder (~> 2.0)
