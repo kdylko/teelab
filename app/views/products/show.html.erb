@@ -27,11 +27,11 @@
         <h3><%= @product.title %></h3>
 
         <div class="row align-middle" >
-          <div class=" large-3 medium-3 small-3 column align-self-middle" >
+          <div class=" large-4 medium-4 small-4 column align-self-middle" >
             <p style="line-height:2.5rem;"><%= @product.style.name %></p> 
           </div>
           <% if @product.instagram_name.present? %>
-            <div class=" large-9 medium-9 small-9 text-right column align-self-middle">
+            <div class=" large-8 medium-8 small-8 text-right column align-self-middle">
               <p>Designed by <%= @product.instagram_name %>  &nbsp  <%= link_to "https://www.instagram.com/#{@product.instagram_name}" do %> <%= image_tag @product.avatar_url, size: "40x40", style: "border-radius:50%;" %> <% end %></p>
             </div>
             <% end %>
