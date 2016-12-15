@@ -23,14 +23,7 @@ class ProductsController < ApplicationController
     @sizetable = Sizetable.where("style_id = ?", @style.id)
     @intelligence = Product.all.where(category: ["intelligence"]) 
 
-    if @product.instagram_name.present?
-      @client = Instagram.client
-      @user = Instagram.user_search(@product.instagram_name)
-      if !@user.nil?
-        @instuser = @user
-      end
 
-    end
 
     set_meta_tags title: @product.title,
                   description: @product.description,
