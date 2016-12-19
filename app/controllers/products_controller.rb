@@ -27,8 +27,8 @@ class ProductsController < ApplicationController
 
     set_meta_tags title: @product.title,
                   description: @product.description,
-                  keywords: 'футболки, худи, свитшоты, толстовки',
-                  image_src: @product.images.first.photo(:thumb)
+                  keywords: 'футболки, худи, свитшоты, толстовки'
+
 
 
   end

@@ -26,8 +26,8 @@ class StoreController < ApplicationController
 
     set_meta_tags title: 'sdf',
                   description: @product.description,
-                  keywords: 'футболки, худи, свитшоты, толстовки',
-                  image_src: @product.images.first.photo(:thumb)
+                  keywords: 'футболки, худи, свитшоты, толстовки'
+
 		
   end
     def intelligence
