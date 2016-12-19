@@ -5,10 +5,10 @@ class OrderNotifier < ApplicationMailer
   # with the following lookup:
   #
   #   en.order_notifier.received.subject
-  #
+  # rails/mailers/notifier/
   def received(order)
     
-    @order = Order.first
+    @order = order
     @delivery = Delivery.all
     mail to: @order.email, subject: 'Заказ в Teelab.ru'
   end
