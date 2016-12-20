@@ -93,7 +93,7 @@
     <div class="row small-up-2 large-up-4">
       <% @blogger.each_with_index do |product, index| %> 
         <% if product.category == 'blogger' %>
-          <% if index < 4 %>
+          <% if index < 8 %>
             <div class="column" style="-webkit-hyphens: auto;" >
                 <%= link_to store_path(product.id), class: "poster" do %>
                 <% if product.images.present? %>
