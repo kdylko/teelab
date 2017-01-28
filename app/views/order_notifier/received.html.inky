@@ -70,12 +70,12 @@ row{
 
       <h4 style="font-family: circe">Что дальше?</h4>
 
-      <p style="font-family: circe">Мы подготовим Ваш товар, после чего направим сообщение и email с деталями доставки.</p>
+      <p style="font-family: circe">Мы свяжемся с Вами в ближайшие рабочие часы для уточнения всех деталей заказа.</p>
     </columns>
   </row>
   <row class="footer text-center">
     <columns large="3">
-      <%= image_tag 'logo.png', size: "90x50" %>
+
     </columns>
     <columns large="3">
       <p style="font-family: circe">
