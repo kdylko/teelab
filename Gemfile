@@ -46,6 +46,10 @@ gem 'google-webfonts-rails'
 gem 'inky-rb', require: 'inky'
 gem 'premailer-rails'
 
+# bootstrap
+gem 'bootstrap-sass', '~> 3.3.6'
+
+
 # SEO
 gem 'meta-tags'
 gem "dynamic_sitemaps"
