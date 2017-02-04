@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   get 'landing/index'
   get 'landing/devel'
   get 'landing/three'
+  get 'landing/test'
 
   get 'store/intelligence'
   get 'store/bloggers'

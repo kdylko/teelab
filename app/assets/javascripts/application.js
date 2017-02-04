@@ -14,13 +14,15 @@
 //= require jquery-ui
 //= require jquery.turbolinks
 //= require jquery_ujs
+//= require twitter/bootstrap
 //= require jquery.validate
 //= require jquery.validate.additional-methods
 //= require owl.carousel
-//= require foundation
 
-//= require_tree .
+//= require bootstrap
 
+//= require plugins
+//= require functions
 
 jQuery(document).ready(function($) {
 $(document).foundation();

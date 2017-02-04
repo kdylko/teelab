@@ -49,6 +49,10 @@ gem 'premailer-rails'
 # bootstrap
 gem 'bootstrap-sass', '~> 3.3.6'
 
+gem "therubyracer"
+gem "less-rails"
+gem "twitter-bootstrap-rails"
+
 
 # SEO
 gem 'meta-tags'
