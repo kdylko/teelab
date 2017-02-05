@@ -38,8 +38,7 @@ gem 'instagram'
 gem 'hashie'
 
 # gem 'zurb-foundation', '~> 4.3.2'
-gem 'foundation-rails'
-gem 'foundation-icons-sass-rails'
+
 gem 'foundation_emails'
 gem 'joyride_foundation', '~> 0.0.2'
 gem 'google-webfonts-rails'
@@ -47,12 +46,10 @@ gem 'inky-rb', require: 'inky'
 gem 'premailer-rails'
 
 # bootstrap
-gem 'bootstrap-sass', '~> 3.3.6'
-
 gem "therubyracer"
-gem "less-rails"
+gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
 gem "twitter-bootstrap-rails"
-
+gem "font-awesome-rails"
 
 # SEO
 gem 'meta-tags'

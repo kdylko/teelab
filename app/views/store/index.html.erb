@@ -1,376 +1,94 @@
 
 <% content_for :title, "Купить футболки, свитшоты, толстовки, худи" %>   
-    <div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit>
-      <ul class="orbit-container">
 
-        <li class="orbit-slide is-active">
-          <%= link_to store_intelligence_path do %>
-          <%= image_tag '3811w1.jpg' %> 
+    <!-- Page Title
+    ============================================= -->
+    <section id="page-title">
 
-          <% end %>     
-        </li>
-        <li class="orbit-slide">
-          <%= link_to store_intelligence_path do %>
-          <%= image_tag '15w.jpg' %>
+      <div class="container clearfix">
+        <h1>Блоггер</h1>
+        <span>Собственный стиль - больше известности</span>
+        <ol class="breadcrumb">
+          <li>Более 50 инфлуенсеров уже с нами</li>
+        </ol>
+      </div>
 
-          <% end %>  
-        </li>
-        <li class="orbit-slide">
-          <%= link_to store_intelligence_path do %>
-          <%= image_tag 'IMG_4746.JPG' %>
-
-          <% end %>  
-        </li>
-      </ul>
-    </div>
-
-
-    <hr>
+    </section><!-- #page-title end -->
 
 
 
-    <div class="row small-up-2 large-up-4">
-      <% @intelligence.each_with_index do |product, index| %> 
-
-          <% if index < 4 %>
-            <div class="column" style="-webkit-hyphens: auto;" >
-                <%= link_to store_path(product.id), class: "poster" do %>
-                <% if product.images.present? %>
-                <%= image_tag product.images.first.photo(:thumb), class: "thumbnail", style: "background: linear-gradient(to top, #bcbcbe, #bcbcbe);" %>
-                <% end %>
-                <% end %>
-              <h5><%= product.title %></h5>
-              <p><%= product.style.name %></p>
-              <p style="margin-bottom:3px"><%= product.price %> руб.</p>
 
 
-              <button class="button expand add-to-cart" type="button" data-toggle="<%= product.url_name %>">Добавить в корзину</button>
-                <div class="dropdown-pane" id="<%= product.url_name %>" data-dropdown data-auto-focus="true">
-                  Выберите размер
-                  <%= form_tag({controller: "line_items", action: "create"}, method: "post", remote: true, class: "form") do %>
-                     <%= hidden_field_tag :product_id,  product.id %>
+    <!-- Content
+    ============================================= -->
+    <section id="content">
 
-                        <%= select_tag "size_id", options_from_collection_for_select(product.style.sizes, "id", "name"), remote: true, class: " small split no-pip" %>
-                        <% if product.colors.present? %>
-                              <%= select_tag "color_id", options_from_collection_for_select(product.colors, "id", "name"),  remote: true, class: " small " %>
-                        <% end %>
-                        <%= submit_tag "Выбрать", remote: true, :onclick => "alert('Товар успешно добавлен в корзину')",  class: "button expand add-to-cart" %>
+      <div class="content-wrap" style="padding-top:0px;">
 
+        <div class="promo promo-dark promo-full promo-uppercase bottommargin">
+          <div class="container clearfix">
+            <h3> <span>+7 925 704 01 81</span> или <span>collaboration@teelab.ru</span></h3>
+            <span>Создадим вместе с вами дизайн и магазин</span>
+            <a href="#" class="button button-xlarge button-rounded">Оставить свой email</a>
+          </div>
+        </div>
+
+
+        <div class="container clearfix">
+
+
+
+          <!-- Shop
+          ============================================= -->
+          <div id="shop" class="shop product-3 clearfix">
+
+        <% @blogger.each do |product| %> 
+            <div class="product clearfix">
+
+                <div class="product-image">
+                  <%= link_to store_path(product.id) do %>
+                    <% if product.images.present? %>
+                      <%= image_tag product.images.first.photo(:medium), alt: "Checked Short Dress" %>
+                    <% end %>
                   <% end %>
+                  <%= link_to store_path(product.id) do %>
+                    <% if product.images.present? %>
+                      <%= image_tag product.images.second.photo(:medium), alt: "Checked Short Dress" %>
+                    <% end %>
+                  <% end %>
+
+
+                  <div class="product-overlay">
+                    <a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Добавить в корзину</span></a>
+                    <%= link_to store_path(product.id), class: "item-quick-view" do %><i class="icon-zoom-in2"></i><span> Посмотреть</span><% end %>
+                  </div>
                 </div>
-
-
+              <div class="product-desc center">
+                <div class="product-title"><h3><a href="#"><%= product.title %></a></h3><h3><a href="#"><%= product.style.name %></a></h3></div>
+                <div class="product-price"><ins><%= product.price %> руб.</ins></div>
+                <div class="product-rating">
+                  <i class="icon-star3"></i>
+                  <i class="icon-star3"></i>
+                  <i class="icon-star3"></i>
+                  <i class="icon-star3"></i>
+                  <i class="icon-star-half-full"></i>
+                </div>
+              </div>
             </div>
-
-
-          <% end %>
-
         <% end %> 
-    </div>
-
-    <div class="row columns show-more3">
-      <%= link_to store_intelligence_path do %>
-       <span>Посмотреть все     <i class="fi-arrow-right"></i></span>
-       <% end %>
-
-    </div>
-
-    <hr>
 
 
 
 
-
-
-
-
-    <div class="row column text-center">
-      <h3 >Коллаборации</h3>
-      <hr>
-    </div>
-
-
-    <div class="row small-up-2 large-up-4">
-      <% @blogger.each_with_index do |product, index| %> 
-        <% if product.category == 'blogger' %>
-          <% if index < 8 %>
-            <div class="column" style="-webkit-hyphens: auto;" >
-                <%= link_to store_path(product.id), class: "poster" do %>
-                <% if product.images.present? %>
-                <%= image_tag product.images.first.photo(:thumb), class: "thumbnail", style: "background: linear-gradient(to top, #bcbcbe, #bcbcbe);" %>
-                <% end %>
-                <% end %>
-              <h5><%= product.title %></h5>
-              <p><%= product.style.name %></p>
-              <p style="margin-bottom:3px"><%= product.price %> руб.</p>
-
-
-              <button class="button expand add-to-cart" type="button" data-toggle="<%= product.url_name %>">Добавить в корзину</button>
-                <div class="dropdown-pane" id="<%= product.url_name %>" data-dropdown data-auto-focus="true">
-                  Выберите размер
-                  <%= form_tag({controller: "line_items", action: "create"}, method: "post", remote: true, class: "form") do %>
-                     <%= hidden_field_tag :product_id,  product.id %>
-
-                        <%= select_tag "size_id", options_from_collection_for_select(product.style.sizes, "id", "name"), remote: true, class: " small split no-pip" %>
-                        <% if product.colors.present? %>
-                              <%= select_tag "color_id", options_from_collection_for_select(product.colors, "id", "name"),  remote: true, class: " small " %>
-                        <% end %>
-                        <%= submit_tag "Выбрать", remote: true, :onclick => "alert('Товар успешно добавлен в корзину')",  class: "button expand add-to-cart" %>
-
-                  <% end %>
-                </div>
-
-
-            </div>
-          <% else %>
-            <div class="column elseh" style="display:none">
-                <%= link_to store_path(product.id), class: "poster" do %>
-                <% if product.images.present? %>
-                <%= image_tag product.images.first.photo(:medium), class: "thumbnail", style: "background: linear-gradient(to top, #bcbcbe, #bcbcbe);" %>
-                <% end %>
-                <% end %>
-              <h5><%= product.title %></h5>
-              <p><%= product.style.name %></p>
-              <p style="margin-bottom:3px"><%= product.price %> руб.</p>
-
-
-              <button class="button expand add-to-cart" type="button" data-toggle="<%= product.url_name %>">Добавить в корзину</button>
-                <div class="dropdown-pane" id="<%= product.url_name %>" data-dropdown data-auto-focus="true">
-                  Выберите размер
-                  <%= form_tag({controller: "line_items", action: "create"}, method: "post", remote: true, class: "form") do %>
-                     <%= hidden_field_tag :product_id,  product.id %>
-
-                        <%= select_tag "size_id", options_from_collection_for_select(product.style.sizes, "id", "name"), remote: true, class: " small split no-pip" %>
-                        <% if product.colors.present? %>
-                              <%= select_tag "color_id", options_from_collection_for_select(product.colors, "id", "name"),  remote: true, class: " small " %>
-                        <% end %>
-                        <%= submit_tag "Выбрать", remote: true, :onclick => "alert('Товар успешно добавлен в корзину')",  class: "button expand add-to-cart" %>
-
-                  <% end %>
-                </div>
-
-
-            </div>
-
-          <% end %>
-         <% end %>
-        <% end %> 
-    </div>
-
-    <div class="row columns ">
-      <div class="column large-6 medium-6 small-12 float-left show-more">
-       <a class="show-more__button"> Показать еще   <i class="fi-arrow-down"></i></a>
-       <a style="display:none" class="show-more__button"> Скрыть   <i class="fi-arrow-up"></i></a>
-     </div>
-      <div class="column large-6 medium-6 small-12 float-left show-more-add">
-      <%= link_to store_bloggers_path do %>
-       <span>Посмотреть все     <i class="fi-arrow-right"></i></span>
-       <% end %>
-     </div>
-    </div>
-
-
-
-
-
-
-
-
-    <div class="row column text-center hide">
-      <h3>Другое</h3>
-      <hr>
-    </div>
-
-    <div class="row small-up-2 medium-up-3 large-up-6 hide">
-
-      <% @newyear.each_with_index do |product, index| %> 
-      <% if product.category == 'new_year' %>
-      <% if index < 6 %>
-        <div class="column" style="-webkit-hyphens: auto;" >
-          
-              
-                <%= link_to store_path(product.id), class: "poster" do %>  
-                <% if product.images.present? %>  
-                  <%= image_tag product.images.first.photo(:thumb), class: "thumbnail", style: "background: linear-gradient(to top, #bcbcbe, #bcbcbe);" %>
-                  <% end %>
-                <% end %>
-            <h5><%= product.title %></h5>
-            <p><%= product.style.name %></p>
-            <p style="margin-bottom:3px"><%= product.price %> руб.</p>
-          
-            
-            <button class="button expand add-to-cart" type="button" data-toggle="<%= product.url_name %>">Добавить в корзину</button>
-            <div class="dropdown-pane" id="<%= product.url_name %>" data-dropdown data-auto-focus="true">
-              Выберите размер
-              <%= form_tag({controller: "line_items", action: "create"}, method: "post", remote: true, class: "form") do %>
-                 <%= hidden_field_tag :product_id,  product.id %>
-
-                        <%= select_tag "size_id", options_from_collection_for_select(product.style.sizes, "id", "name"), remote: true, class: " small split no-pip" %>
-                        <% if product.colors.present? %>
-                              <%= select_tag "color_id", options_from_collection_for_select(product.colors, "id", "name"),  remote: true, class: " small " %>
-                        <% end %>
-                    <%= submit_tag "Выбрать", remote: true, :onclick => "alert('Товар успешно добавлен в корзину')", class: "button expand add-to-cart" %>
-              <% end %>
-            </div>
-
-
-        </div>
-        <% else %>
-        <div class="column elseh1" style="display:none">
-          
-              
-                <%= link_to store_path(product.id), class: "poster" do %>    
-                <% if product.images.present? %> 
-                  <%= image_tag product.images.first.photo(:medium), class: "thumbnail", style: "background: linear-gradient(to top, #bcbcbe, #bcbcbe);" %>
-                  <% end %>
-                <% end %>
-            <h5><%= product.title %></h5>
-            <p><%= product.style.name %></p>
-            <p style="margin-bottom:3px"><%= product.price %> руб.</p>
-          
-            
-            <button class="button expand add-to-cart" type="button" data-toggle="<%= product.url_name %>">Добавить в корзину</button>
-            <div class="dropdown-pane" id="<%= product.url_name %>" data-dropdown data-auto-focus="true">
-              Выберите размер
-              <%= form_tag({controller: "line_items", action: "create"}, method: "post", remote: true, class: "form") do %>
-                 <%= hidden_field_tag :product_id,  product.id %>
-
-                        <%= select_tag "size_id", options_from_collection_for_select(product.style.sizes, "id", "name"), remote: true, class: " small split no-pip" %>
-                        <% if product.colors.present? %>
-                              <%= select_tag "color_id", options_from_collection_for_select(product.colors, "id", "name"),  remote: true, class: " small " %>
-                        <% end %>
-                    <%= submit_tag "Выбрать", remote: true, :onclick => "alert('Товар успешно добавлен в корзину')", class: "button expand add-to-cart" %>
-              <% end %>
-            </div>
-
+          </div><!-- #shop end -->
 
         </div>
 
+      </div>
 
-
-      <% end %>
-      <% end %>
-      <% end %>
-    </div>
-
-    <div class="row columns show-more1 hide">
-       <a class="show-more__button"> Показать еще  <i class="fi-arrow-down"></i></a>
-       <a style="display:none" class="show-more__button"> Скрыть  <i class="fi-arrow-up"></i></a>
-    </div>
-
-    <hr>
+    </section><!-- #content end -->
 
 
 
 
 
-
-     <div class="row column text-center">
-      <h3>Бланковые вещи (без нанесений)</h3>
-      <hr>
-    </div>
-
-    <div class="row small-up-2 medium-up-3 large-up-5">
-
-      <% @blank.each_with_index do |product, index| %> 
-      <% if product.category == 'blank' %>
-      <% if index < 6 %>
-        <div class="column" style="-webkit-hyphens: auto;" >
-          
-              
-                <%= link_to store_path(product.id), class: "poster" do %> 
-                <% if product.images.present? %>    
-                  <%= image_tag product.images.first.photo(:thumb), class: "thumbnail", style: "background: linear-gradient(to top, #bcbcbe, #bcbcbe);" %>
-                  <% end %>
-                <% end %>              
-            <h5><%= product.title %></h5>
-            <p><%= product.style.name %></p>
-            <p style="margin-bottom:3px"><%= product.price %> руб.</p>
-          
-            
-            <button class="button expand add-to-cart" type="button" data-toggle="<%= product.url_name %>">Добавить в корзину</button>
-            <div class="dropdown-pane" id="<%= product.url_name %>" data-dropdown data-auto-focus="true">
-              Выберите размер
-              <%= form_tag({controller: "line_items", action: "create"}, method: "post", remote: true, class: "form") do %>
-                 <%= hidden_field_tag :product_id,  product.id %>
-
-                        <%= select_tag "size_id", options_from_collection_for_select(product.style.sizes, "id", "name"), remote: true, class: " small split no-pip" %>
-                        <% if product.colors.present? %>
-                              <%= select_tag "color_id", options_from_collection_for_select(product.colors, "id", "name"),  remote: true, class: " small " %>
-                        <% end %>
-                    <%= submit_tag "Выбрать", remote: true, :onclick => "alert('Товар успешно добавлен в корзину')", class: "button expand add-to-cart" %>
-              <% end %>
-            </div>
-
-
-        </div>
-        <% else %>
-        <div class="column elseh2" style="display:none">
-          
-              
-                <%= link_to store_path(product.id), class: "poster" do %>
-                <% if product.images.present? %>     
-                  <%= image_tag product.images.first.photo(:medium), class: "thumbnail", style: "background: linear-gradient(to top, #bcbcbe, #bcbcbe);" %>
-                  <% end %>
-                <% end %>
-              
-            <h5><%= product.title %></h5>
-            <p><%= product.style.name %></p>
-            <p style="margin-bottom:3px"><%= product.price %> руб.</p>
-          
-            
-            <button class="button expand add-to-cart" type="button" data-toggle="<%= product.url_name %>">Добавить в корзину</button>
-            <div class="dropdown-pane" id="<%= product.url_name %>" data-dropdown data-auto-focus="true">
-              Выберите размер
-              <%= form_tag({controller: "line_items", action: "create"}, method: "post", remote: true, class: "form") do %>
-                 <%= hidden_field_tag :product_id,  product.id %>
-
-                        <%= select_tag "size_id", options_from_collection_for_select(product.style.sizes, "id", "name"), remote: true, class: " small split no-pip" %>
-                        <% if product.colors.present? %>
-                              <%= select_tag "color_id", options_from_collection_for_select(product.colors, "id", "name"),  remote: true, class: " small " %>
-                        <% end %>
-                    <%= submit_tag "Выбрать", remote: true, :onclick => "alert('Товар успешно добавлен в корзину')", class: "button expand add-to-cart" %>
-              <% end %>
-            </div>
-
-
-        </div>
-
-
-
-      <% end %>
-      <% end %>
-      <% end %>
-    </div>
-
-    <div class="row columns show-more2">
-       <a class="show-more__button"> Показать еще  <i class="fi-arrow-down"></i></a>
-       <a style="display:none" class="show-more__button"> Скрыть  <i class="fi-arrow-up"></i></a>
-    </div>
-
-    <hr>
-
-
-<%= javascript_tag do %>
-
-$( ".show-more a" ).click(function() {
-  
-  $('.elseh').toggle();
-  $(".show-more a").toggle();
-  
-});
-$( ".show-more1 a" ).click(function() {
-  
-  $('.elseh1').toggle();
-  $(".show-more1 a").toggle();
-  
-});
-$( ".show-more2 a" ).click(function() {
-  
-  $('.elseh2').toggle();
-  $(".show-more2 a").toggle();
-  
-});
-
-  
-<% end %>
