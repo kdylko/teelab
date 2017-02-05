@@ -1,19 +1,39 @@
 <% content_for :title, "Регистрация" %>
-<div class="form-container medium-centered small-10 small-centered medium-6 large-4 columns">
-  <h2>Регистрация</h2>
 
-  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-    <%= devise_error_messages! %>
 
-    <div class="mb1"><%= f.email_field :email, autofocus: true, placeholder: "Email", class: "radius" %></div>
+    <section id="content">
 
-    <div class="mb1"><%= f.password_field :password, autocomplete: "off", placeholder: "Пароль", class: "radius" %></div>
+      <div class="content-wrap nopadding">
 
-    <div class="mb1"><%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "Подтвердить пароль", class: "radius" %></div>
+        <div class="section nopadding nomargin" style="width: 100%; height: 100%; position: absolute; left: 0; top: 0; background: url('images/parallax/home/1.jpg') center center no-repeat; background-size: cover;"></div>
 
-    <div><%= f.submit "Подтвердить", class: "button" %></div>
-  <% end %>
-  <%= render "devise/shared/links" %>
-  <br>
-</div>
+        <div class="section nobg full-screen nopadding nomargin">
+          <div class="container vertical-middle divcenter clearfix">
 
+            <div class="row center">
+
+            </div>
+
+            <div class="panel panel-default divcenter noradius noborder" style="max-width: 400px; background-color: rgba(255,255,255,0.93);">
+              <div class="panel-body" style="padding: 40px;">
+
+                <%= form_for(resource, as: resource_name, url: registration_path(resource_name), id: "login-form", class: "nobottommargin") do |f| %>
+                  <div class="col_full"><%= f.email_field :email, autofocus: true, placeholder: "Email", id: "login-form-username", class: "form-control not-dark" %></div>
+
+                  <div class="col_full"><%= f.password_field :password, autocomplete: "off", placeholder: "Пароль", id: "login-form-password", class: "form-control not-dark" %></div>
+
+                  <div class="col_full"><%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "Подтвердить пароль", id: "login-form-password", class: "form-control not-dark" %></div>
+
+                  <div class="col_full nobottommargin"><%= f.submit "Регистрация", id: "login-form-submit", class: "button button-3d button-black nomargin" %></div>
+                <% end %>
+                <div class="col_full nobottommargin">
+                <%= render "devise/shared/links" %>
+                </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- #content end -->

@@ -1,123 +1,152 @@
 <% content_for :title, 'Product' %>  
-    <br>
-    <!-- You can now combine a row and column if you just need a 12 column row -->
-    <div class="row columns">
-      <nav aria-label="You are here:" role="navigation">
-        <ul class="breadcrumbs">
-          <li><%= link_to 'Главная', store_index_path %></li>
-          
-          <li>
-            <span class="show-for-sr">Current: </span> <%= @product.title %>
-          </li>
-        </ul>
-      </nav>
-    </div>
 
-    <div class="row">
-      <div class="medium-6 columns">
-        <div class="owl-carousel" id="owl">
-            <% @product.images.each do |image| %>
-            <div><%= image_tag image.photo(:medium), style: "background: linear-gradient(to top, #bcbcbe, #bcbcbe);" %></div>
-            <% end %>
-          </div> 
+
+    <!-- Page Title
+    ============================================= -->
+    <section id="page-title">
+
+      <div class="container clearfix">
+        <h1>Pink Printed Dress</h1>
+        <ol class="breadcrumb">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Shop</a></li>
+          <li class="active">Shop Single</li>
+        </ol>
       </div>
 
-    
-      <div class="medium-6 large-5 columns">
-        <h3><%= @product.title %></h3>
+    </section><!-- #page-title end -->
 
-        <div class="row align-middle" >
-          <div class=" large-4 medium-4 small-4 column align-self-middle" >
-            <p style="line-height:2.5rem;"><%= @product.style.name %></p> 
-          </div>
-          <% if @product.instagram_name.present? %>
-            <div class=" large-8 medium-8 small-8 text-right column align-self-middle">
-              <p>Designed by <%= @product.instagram_name %>  &nbsp  <%= link_to "https://www.instagram.com/#{@product.instagram_name}" do %> <%= image_tag @product.avatar_url, size: "40x40", style: "border-radius:50%;" %> <% end %></p>
-            </div>
-            <% end %>
-        </div>
-          <br>
+    <!-- Content
+    ============================================= -->
+    <section id="content">
 
+      <div class="content-wrap">
 
-        <% if @product.description.present? %>
-          <p><%= @product.description %></p> <br>
-        <% end %>
-        <% if @product.style.description.present? %>
-          <p><%= @product.style.description %></p> <br>
-        <% end %>
-    <!-- Tabs -->
-      <%= form_tag({controller: "line_items", action: "create"}, method: "post", remote: true, class: "form") do %>
-          <%= hidden_field_tag :product_id,  @product.id %>
-          <p class="product__size-description">Выберите размер:</p>
-          <%= select_tag "size_id", options_from_collection_for_select(@size, "id", "name"), class: " small " %>
-          <% if @product.colors.present? %>
-                <%= select_tag "colorid", options_from_collection_for_select(@product.colors, "id", "name"), class: "small" %>
-          <% end %>
-     
-            <hr>
-            <div class="row">
-              <div class="small-3 columns">
-                <p for="middle-label" class="middle">Цена</p>
+        <div class="container clearfix">
+
+          <div class="single-product">
+
+            <div class="product">
+
+              <div class="col_two_fifth">
+
+                <!-- Product Single - Gallery
+                ============================================= -->
+                <div class="product-image">
+                  <div class="fslider" data-pagi="false" data-arrows="false" data-thumbs="true">
+                    <div class="flexslider">
+                      <div class="slider-wrap" data-lightbox="gallery">
+
+                        <% @product.images.each do |image| %>
+                          <div class="slide" data-thumb="images/shop/thumbs/dress/3.jpg"><%= image_tag image.photo(:medium), alt: @product.title %></div>
+
+                        <% end %>
+                      </div>
+                    </div>
+                  </div>
+ 
+                </div><!-- Product Single - Gallery End -->
+
               </div>
-              <div class="small-9 columns">
-                <p for="middle-label" class="middle"><%= @product.price %> руб.</p>
+
+              <div class="col_two_fifth product-desc">
+
+                <!-- Product Single - Price
+                ============================================= -->
+                <div class="product-price"><%= @product.price %> руб.</div><!-- Product Single - Price End -->
+
+                <!-- Product Single - Rating
+                ============================================= -->
+                <div class="product-rating">
+                  <i class="icon-star3"></i>
+                  <i class="icon-star3"></i>
+                  <i class="icon-star3"></i>
+                  <i class="icon-star-half-full"></i>
+                  <i class="icon-star-empty"></i>
+                </div><!-- Product Single - Rating End -->
+
+                <div class="clear"></div>
+                <div class="line"></div>
+
+                <!-- Product Single - Quantity & Cart Button
+                ============================================= -->
+                <%= form_tag({controller: "line_items", action: "create"}, method: "post", enctype: "multipart/form-data", remote: true, class: "fcart nobottommargin clearfix") do %>
+                    <%= hidden_field_tag :product_id,  @product.id %>
+                    <%= select_tag "size_id", options_from_collection_for_select(@size, "id", "name"), class: " btn btn-default dropdown-toggle" %>
+                    <% if @product.colors.present? %>
+                          <%= select_tag "colorid", options_from_collection_for_select(@product.colors, "id", "name"), class: "qty" %>
+                    <% end %>
+                    <%= submit_tag "Добавить в корзину", remote: true, :onclick => "alert('Товар успешно добавлен в корзину')", class: "add-to-cart button nomarginn" %>
+                <% end %>
+
+
+                <div class="clear"></div>
+                <div class="line"></div>
+
+                <!-- Product Single - Short Description
+                ============================================= -->
+                <p><%= @product.title %></p> <br>
+
+                <% if @product.style.description.present? %>
+                  <p><%= @product.style.description %></p> <br>
+                <% end %>
+
+                <!-- Product Single - Short Description End -->
+
+
+
+
+
               </div>
-            </div>
-            <hr>
+
+              <div class="col_one_fifth col_last">
+
+                <a href="#" title="Brand Logo" class="hidden-xs"><img class="image_fade" src="images/shop/brand.jpg" alt="Brand Logo"></a>
+
+                <div class="divider divider-center"><i class="icon-circle-blank"></i></div>
+
+                <div class="feature-box fbox-plain fbox-dark fbox-small">
+                  <div class="fbox-icon">
+                    <i class="icon-thumbs-up2"></i>
+                  </div>
+                  <h3>100% Качество</h3>
+                  <p class="notopmargin">Каждый наш товар мы проверяем вручную.</p>
+                </div>
+
+                <div class="feature-box fbox-plain fbox-dark fbox-small">
+                  <div class="fbox-icon">
+                    <i class="icon-credit-cards"></i>
+                  </div>
+                  <h3>Способы оплаты</h3>
+                  <p class="notopmargin">Мы принимаем карты Visa и MasterCard.</p>
+                </div>
+
+                <div class="feature-box fbox-plain fbox-dark fbox-small">
+                  <div class="fbox-icon">
+                    <i class="icon-truck2"></i>
+                  </div>
+                  <h3>Доставка</h3>
+                  <p class="notopmargin">Отправляем товар два раза в неделю удобным для Вас способом.</p>
+                </div>
 
 
-          <%= submit_tag "Добавить в корзину", remote: true, :onclick => "alert('Товар успешно добавлен в корзину')", class: "button expand add-to-cart product__button" %>
-      <% end %>
-          <%= button_to "Перейти к оплате", new_order_path, method: :get, class: "button expand add-to-cart product__button" %>
 
+              </div>
 
-    </div>
+              <div class="col_full nobottommargin">
 
-    </div>
+                <div class="tabs clearfix nobottommargin" id="tab-1">
 
-    <div class="column row">
-      <hr>
-      <ul class="tabs" data-tabs id="example-tabs">
-        <li class="tabs-title is-active"><a href="#panel4" aria-selected="true">Доставка</a></li>
-        <li class="tabs-title"><a href="#panel5">Таблица размеров</a></li>
-      </ul>
-      <div class="tabs-content" data-tabs-content="example-tabs">
-        <div class="tabs-panel is-active" id="panel4">
-          <h4>Виды доставки:</h4>
-          <div class="media-object stack-for-small">
-            <div class="media-object-section">
-              <%= image_tag 'map.jpg', size: "150x100", class: "" %>
-            </div>
-            <div class="media-object-section">
-              <h5>Самовывоз</h5>
-              <p>Самостоятельно забрать покупку можно у нас в офисе по адресу: ул. Рочдельская 15, к. 17-18, в будние дни с 10 утра и до 7 вечера, предварительно согласовав по телефону приезд.</p>
-            </div>
-          </div>
-          <div class="media-object stack-for-small">
-            <div class="media-object-section">
-              
-            </div>
-            <div class="media-object-section">
-              <h5>Курьерская доставка</h5>
-              <p>Курьерескую доставку осуществляет наш партнер компания DPD. Доставка осуществляется в короткие сроки во все города таможенного союза. В том числе: Беларусь, Казахстан, Армения.</p>
-            </div>
-          </div>
-          <div class="media-object stack-for-small">
-            <div class="media-object-section">
-             
-            </div>
-            <div class="media-object-section">
-              <h5>Доставка Почтой России</h5>
-              <p>В среднем, Почта России осуществляет доставку в срок от 7 до 14 дней в ближайшее к Вам отделение.</p>
-            </div>
-          </div>
+                  <ul class="tab-nav clearfix">
+                    <li><a href="#tabs-1"><i class="icon-align-justify2"></i><span class="hidden-xs"> Таблица размеров</span></a></li>
+                    <li><a href="#tabs-2"><i class="icon-info-sign"></i><span class="hidden-xs"> Доставка</span></a></li>
 
-        </div>
-        <div class="tabs-panel" id="panel5">
+                  </ul>
 
-            
+                  <div class="tab-container">
 
-                             <table class="table responsive">
+                    <div class="tab-content clearfix" id="tabs-1">
+                             <table class="table">
                               <thead>
                               <% @sizetable.each_with_index do |sizetable, index| %>
                               <% if index < 1 %>
@@ -144,13 +173,34 @@
                               </tbody>
                            </table>
 
+                    </div>
+                    <div class="tab-content clearfix" id="tabs-2">
+
+                    <p> <strong> Самовывоз </strong><br> Самостоятельно забрать покупку можно у нас в офисе по адресу: ул. Рочдельская 15, к. 17-18, в будние дни с 10 утра и до 7 вечера, предварительно согласовав по телефону приезд.</p>
+                    <p> <strong> Курьерская доставка </strong><br> Курьерескую доставку осуществляет наш партнер компания DPD. Доставка осуществляется в короткие сроки во все города таможенного союза. В том числе: Беларусь, Казахстан, Армения.</p>
+                    <p> <strong> Доставка Почтой России </strong><br> В среднем, Почта России осуществляет доставку в срок от 7 до 14 дней в ближайшее к Вам отделение.</p>
+
+                    </div>
+
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
         </div>
+
       </div>
-    </div>
-<br>
+
+    </section><!-- #content end -->
 
 
-    
 
 
 

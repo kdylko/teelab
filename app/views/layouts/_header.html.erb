@@ -11,8 +11,8 @@
           <!-- Logo
           ============================================= -->
           <div id="logo">
-            <a href="index.html" class="standard-logo" data-dark-logo="images/logo-dark.png"><%= image_tag 'logo.png', alt: "Canvas Logo" %></a>
-            <a href="index.html" class="retina-logo" data-dark-logo="images/logo-dark@2x.png"><%= image_tag 'logo@2x.png', alt: "Canvas Logo" %></a>
+            <%= link_to root_path, class: "standard-logo" do %><%= image_tag 'logo.png', alt: "Canvas Logo" %><% end %>
+            <%= link_to root_path, class: "retina-logo" do %><%= image_tag 'logo@2x.png', alt: "Canvas Logo" %><% end %>
           </div><!-- #logo end -->
 
           <!-- Primary Navigation
