@@ -5,7 +5,7 @@ class SupportController < ApplicationController
   def aboutus
         set_meta_tags title: 'О нас',
                   description: 'Купить футболки, свитшоты, толстовки и худи с уникальным дизайном без вложений'
-
+        @product= Product.all;
   end
 
   def help

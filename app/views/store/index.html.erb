@@ -6,18 +6,14 @@
     <section id="page-title">
 
       <div class="container clearfix">
-        <h1>Блоггер</h1>
-        <span>Собственный стиль - больше известности</span>
+        <h1>Футболки и Толстовки</h1>
+        <span>Помогаем создавать собственную одежду</span>
         <ol class="breadcrumb">
-          <li>Более 50 инфлуенсеров уже с нами</li>
+          <li>Главная</li>
         </ol>
       </div>
 
     </section><!-- #page-title end -->
-
-
-
-
 
     <!-- Content
     ============================================= -->
@@ -27,17 +23,13 @@
 
         <div class="promo promo-dark promo-full promo-uppercase bottommargin">
           <div class="container clearfix">
-            <h3> <span>+7 925 704 01 81</span> или <span>collaboration@teelab.ru</span></h3>
-            <span>Создадим вместе с вами дизайн и магазин</span>
-            <a href="#" class="button button-xlarge button-rounded">Оставить свой email</a>
+            <h3> <span>Узнайте больше о том как мы работаем</span><span></span></h3>
+            <span>Работаем с блоггерами, пабликами, каналами и интернет ресурсами</span>
+            <%= link_to support_aboutus_path, class: "button button-xlarge button-rounded" do %>Узнать больше<% end %>
           </div>
         </div>
 
-
         <div class="container clearfix">
-
-
-
           <!-- Shop
           ============================================= -->
           <div id="shop" class="shop product-3 clearfix">
@@ -59,7 +51,7 @@
 
 
                   <div class="product-overlay">
-                    <a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Добавить в корзину</span></a>
+
                     <%= link_to store_path(product.id), class: "item-quick-view" do %><i class="icon-zoom-in2"></i><span> Посмотреть</span><% end %>
                   </div>
                 </div>
@@ -77,9 +69,6 @@
             </div>
         <% end %> 
 
-
-
-
           </div><!-- #shop end -->
 
         </div>
@@ -88,7 +77,73 @@
 
     </section><!-- #content end -->
 
+        <div class="section topmargin-sm footer-stick">
 
+          <h4 class="uppercase center">What <span>Clients</span> Say?</h4>
+
+          <div class="fslider testimonial testimonial-full" data-animation="fade" data-arrows="false">
+            <div class="flexslider">
+              <div class="slider-wrap">
+                <div class="slide">
+                  <div class="testi-image">
+                    <a href="#"><img src="images/testimonials/3.jpg" alt="Customer Testimonails"></a>
+                  </div>
+                  <div class="testi-content">
+                    <p>Similique fugit repellendus expedita excepturi iure perferendis provident quia eaque. Repellendus, vero numquam?</p>
+                    <div class="testi-meta">
+                      Steve Jobs
+                      <span>Apple Inc.</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="slide">
+                  <div class="testi-image">
+                    <a href="#"><img src="images/testimonials/2.jpg" alt="Customer Testimonails"></a>
+                  </div>
+                  <div class="testi-content">
+                    <p>Natus voluptatum enim quod necessitatibus quis expedita harum provident eos obcaecati id culpa corporis molestias.</p>
+                    <div class="testi-meta">
+                      Collis Ta'eed
+                      <span>Envato Inc.</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="slide">
+                  <div class="testi-image">
+                    <a href="#"><img src="images/testimonials/1.jpg" alt="Customer Testimonails"></a>
+                  </div>
+                  <div class="testi-content">
+                    <p>Incidunt deleniti blanditiis quas aperiam recusandae consequatur ullam quibusdam cum libero illo rerum!</p>
+                    <div class="testi-meta">
+                      John Doe
+                      <span>XYZ Inc.</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        
+        <div class="section footer-stick">
+
+          <div class="container clearfix">
+
+            <div id="section-buy" class="heading-block title-center nobottomborder page-section">
+              <h2>Enough? Start Building!</h2>
+              <span>Now that you have read all the Tid-Bits, so start with a plan</span>
+            </div>
+
+            <div class="center">
+
+              <a href="#" data-animate="tada" class="button button-3d button-teal button-xlarge nobottommargin"><i class="icon-star3"></i>Start your FREE Trial</a> - OR - <a href="#" data-scrollto="#section-pricing" class="button button-3d button-red button-xlarge nobottommargin"><i class="icon-user2"></i>Sign Up for a Subscription</a>
+
+            </div>
+
+          </div>
+
+        </div>
 
 
 

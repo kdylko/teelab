@@ -1,73 +1,156 @@
 <% content_for :title, "О нас" %>   
 
-		<div class="row">
-			<!--<div class="col-xs-12 sub-title">
-				Придумывайте, творите, эксперементируйте,<br>создавайте и получайте за это деньги
-			</div> -->
-			
-			<div class="medium-10 columns">
-					<br>
-					<h1>
-						Информация о работе платформы
-					</h1>
-					<br>
-					<hr>				
-						
+		
+		<!-- Page Title
+		============================================= -->
+		<section id="page-title" class="page-title-mini">
 
-					<div >
-						<span style="font-weight:bold;">Платежи. Оплата банковской картой онлайн</span><br>
-						Наш сайт подключен к интернет-эквайрингу, и Вы можете оплатить Товар банковской картой Visa или Mastercard. После подтверждения выбранного Товара откроется защищенное окно с платежной страницей процессингового центра CloudPayments, где Вам необходимо ввести данные Вашей банковской карты. Для дополнительной аутентификации держателя карты используется протокол 3D Secure. Если Ваш Банк поддерживает данную технологию, Вы будете перенаправлены на его сервер для дополнительной идентификации. Информацию о правилах и методах дополнительной идентификации уточняйте в Банке, выдавшем Вам банковскую карту.<br><br>
-
-						<span style="font-weight:bold;">Гарантии безопасности</span><br>
-						Процессинговый центр CloudPayments защищает и обрабатывает данные Вашей банковской карты по стандарту безопасности PCI DSS 3.0. Передача информации в платежный шлюз происходит с применением технологии шифрования SSL. Дальнейшая передача информации происходит по закрытым банковским сетям, имеющим наивысший уровень надежности. CloudPayments не передает данные Вашей карты нам и иным третьим лицам. Для дополнительной аутентификации держателя карты используется протокол 3D Secure.<br>
-
-						В случае, если у Вас есть вопросы по совершенному платежу, Вы можете обратиться в службу поддержки клиентов по электронной почте <a href="support@cloudpayments.ru">support@cloudpayments.ru</a>.<br><br>
-
-						<span style="font-weight:bold;">Безопасность онлайн платежей</span><br>
-						Предоставляемая Вами персональная информация (имя, адрес, телефон, e-mail, номер кредитной карты) является конфиденциальной и не подлежит разглашению. Данные Вашей кредитной карты передаются только в зашифрованном виде и не сохраняются на нашем Web-сервере.<br>
-						Безопасность обработки Интернет-платежей гарантирует ООО «КлаудПэйментс». Все операции с платежными картами происходят в соответствии с требованиями VISA International, MasterCard и других платежных систем. При передаче информации используются специальные технологии безопасности карточных онлайн-платежей, обработка данных ведется на безопасном высокотехнологичном сервере процессинговой компании.<br><br> 
-
-						
-							<%= image_tag  'logo-small.png', size:"80x80" %>
-							<%= image_tag  'vbv.png', size:"80x80" %>
-							<%= image_tag  'mastercard-securecode.png', size:"80x80" %>
-						
-						<br>
-						<br>
-
-						<span style="font-weight:bold;">Правила доставки</span><br>
-						Товар передается в службу доставки не позднее чем на 7ой рабочий день после оформления заказа на нашем сайте. Сроки доставки могут варьироваться в зависимости от способа доставки и конечной точки. В Москве и крупных городах срок доставки обычно не превышает 2 дней с момента передачи в службу доставки.<br><br> 
-
-						<span style="font-weight:bold;">Возврат товаров</span><br>
-						Постановление Правительства РФ от 19 января 1998 г. В случае обнаружения недостатков товара, свойства которого не позволяют устранить их (продовольственные товары, парфюмерно-косметические изделия, товары бытовой химии и другие товары), покупатель вправе по своему выбору потребовать замены такого товара товаром надлежащего качества либо соразмерного уменьшения покупной цены. Вместо предъявления указанных требований покупатель вправе отказаться от приобретенного товара и потребовать возврата уплаченной за товар денежной суммы. При этом покупатель по требованию продавца и за его счет должен возвратить полученный товар ненадлежащего качества.<br><br>
-
-						<span style="font-weight:bold;">Конфиденциальность</span><br>
-						Федеральный закон РФ № 152-ФЗ «О персональных данных» — федеральный закон, регулирующий деятельность по обработке (использованию) персональных данных.<br><br>
-						1. Определения <br><br>
-						Интернет проект www.teelab.ru (далее – URL, «мы») серьезно относится к вопросу конфиденциальности информации своих клиентов и посетителей сайта www.teelab.ru (далее – «вы», «посетители сайта»). Персонифицированной мы называем информацию, содержащую персональные данные (например: ФИО, логин или название компании) посетителя сайта, а также информацию о действиях совершаемых вами на сайте URL. (например: заказ посетителя сайта с его контактной информацией). Анонимными мы называем данные, которые невозможно однозначно идентифицировать с конкретным посетителем сайта (например: статистика посещаемости сайта).<br><br>
-						2. Использование информации<br><br>
-						Мы используем персонифицированную информацию конкретного посетителя сайта исключительно для обеспечения ему качественного оказания услуг и их учета. Мы не раскрываем персонифицированных данных одних посетителей сайта URL другим посетителям сайта. Мы никогда не публикуем персонифицированную информацию в открытом доступе и не передаем ее третьим лицам. Исключением являются лишь ситуации, когда предоставление такой информации уполномоченным государственным органам предписано действующим законодательством Российской Федерации. Мы публикуем и распространяем только отчеты, построенные на основании собранных анонимных данных. При этом отчеты не содержат информацию, по которой было бы возможным идентифицировать персонифицированные данные пользователей услуг. Мы также используем анонимные данные для внутреннего анализа, целью которого является развитие продуктов и услуг URL.<br><br>
-						3. Ссылки<br><br>
-						Сайт www.teelab.ru может содержать ссылки на другие сайты, не имеющие отношения к нашей компании и принадлежащие третьим лицам. Мы не несем ответственности за точность, полноту и достоверность сведений, размещенных на сайтах третьих лиц, и не берем на себя никаких обязательств по сохранению конфиденциальности информации, оставленной вами на таких сайтах.<br><br>
-						4. Ограничение ответственности<br><br>
-						Мы делаем все возможное для соблюдения настоящей политики конфиденциальности, однако, мы не можем гарантировать сохранность информации в случае воздействия факторов, находящихся вне нашего влияния, результатом действия которых станет раскрытие информации. Сайт www.teelab.ru и вся размещенная на нем информация представлены по принципу "как есть” без каких-либо гарантий. Мы не несем ответственности за неблагоприятные последствия, а также за любые убытки, причиненные вследствие ограничения доступа к сайту URL или вследствие посещения сайта и использования размещенной на нем информации.<br><br>
-						5. Контакты<br><br>
-						По вопросам, касающимся настоящей политики, просьба обращаться по адресу <a href="order@teelab.ru">order@teelab.ru</a><br><br>
-
-						<span style="font-weight:bold;">Юридическое лицо</span><br>
-						 <span itemprop="name">Teelab.ru</span><br>ООО "ТИЛАБ"
-						<br>
-						
-
-						<span itemprop="postalCode"></span>Россия<br>
-						ИНН: 5047188981<br>
-						КПП: 504701001<br>
-						ОГРН: 1165047059616<br>
-						
-					
-
-						<hr>	
-					</div>
-				
+			<div class="container clearfix">
+				<h1>About Us</h1>
+				<span>Everything you need to know about our Company</span>
+				<ol class="breadcrumb">
+					<li><a href="#">Home</a></li>
+					<li><a href="#">Pages</a></li>
+					<li class="active">About Us</li>
+				</ol>
 			</div>
-		</div>
+
+		</section><!-- #page-title end -->
+
+		<!-- Content
+		============================================= -->
+		<section id="content">
+
+			<div class="content-wrap">
+
+				<div class="container clearfix">
+
+					<div class="col_full">
+
+						<div class="heading-block center nobottomborder">
+							<h2>Платформа для блоггеров и пабликов</h2>
+							<span>Создаем вместе одежду которую будут покупать ваши подписчики</span>
+						</div>
+
+						<div class="fslider" data-pagi="false" data-animation="fade">
+							<div class="flexslider">
+								<div class="slider-wrap">
+									<div class="slide"><a href="#"><%= image_tag 'IMG_4746.JPG', alt: "About Image" %></a></div>
+									<div class="slide"><a href="#"><%= image_tag '16w800.jpg', alt: "About Image" %></a></div>
+									<div class="slide"><a href="#"><%= image_tag '3811w1.jpg', alt: "About Image" %></a></div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+
+
+
+
+					<div class="clear"></div>
+
+
+
+				<div class="divider divider-short divider-center"><i class="icon-circle"></i></div>
+
+					<div class="col_full nobottommargin clearfix">
+					<div id="section-contact" class="heading-block title-center page-section">
+						<h3>95% блоггеров и пабликов с которыми мы работаем успешно продают свою одежду</h3>
+						
+					</div>
+
+						<div class="masonry-thumbs col-6" data-big="3" data-lightbox="gallery">
+							<% @product.each_with_index do |product,index| %>
+							<% if index < 13 %>
+							<a href="" data-lightbox="gallery-item">
+							<%= image_tag product.images.first.photo(:thumb), alt: "Gallery Thumb " %></a>
+							<% end %>
+							<% end %>
+							
+
+						</div>
+
+					</div>
+				<div id="section-services" class="page-section notoppadding">
+
+					<div class="section nomargin">
+						<div class="container clearfix">
+							<div class="divcenter center" style="max-width: 900px;">
+								<h2 class="nobottommargin t300 ls1">We enjoy working on the Services &amp; Products we provide as much as you need them. This help us in delivering your Goals easily. Browse through the wide range of services we provide.</h2>
+							</div>
+						</div>
+					</div>
+
+					<div class="common-height clearfix">
+
+						<div class="col-md-4 hidden-xs" style="background: url('images/services/main-bg.jpg') center center no-repeat; background-size: cover;"></div>
+						<div class="col-md-8">
+							<div class="max-height">
+								<div class="row common-height grid-border clearfix">
+									<div class="col-md-4 col-sm-6 col-padding">
+										<div class="feature-box fbox-center fbox-dark fbox-plain fbox-small nobottomborder">
+											<div class="fbox-icon">
+												<a href="#"><i class="icon-et-mobile"></i></a>
+											</div>
+											<h3>Responsive Framework</h3>
+										</div>
+									</div>
+									<div class="col-md-4 col-sm-6 col-padding">
+										<div class="feature-box fbox-center fbox-dark fbox-plain fbox-small nobottomborder">
+											<div class="fbox-icon">
+												<a href="#"><i class="icon-et-presentation"></i></a>
+											</div>
+											<h3>Beautifully Presented</h3>
+										</div>
+									</div>
+									<div class="col-md-4 col-sm-6 col-padding">
+										<div class="feature-box fbox-center fbox-dark fbox-plain fbox-small nobottomborder">
+											<div class="fbox-icon">
+												<a href="#"><i class="icon-et-puzzle"></i></a>
+											</div>
+											<h3>Extensively Extendable</h3>
+										</div>
+									</div>
+									<div class="col-md-4 col-sm-6 col-padding">
+										<div class="feature-box fbox-center fbox-dark fbox-plain fbox-small nobottomborder">
+											<div class="fbox-icon">
+												<a href="#"><i class="icon-et-gears"></i></a>
+											</div>
+											<h3>Powerfully Customizable</h3>
+										</div>
+									</div>
+									<div class="col-md-4 col-sm-6 col-padding">
+										<div class="feature-box fbox-center fbox-dark fbox-plain fbox-small nobottomborder">
+											<div class="fbox-icon">
+												<a href="#"><i class="icon-et-genius"></i></a>
+											</div>
+											<h3>Geniusly Transformable</h3>
+										</div>
+									</div>
+									<div class="col-md-4 col-sm-6 col-padding">
+										<div class="feature-box fbox-center fbox-dark fbox-plain fbox-small nobottomborder">
+											<div class="fbox-icon">
+												<a href="#"><i class="icon-et-hotairballoon"></i></a>
+											</div>
+											<h3>Industrial Support</h3>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+
+
+
+
+
+	
+
+
+				</div>
+
+			</div>
+
+		</section><!-- #content end -->
+

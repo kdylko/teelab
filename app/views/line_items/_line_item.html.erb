@@ -1,20 +1,37 @@
 
+                <tr class="cart_item">
+                  <td class="cart-product-remove">
+                    <%= link_to line_item_path(line_item.id), :method => :delete, class: "remove" do %><i class="icon-trash2"></i><% end %>
+                  </td>
 
-     <tbody>
-     <tr>
-     	<td class="align-center align-middle"><%= line_item.quantity %>&times; </td>
-		<td class="align-center align-middle"><% if line_item.product.images.present? %><%= image_tag line_item.product.images.first.photo, class: "thumbnail", size: "100x100" %> <% end %></td>
-		
-		<td style="max-width:90px; Word-wrap: break-word;"><%= line_item.product.title %></td>
-		<td style="max-width:90px; "><%= line_item.product.style.name %></td>
-		<td ><%= line_item.size.name %><br><% if line_item.color.present? %><%= line_item.color.name %><% end %></td>
-		<td class="item_price"><%= line_item.total_price %></td>
-		<td >
-			<button >
-			
-				<span aria-hidden="true"><%= link_to '&times;'.html_safe, line_item_path(line_item.id), :method => :delete, id: "delete" %></span>
-	    	</button>
-	    </td>
-     </tr>
+                  <td class="cart-product-thumbnail">
+                    <a href="#"><% if line_item.product.images.present? %><%= image_tag line_item.product.images.first.photo(:thumb), size: "64x64" %> <% end %></a>
+                  </td>
+
+                  <td class="cart-product-name">
+                    <a href="#"><%= line_item.product.title %> <br> <%= line_item.size.name %></a>
+                  </td>
+
+                  <td class="cart-product-price">
+                    <span class="amount"><%= line_item.product.price %> руб.</span>
+                  </td>
+
+                  <td class="cart-product-quantity">
+                    <div class="quantity clearfix">
+                      <input type="button" value="-" class="minus">
+                      <input type="text" name="quantity" value="2" class="qty" />
+                      <input type="button" value="+" class="plus">
+                    </div>
+                  </td>
+
+                  <td class="cart-product-subtotal">
+                    <span class="amount"><%= line_item.total_price %></span>
+                  </td>
+                </tr>
+                
+
+
+
+
  
 
