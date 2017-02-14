@@ -3,14 +3,13 @@
 
     <!-- Page Title
     ============================================= -->
-    <section id="page-title">
+    <section id="page-title" class="page-title-mini">
 
       <div class="container clearfix">
-        <h1>Pink Printed Dress</h1>
+        <h1><%= @product.title %></h1>
         <ol class="breadcrumb">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Shop</a></li>
-          <li class="active">Shop Single</li>
+          <li><%= link_to root_path do%>Главная<% end %></li>
+          <li><a href="#"><%= @product.title %></a></li>
         </ol>
       </div>
 
@@ -137,7 +136,7 @@
 
                 <div class="tabs clearfix nobottommargin" id="tab-1">
 
-                  <ul class="tab-nav clearfix">
+                  <ul class="nav nav-tabs boot-tabs clearfix">
                     <li><a href="#tabs-1"><i class="icon-align-justify2"></i><span class="hidden-xs"> Таблица размеров</span></a></li>
                     <li><a href="#tabs-2"><i class="icon-info-sign"></i><span class="hidden-xs"> Доставка</span></a></li>
 

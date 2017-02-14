@@ -1,0 +1,30 @@
+<%= form_for(@blogger, class: "nobottommargin", id: "template-contactform") do |f| %>
+  <% if @blogger.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@blogger.errors.count, "error") %> prohibited this blogger from being saved:</h2>
+
+      <ul>
+      <% @blogger.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="form-process"></div>
+
+  <div class="col_half" >
+
+    <%= f.text_field :name, class: "sm-form-control border-form-control required", id: "template-contactform-name", placeholder: "Имя", :required => true  %>
+  </div>
+  <div class="col_half col_last">
+
+    <%= f.text_field :tel, class: "sm-form-control border-form-control required", id: "template-contactform-name", placeholder: "+7 909 9090 90 90", :required => true, :pattern =>  "^([0|\+[0-9]{1,5})?([1-9][0-9]{9})$" %>
+  </div>
+  <div class="col_full">
+
+    <%= f.text_field :account, class: "sm-form-control border-form-control required", id: "template-contactform-name", placeholder: "Ваш аккаунт, например: @kyliejenner", :required => true %>
+  </div>
+  <div class="col_full center">
+    <%= f.submit 'Отправить', class: "button button-border button-circle t500 noleftmargin topmargin-sm", id: "template-contactform-submit" %>
+  </div>
+<% end %>

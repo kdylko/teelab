@@ -1,0 +1,15 @@
+                 <% @cart.line_items.each do |line_item| %>
+                  <div class="top-cart-item clearfix">
+
+                    <div class="top-cart-item-image">
+                      <a href="#"><%= image_tag line_item.product.images.first.photo(:thumb) %></a>
+                    </div>
+                    
+                    <div class="top-cart-item-desc">
+                      <a href="#"><%= line_item.product.title %></a>
+                      <span class="top-cart-item-price"><%= line_item.size.name %><br><%= line_item.total_price %> руб.</span>
+                      <span class="top-cart-item-quantity">x <%= line_item.total_count %><br><br><%= link_to line_item_path(line_item.id), remote:true, :method => :delete,  class: "remove" do %><i class="icon-trash2"></i><% end %></span>
+                    </div>
+
+                  </div>
+                   <% end %> 

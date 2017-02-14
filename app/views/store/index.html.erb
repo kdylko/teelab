@@ -1,19 +1,7 @@
 
 <% content_for :title, "Купить футболки, свитшоты, толстовки, худи" %>   
 
-    <!-- Page Title
-    ============================================= -->
-    <section id="page-title">
 
-      <div class="container clearfix">
-        <h1>Футболки и Толстовки</h1>
-        <span>Помогаем создавать собственную одежду</span>
-        <ol class="breadcrumb">
-          <li>Главная</li>
-        </ol>
-      </div>
-
-    </section><!-- #page-title end -->
 
     <!-- Content
     ============================================= -->
@@ -23,8 +11,12 @@
 
         <div class="promo promo-dark promo-full promo-uppercase bottommargin">
           <div class="container clearfix">
-            <h3> <span>Узнайте больше о том как мы работаем</span><span></span></h3>
-            <span>Работаем с блоггерами, пабликами, каналами и интернет ресурсами</span>
+            <h3> 
+              <span class="text-rotater nocolor" data-separator="|" data-rotate="fadeIn" data-speed="6000">
+                        <span class="t-rotate t700 font-body opm-large-word">блог.|паблик.|канал youtube.|канал twitch.|сообщество.</span>
+              </span>
+            </h3>
+            <span>Создайте свой мерч вместе с нами</span>
             <%= link_to support_aboutus_path, class: "button button-xlarge button-rounded" do %>Узнать больше<% end %>
           </div>
         </div>
@@ -58,13 +50,7 @@
               <div class="product-desc center">
                 <div class="product-title"><h3><a href="#"><%= product.title %></a></h3><h3><a href="#"><%= product.style.name %></a></h3></div>
                 <div class="product-price"><ins><%= product.price %> руб.</ins></div>
-                <div class="product-rating">
-                  <i class="icon-star3"></i>
-                  <i class="icon-star3"></i>
-                  <i class="icon-star3"></i>
-                  <i class="icon-star3"></i>
-                  <i class="icon-star-half-full"></i>
-                </div>
+
               </div>
             </div>
         <% end %> 
@@ -77,73 +63,7 @@
 
     </section><!-- #content end -->
 
-        <div class="section topmargin-sm footer-stick">
 
-          <h4 class="uppercase center">What <span>Clients</span> Say?</h4>
-
-          <div class="fslider testimonial testimonial-full" data-animation="fade" data-arrows="false">
-            <div class="flexslider">
-              <div class="slider-wrap">
-                <div class="slide">
-                  <div class="testi-image">
-                    <a href="#"><img src="images/testimonials/3.jpg" alt="Customer Testimonails"></a>
-                  </div>
-                  <div class="testi-content">
-                    <p>Similique fugit repellendus expedita excepturi iure perferendis provident quia eaque. Repellendus, vero numquam?</p>
-                    <div class="testi-meta">
-                      Steve Jobs
-                      <span>Apple Inc.</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="slide">
-                  <div class="testi-image">
-                    <a href="#"><img src="images/testimonials/2.jpg" alt="Customer Testimonails"></a>
-                  </div>
-                  <div class="testi-content">
-                    <p>Natus voluptatum enim quod necessitatibus quis expedita harum provident eos obcaecati id culpa corporis molestias.</p>
-                    <div class="testi-meta">
-                      Collis Ta'eed
-                      <span>Envato Inc.</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="slide">
-                  <div class="testi-image">
-                    <a href="#"><img src="images/testimonials/1.jpg" alt="Customer Testimonails"></a>
-                  </div>
-                  <div class="testi-content">
-                    <p>Incidunt deleniti blanditiis quas aperiam recusandae consequatur ullam quibusdam cum libero illo rerum!</p>
-                    <div class="testi-meta">
-                      John Doe
-                      <span>XYZ Inc.</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-        
-        <div class="section footer-stick">
-
-          <div class="container clearfix">
-
-            <div id="section-buy" class="heading-block title-center nobottomborder page-section">
-              <h2>Enough? Start Building!</h2>
-              <span>Now that you have read all the Tid-Bits, so start with a plan</span>
-            </div>
-
-            <div class="center">
-
-              <a href="#" data-animate="tada" class="button button-3d button-teal button-xlarge nobottommargin"><i class="icon-star3"></i>Start your FREE Trial</a> - OR - <a href="#" data-scrollto="#section-pricing" class="button button-3d button-red button-xlarge nobottommargin"><i class="icon-user2"></i>Sign Up for a Subscription</a>
-
-            </div>
-
-          </div>
-
-        </div>
 
 
 

@@ -6,6 +6,8 @@ class SupportController < ApplicationController
         set_meta_tags title: 'О нас',
                   description: 'Купить футболки, свитшоты, толстовки и худи с уникальным дизайном без вложений'
         @product= Product.all;
+        @blogger= Blogger.new;
+
   end
 
   def help

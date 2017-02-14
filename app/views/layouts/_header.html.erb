@@ -11,7 +11,7 @@
           <!-- Logo
           ============================================= -->
           <div id="logo">
-            <%= link_to root_path, class: "standard-logo" do %><%= image_tag 'logo.png', alt: "Canvas Logo" %><% end %>
+            <%= link_to root_path, class: "standard-logo" do %><%= image_tag 'logo_n.png', alt: "Canvas Logo" %><% end %>
             <%= link_to root_path, class: "retina-logo" do %><%= image_tag 'logo@2x.png', alt: "Canvas Logo" %><% end %>
           </div><!-- #logo end -->
 
@@ -38,12 +38,12 @@
             <!-- Top Cart
             ============================================= -->
             <div id="top-cart">
-              <%= link_to cart_path(@cart.id), id: "top-cart-trigger" do%><i class="icon-shopping-cart"></i><span><%= render 'layouts/cart_count' %></span><% end %>
+              <a id="top-cart-trigger"><i class="icon-shopping-cart"></i><span id="cart_count"><%=@cart.total_count%></span></a>
               <div class="top-cart-content">
                 <div class="top-cart-title">
                   <h4>Shopping Cart</h4>
                 </div>
-                <div class="top-cart-items">
+                <div class="top-cart-items" id="cart-items">
                  <% @cart.line_items.each do |line_item| %>
                   <div class="top-cart-item clearfix">
 
@@ -54,15 +54,15 @@
                     <div class="top-cart-item-desc">
                       <a href="#"><%= line_item.product.title %></a>
                       <span class="top-cart-item-price"><%= line_item.size.name %><br><%= line_item.total_price %> руб.</span>
-                      <span class="top-cart-item-quantity">x <%= line_item.total_count %></span>
+                      <span class="top-cart-item-quantity">x <%= line_item.total_count %><br><br><%= link_to line_item_path(line_item.id), :method => :delete,  remote:true, class: "remove" do %><i class="icon-trash2"></i><% end %></span>
                     </div>
 
                   </div>
                    <% end %> 
                 </div>
                 <div class="top-cart-action clearfix">
-                  <span class="fleft top-checkout-price"><%= @cart.total_price %> руб.</span>
-                  <%= link_to cart_path(@cart.id), class: "button button-3d button-small nomargin fright" do %>Корзина <% end %>
+                  <span class="fleft top-checkout-price" id="cart-total"><%= @cart.total_price %> руб.</span>
+                  <%= link_to new_order_path, class: "button button-3d button-small nomargin fright" do %>Оформить <% end %>
                 </div>
               </div>
             </div><!-- #top-cart end -->

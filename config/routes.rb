@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   
  
+  resources :bloggers
   get 'support/aboutus'
   get 'support/help'
   get 'support/contact'

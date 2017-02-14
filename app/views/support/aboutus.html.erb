@@ -1,21 +1,34 @@
 <% content_for :title, "О нас" %>   
 
 		
-		<!-- Page Title
+		<!-- Slider
 		============================================= -->
-		<section id="page-title" class="page-title-mini">
+		<section id="slider">
 
-			<div class="container clearfix">
-				<h1>About Us</h1>
-				<span>Everything you need to know about our Company</span>
-				<ol class="breadcrumb">
-					<li><a href="#">Home</a></li>
-					<li><a href="#">Pages</a></li>
-					<li class="active">About Us</li>
-				</ol>
+			<div class="section parallax swiper_wrapper nopadding nomargin noborder ohidden" style="background-image: url('/assets/IMG_4746.JPG');" data-stellar-background-ratio="0.3">
+
+				<div class="container center">
+					<div class="vertical-middle">
+
+						<div class="emphasis-title">
+							<h1 class="t600 ls4 uppercase bottommargin-sm" style="font-size: 48px;">Блог <span class="nocolor hidden-xs">/</span> Паблик <span class="nocolor hidden-xs">/</span> Канал <span class="nocolor hidden-xs">/</span> Ресурс</h1>
+							<p class="lead">Закрываем вопросы с мерчом под ключ</p>
+						</div>
+						<a href="#" class="button button-dark t400 ls2 button-rounded" data-scrollto="#section-contact" data-easing="easeInOutExpo" data-speed="1250" data-offset="70">Свяжитесь с нами</a>
+						<a href="#" class="button button-border button-rounded" data-scrollto="#section-works" data-easing="easeInOutExpo" data-speed="1250" data-offset="70">Наши работы</a>
+
+					</div>
+				</div>
+
+				<div class="video-wrap">
+					<div class="video-overlay" style="background: rgba(255,255,255,0.8);"></div>
+				</div>
+
 			</div>
 
-		</section><!-- #page-title end -->
+		</section><!-- #slider end -->
+
+
 
 		<!-- Content
 		============================================= -->
@@ -25,41 +38,23 @@
 
 				<div class="container clearfix">
 
-					<div class="col_full">
-
-						<div class="heading-block center nobottomborder">
-							<h2>Платформа для блоггеров и пабликов</h2>
-							<span>Создаем вместе одежду которую будут покупать ваши подписчики</span>
-						</div>
-
-						<div class="fslider" data-pagi="false" data-animation="fade">
-							<div class="flexslider">
-								<div class="slider-wrap">
-									<div class="slide"><a href="#"><%= image_tag 'IMG_4746.JPG', alt: "About Image" %></a></div>
-									<div class="slide"><a href="#"><%= image_tag '16w800.jpg', alt: "About Image" %></a></div>
-									<div class="slide"><a href="#"><%= image_tag '3811w1.jpg', alt: "About Image" %></a></div>
-								</div>
-							</div>
-						</div>
-
-					</div>
 
 
 
 
-					<div class="clear"></div>
 
 
 
-				<div class="divider divider-short divider-center"><i class="icon-circle"></i></div>
 
 					<div class="col_full nobottommargin clearfix">
-					<div id="section-contact" class="heading-block title-center page-section">
-						<h3>95% блоггеров и пабликов с которыми мы работаем успешно продают свою одежду</h3>
-						
-					</div>
+						<div  class="heading-block title-center page-section">
+							<h2 class="divcenter bottommargin font-body" style="max-width: 700px; font-size: 40px;">Индивидуальный подход</h2>
 
-						<div class="masonry-thumbs col-6" data-big="3" data-lightbox="gallery">
+							<p class="lead divcenter bottommargin" style="max-width: 800px;">Создаем вместе с Вами мерч премиум качества</p>
+							
+						</div>
+
+						<div class="masonry-thumbs col-6" id="section-works" data-big="3" data-lightbox="gallery">
 							<% @product.each_with_index do |product,index| %>
 							<% if index < 13 %>
 							<a href="" data-lightbox="gallery-item">
@@ -71,72 +66,23 @@
 						</div>
 
 					</div>
-				<div id="section-services" class="page-section notoppadding">
+				<div id="section-contact" class="page-section notoppadding">
 
-					<div class="section nomargin">
-						<div class="container clearfix">
-							<div class="divcenter center" style="max-width: 900px;">
-								<h2 class="nobottommargin t300 ls1">We enjoy working on the Services &amp; Products we provide as much as you need them. This help us in delivering your Goals easily. Browse through the wide range of services we provide.</h2>
+
+
+					<div class="container clearfix">
+
+						<div class="divcenter topmargin" style="max-width: 850px;">
+
+							<div class="contact-widget">
+
+								<div class="contact-form-result"></div>
+
+								<%= render 'bloggers/form' %>
+
+
 							</div>
-						</div>
-					</div>
 
-					<div class="common-height clearfix">
-
-						<div class="col-md-4 hidden-xs" style="background: url('images/services/main-bg.jpg') center center no-repeat; background-size: cover;"></div>
-						<div class="col-md-8">
-							<div class="max-height">
-								<div class="row common-height grid-border clearfix">
-									<div class="col-md-4 col-sm-6 col-padding">
-										<div class="feature-box fbox-center fbox-dark fbox-plain fbox-small nobottomborder">
-											<div class="fbox-icon">
-												<a href="#"><i class="icon-et-mobile"></i></a>
-											</div>
-											<h3>Responsive Framework</h3>
-										</div>
-									</div>
-									<div class="col-md-4 col-sm-6 col-padding">
-										<div class="feature-box fbox-center fbox-dark fbox-plain fbox-small nobottomborder">
-											<div class="fbox-icon">
-												<a href="#"><i class="icon-et-presentation"></i></a>
-											</div>
-											<h3>Beautifully Presented</h3>
-										</div>
-									</div>
-									<div class="col-md-4 col-sm-6 col-padding">
-										<div class="feature-box fbox-center fbox-dark fbox-plain fbox-small nobottomborder">
-											<div class="fbox-icon">
-												<a href="#"><i class="icon-et-puzzle"></i></a>
-											</div>
-											<h3>Extensively Extendable</h3>
-										</div>
-									</div>
-									<div class="col-md-4 col-sm-6 col-padding">
-										<div class="feature-box fbox-center fbox-dark fbox-plain fbox-small nobottomborder">
-											<div class="fbox-icon">
-												<a href="#"><i class="icon-et-gears"></i></a>
-											</div>
-											<h3>Powerfully Customizable</h3>
-										</div>
-									</div>
-									<div class="col-md-4 col-sm-6 col-padding">
-										<div class="feature-box fbox-center fbox-dark fbox-plain fbox-small nobottomborder">
-											<div class="fbox-icon">
-												<a href="#"><i class="icon-et-genius"></i></a>
-											</div>
-											<h3>Geniusly Transformable</h3>
-										</div>
-									</div>
-									<div class="col-md-4 col-sm-6 col-padding">
-										<div class="feature-box fbox-center fbox-dark fbox-plain fbox-small nobottomborder">
-											<div class="fbox-icon">
-												<a href="#"><i class="icon-et-hotairballoon"></i></a>
-											</div>
-											<h3>Industrial Support</h3>
-										</div>
-									</div>
-								</div>
-							</div>
 						</div>
 
 					</div>
