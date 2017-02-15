@@ -50,15 +50,15 @@
 						<div  class="heading-block title-center page-section">
 							<h2 class="divcenter bottommargin font-body" style="max-width: 700px; font-size: 40px;">Индивидуальный подход</h2>
 
-							<p class="lead divcenter bottommargin" style="max-width: 800px;">Создаем вместе с Вами мерч премиум качества</p>
+							<p class="lead divcenter bottommargin" style="max-width: 800px;">Создаем вместе с Вами одежду премиум качества</p>
 							
 						</div>
 
 						<div class="masonry-thumbs col-6" id="section-works" data-big="3" data-lightbox="gallery">
 							<% @product.each_with_index do |product,index| %>
 							<% if index < 13 %>
-							<a href="" data-lightbox="gallery-item">
-							<%= image_tag product.images.first.photo(:thumb), alt: "Gallery Thumb " %></a>
+							<a href="<%= product.images.first.photo(:medium) %>" data-lightbox="gallery-item">
+							<%= image_tag product.images.first.photo(:thumb), alt: "Gallery Thumb 1" %></a>
 							<% end %>
 							<% end %>
 							
@@ -66,11 +66,63 @@
 						</div>
 
 					</div>
+
+				<div class="divider divider-center"><i class="icon-circle"></i></div>
+
+
+		          <!-- Content
+					============================================= -->
+					<div class="clear"></div>
+						<div  class="heading-block title-center page-section">
+							<h2 class="divcenter bottommargin font-body" style="max-width: 700px; font-size: 40px;">Как мы работаем</h2>
+
+							<p class="lead divcenter bottommargin" style="max-width: 800px;"></p>
+							
+						</div>
+
+
+					<div class="col_one_third">
+						<div class="feature-box fbox-center fbox-bg fbox-light fbox-effect">
+							<div class="fbox-icon">
+								<a href="#"><i class="i-alt">1</i></a>
+							</div>
+							<h3>Изготавливаем вместе с Вами образец мерча<span class="subtitle">Шаг 1</span></h3>
+						</div>
+					</div>
+
+					<div class="col_one_third">
+						<div class="feature-box fbox-center fbox-bg fbox-border fbox-effect">
+							<div class="fbox-icon">
+								<a href="#"><i>2</i></a>
+							</div>
+							<h3>Создаем магазин на нашей платформе<span class="subtitle">Шаг 2</span></h3>
+						</div>
+					</div>
+
+					<div class="col_one_third col_last">
+						<div class="feature-box fbox-center fbox-bg fbox-outline fbox-dark fbox-effect">
+							<div class="fbox-icon">
+								<a href="#"><i class="i-alt">3</i></a>
+							</div>
+							<h3>Занимаемся всей операционной частью<span class="subtitle">Шаг 3</span></h3>
+						</div>
+					</div>
+
+					<div class="clear"></div>
+
+
+
+				<div class="divider divider-center"><i class="icon-circle"></i></div>
+
+
 				<div id="section-contact" class="page-section notoppadding">
 
 
 
 					<div class="container clearfix">
+						<div  class="center page-section">
+							<h2 class="center uppercase t300 ls3 font-body" >Свяжитесь с нами</h2>
+						</div>
 
 						<div class="divcenter topmargin" style="max-width: 850px;">
 
