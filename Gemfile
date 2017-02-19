@@ -67,6 +67,9 @@ gem 'owlcarousel-rails'
 gem 'cloud_payments'
 gem 'activeadmin', github: 'activeadmin'
 
+# cloud payments
+gem 'cloud_payments'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

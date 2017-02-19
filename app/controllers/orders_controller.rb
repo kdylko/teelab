@@ -29,6 +29,7 @@ class OrdersController < ApplicationController
 
   # GET /orders/1/edit
   def edit
+
   end
 
   def confirm
@@ -43,12 +44,12 @@ class OrdersController < ApplicationController
     @delivery = Delivery.all
     @order.user_id = current_user.id if current_user
 
+
     respond_to do |format|
       if @order.save
-        Cart.destroy(session[:cart_id])
-        session[:cart_id] = nil
-        format.html { redirect_to support_confirm_path }
-        format.js   {}
+
+        format.html { redirect_to order_path(@order) }
+
         format.json { render :show, status: :created, location: @order }
       else
         
@@ -61,12 +62,19 @@ class OrdersController < ApplicationController
   # PATCH/PUT /orders/1
   # PATCH/PUT /orders/1.json
   def update
+    @order = Order.find_by(cart_id: session[:cart_id])
+    @order.pay = "paid"
     respond_to do |format|
       if @order.update(order_params)
+        Cart.destroy(session[:cart_id])
+        session[:cart_id] = nil       
+        cart.line_items.each do |item|
+             item.cart_id = nil
+        end
 
-        format.html { redirect_to @order, notice: 'Order was successfully updated.' }
+        format.html { redirect_to support_confirm_path }
         OrderNotifier.received(@order).deliver
-        format.js   {}
+
         format.json { render :show, status: :ok, location: @order }
       else
         format.html { render :edit }
@@ -93,6 +101,6 @@ class OrdersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_params
-      params.require(:order).permit(:name, :address, :email, :phone, :order_clientid, :delivery_price, :delivery_id, :order_amount)
+      params.require(:order).permit(:name, :address, :email, :phone, :order_clientid, :delivery_price, :delivery_id, :order_amount, :pay)
     end
 end

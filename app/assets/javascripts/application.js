@@ -23,8 +23,6 @@
 
 
 
-//= require plugins
-//= require functions
 
 
 

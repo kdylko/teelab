@@ -151,7 +151,7 @@
                       </td>
 
                       <td class="cart-product-name">
-                        <span class="amount">Free Delivery</span>
+                        <span class="amount" id="deliv">Free Delivery</span><span class="amount"> руб.</span>
                       </td>
                     </tr>
                     <tr class="cart_item">
@@ -160,15 +160,21 @@
                       </td>
 
                       <td class="cart-product-name">
-                        <span class="amount color lead" ><strong id="total"><%= @cart.total_price %> руб.</strong></span>
+                        <span class="amount color lead" ><strong id="total"><%= @cart.total_price %></strong></span><span class="amount color lead" ><strong > руб.</strong></span>
                       </td>
                     </tr>
                   </tbody>
                 </table>
 
+
+              <div id="updated">
+
+              </div>
+
               </div>
 
               <a class="button button-3d fright" id="sb">Оплатить</a>
+
             </div>
 
 
@@ -185,6 +191,7 @@
         </div>
 
       </div>
+    <%= link_to "Update", order_path(42), :method => :put, :action => :update %>
 
     </section><!-- #content end -->
 
@@ -237,7 +244,7 @@
 
             },
             function (options) { 
-              $("#new_order").submit();
+
             },
             function (reason, options) { 
             });

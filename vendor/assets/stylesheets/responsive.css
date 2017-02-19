@@ -1620,7 +1620,7 @@
 
 	.full-screen:not(.force-full-screen) .container.vertical-middle { width: 310px !important; }
 
-	#top-cart { display: none; }
+	#top-search { display: none; }
 
 	#top-search a { right: 15px; }
 

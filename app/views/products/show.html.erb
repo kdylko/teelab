@@ -134,18 +134,18 @@
 
               <div class="col_full nobottommargin">
 
-                <div class="tabs clearfix nobottommargin" id="tab-1">
 
-                  <ul class="nav nav-tabs boot-tabs clearfix">
-                    <li><a href="#tabs-1"><i class="icon-align-justify2"></i><span class="hidden-xs"> Таблица размеров</span></a></li>
-                    <li><a href="#tabs-2"><i class="icon-info-sign"></i><span class="hidden-xs"> Доставка</span></a></li>
+
+                  <ul id="myTab" class="nav nav-tabs boot-tabs">
+                    <li><a href="#tabs-1" data-toggle="tab"><i class="icon-align-justify2"></i><span class="hidden-xs"> Таблица размеров</span></a></li>
+                    <li><a href="#tabs-2" data-toggle="tab"><i class="icon-info-sign"></i><span class="hidden-xs"> Доставка</span></a></li>
 
                   </ul>
 
-                  <div class="tab-container">
+                  <div id="myTabContent" class="tab-content">
 
-                    <div class="tab-content clearfix" id="tabs-1">
-                             <table class="table">
+                    <div class="tab-pane fade in active" id="tabs-1">
+                             <table class="table table-striped">
                               <thead>
                               <% @sizetable.each_with_index do |sizetable, index| %>
                               <% if index < 1 %>
@@ -173,7 +173,10 @@
                            </table>
 
                     </div>
-                    <div class="tab-content clearfix" id="tabs-2">
+                    
+
+                    
+                    <div class="tab-pane fade" id="tabs-2">
 
                     <p> <strong> Самовывоз </strong><br> Самостоятельно забрать покупку можно у нас в офисе по адресу: ул. Рочдельская 15, к. 17-18, в будние дни с 10 утра и до 7 вечера, предварительно согласовав по телефону приезд.</p>
                     <p> <strong> Курьерская доставка </strong><br> Курьерескую доставку осуществляет наш партнер компания DPD. Доставка осуществляется в короткие сроки во все города таможенного союза. В том числе: Беларусь, Казахстан, Армения.</p>
@@ -186,7 +189,9 @@
 
                 </div>
 
-              </div>
+
+
+
 
             </div>
 

@@ -1,7 +1,8 @@
-<%= form_for [:user, @product], html: { multipart: true } do |f| %>
+<div class="acc_content">
+<%= form_for [:user, @product], html: { multipart: true, class: "nobottommargin" } do |f| %>
   <% if @product.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
+      <h3>Исправьте следующие ошибки:</h3>
 
       <ul>
       <% @product.errors.full_messages.each do |message| %>
@@ -11,39 +12,40 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label 'Название кампании' %>
-    <%= f.text_field :title %>
+
+  <div class="col_full">
+    <%= f.label_tag :title, 'Название:' %>
+    <%= f.text_field(:title, class: "form-control") %>
   </div>
-  <div class="field">
-    <%= f.label 'Описание' %>
-    <%= f.text_area :description %>
+  <div class="col_full">
+    <%= f.label_tag :description, 'Описание:' %>
+    <%= f.text_area(:description, class: "form-control")  %>
   </div>
-  <div class="field">
-    <%= f.label 'URL' %>
-    <%= f.text_field :url_name %>
+  <div class="col_full">
+    <%= f.label_tag :url_name, 'URL:' %>
+    <%= f.text_field(:url_name, class: "form-control") %>
   </div>
-  <div class="field">
-    <%= f.label 'Цена' %>
-    <%= f.text_field :price %>
+  <div class="col_full">
+    <%= f.label_tag :price, 'Цена:' %>
+    <%= f.text_field(:price, class: "form-control") %>
   </div>
-    <div class="field">
-    <%= f.label 'Фасон' %>
+    <div class="col_full">
+    <%= f.label_tag 'Фасон:' %>
     <%= f.collection_select :style_id, Style.order(:name),:id,:name, include_blank: false %>
     <%= f.hidden_field :category, value: 'all' %>
   </div>
-  <div class="field">
-    <%= f.label 'Ваш username в инстаграм (для того чтобы было видно что Вы создали дизайн)' %>
-    <%= f.text_field :instagram_name %>
+  <div class="col_full">
+    <%= f.label_tag :instagram_name, 'Ваш username в инстаграм (для того, чтобы было видно, что Вы создали дизайн):' %>
+    <%= f.text_field(:instagram_name, class: "form-control") %>
   </div>
-  <div class="field">
-    <%= f.label 'Загрузка изображения'  %>
+  <div class="col_full">
+    <%= f.label_tag 'Загрузка изображения:'  %>
     <%= file_field_tag "photos[]", type: :file, multiple: true %>
   </div>
-  
 
   <div class="actions">
     
-    <%= f.submit :Создать , class: "button" %>
+    <%= f.submit :Создать , class: "button button-3d button-black nomargin" %>
   </div>
 <% end %>
+</div>

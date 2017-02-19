@@ -8,6 +8,8 @@
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag "application", :media => "all" %>
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <script src="https://widget.cloudpayments.ru/bundles/cloudpayments"></script>
 
     <!-- For third-generation iPad with high-resolution Retina display: -->
     <!-- Size should be 144 x 144 pixels -->
@@ -57,7 +59,7 @@
           
           <%= yield %>
 
-      
+
 
         <%= render "layouts/footer" %>
 
@@ -66,7 +68,9 @@
     ============================================= -->
     <div id="gotoTop" class="icon-angle-up"></div>
 
-    <%= javascript_include_tag "application" %> 
+    <%= javascript_include_tag "functions", 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag "plugins", 'data-turbolinks-track' => true %>
+
   </body>
    
 </html>
