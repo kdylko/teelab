@@ -52,7 +52,7 @@
 
                 <!-- Product Single - Price
                 ============================================= -->
-                <div class="product-price"><%= @product.price %> руб.</div><!-- Product Single - Price End -->
+                <div class="product-price"><%= @product.price.round %> руб.</div><!-- Product Single - Price End -->
 
                 <!-- Product Single - Rating
                 ============================================= -->
@@ -65,30 +65,26 @@
                 ============================================= -->
                 <%= form_tag({controller: "line_items", action: "create"}, method: "post", enctype: "multipart/form-data", remote: true, class: "fcart nobottommargin clearfix") do %>
                     <%= hidden_field_tag :product_id,  @product.id %>
-                    <div class="white-section col-md-6">
-                      <%= select_tag "size_id", options_from_collection_for_select(@size, "id", "name"), class: "selectpicker" %>
+                    <div class="col-full">
+                      <%= select_tag "size_id", options_from_collection_for_select(@size, "id", "name"), class: "sm-form-control" %>
                       <% if @product.colors.present? %>
-                            <%= select_tag "colorid", options_from_collection_for_select(@product.colors, "id", "name"), class: "selectpicker" %>
+                            <br>
+                            <%= select_tag "colorid", options_from_collection_for_select(@product.colors, "id", "name"), class: "sm-form-control" %>
                       <% end %>
                     </div>  
-                    <%= submit_tag "Добавить в корзину", remote: true, :onclick => "alert('Товар успешно добавлен в корзину')", class: "add-to-cart button nomarginn" %>
+                    <div class="line"></div>
+                    <%= submit_tag "Добавить в корзину", remote: true, :onclick => "alert('Товар успешно добавлен в корзину')", class: "add-to-cart button nomargin" %>
                 <% end %>
 
 
                 <div class="clear"></div>
                 <div class="line"></div>
 
-                <!-- Product Single - Short Description
-                ============================================= -->
                 <p><%= @product.title %></p> <br>
 
                 <% if @product.style.description.present? %>
                   <p><%= @product.style.description %></p> <br>
                 <% end %>
-                <% if @product.instagram_name.present? %>
-                <p>Designed by <%= @product.instagram_name %>  &nbsp  <%= link_to "https://www.instagram.com/#{@product.instagram_name}" do %> <%= image_tag @product.avatar_url, size: "40x40", style: "border-radius:50%;" %> <% end %></p>
-                <% end %>
-                <!-- Product Single - Short Description End -->
 
 
 
@@ -97,8 +93,14 @@
               </div>
 
               <div class="col_one_fifth col_last">
+                <!-- Product Single - Short Description
+                ============================================= -->
 
-                <a href="#" title="Brand Logo" class="hidden-xs"><%= image_tag 'logo_n.png', class: "image_fade", alt: "Canvas Logo" %></a>
+                <% if @product.instagram_name.present? %>
+                <p>Designed by <%= @product.instagram_name %>  &nbsp  <%= link_to "https://www.instagram.com/#{@product.instagram_name}" do %> <%= image_tag @product.avatar_url, size: "40x40", style: "border-radius:50%;" %> <% end %></p>
+                <% end %>
+                <!-- Product Single - Short Description End -->
+                
 
                 <div class="divider divider-center"><i class="icon-circle-blank"></i></div>
 
@@ -123,7 +125,7 @@
                     <i class="icon-truck2"></i>
                   </div>
                   <h3>Доставка</h3>
-                  <p class="notopmargin">Отправляем товар два раза в неделю удобным для Вас способом.</p>
+                  <p class="notopmargin">Отправляем два раза в неделю удобным для Вас способом.</p>
                 </div>
 
 
