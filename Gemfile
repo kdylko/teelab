@@ -20,6 +20,8 @@ gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'jquery-turbolinks'
 gem 'jquery-validation-rails'
+
+gem 'i18n', '~> 0.7.0'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -46,6 +48,7 @@ gem 'inky-rb', require: 'inky'
 gem 'premailer-rails'
 
 # bootstrap
+
 gem "therubyracer"
 gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
 gem "twitter-bootstrap-rails"
