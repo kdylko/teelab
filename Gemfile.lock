@@ -334,6 +334,7 @@ DEPENDENCIES
   better_errors
   byebug
   capistrano
+  capistrano-bundler (~> 1.2)
   capistrano-linked-files
   capistrano-passenger
   capistrano-rails

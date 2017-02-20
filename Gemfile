@@ -83,6 +83,7 @@ gem 'rvm-capistrano'
 gem 'capistrano'
 gem 'capistrano-secrets-yml'
 gem 'capistrano-linked-files'
+gem 'capistrano-bundler', '~> 1.2'
 
 group :development do
   gem 'better_errors'
