@@ -4,18 +4,18 @@
 en:
   breadcrumbs:
     application:
-      root: "Index"
+      root: "Главная"
     pages:
-      pages: "Pages"
+      pages: "Страницы"
   helpers:
     actions: "Actions"
     links:
-      back: "Back"
-      cancel: "Cancel"
-      confirm: "Are you sure?"
-      destroy: "Delete"
-      new: "New"
-      edit: "Edit"
+      back: "Назад"
+      cancel: "Отменить"
+      confirm: "Вы уверены?"
+      destroy: "Удалить"
+      new: "Новый"
+      edit: "Изменить"
     titles:
       edit: "Edit %{model}"
       save: "Save %{model}"

@@ -1,9 +1,11 @@
 <%if notice.present? || alert.present? %>
-  <div class="row">
-    <%is_alert = alert.present? ? "alert" : ""%>
-      <div data-alert class="alert-box <%=is_alert%>">
-        <%=notice || alert%>
-        <a href="#" class="close">&times;</a>
-      </div>
+  <div class="container clearfix">
+	  <div class="nobottommargin clearfix">
+	    <%is_alert = alert.present? ? "alert" : ""%>
+	      <div data-alert class="style-msg <%=is_alert%>">
+	        <%=notice || alert%>
+	        <a href="#" class="close" data-dismiss="alert" aria-hidden="true">&times;</a>
+	      </div>
+	  </div>
   </div>
 <%end%>

@@ -1,7 +1,7 @@
 class OrdersController < ApplicationController
   include CurrentCart
 
-  before_action :set_cart, only: [:new, :create]
+  before_action :set_cart, only: [:new, :create, :update, :show]
   before_action :set_order, only: [:show, :edit, :update, :destroy]
 
   # GET /orders
@@ -13,6 +13,7 @@ class OrdersController < ApplicationController
   # GET /orders/1
   # GET /orders/1.json
   def show
+    @order= Order.find(params[:id])
   end
 
   # GET /orders/new
@@ -62,18 +63,15 @@ class OrdersController < ApplicationController
   # PATCH/PUT /orders/1
   # PATCH/PUT /orders/1.json
   def update
-    @order = Order.find_by(cart_id: session[:cart_id])
+
     @order.pay = "paid"
+
     respond_to do |format|
       if @order.update(order_params)
         Cart.destroy(session[:cart_id])
-        session[:cart_id] = nil       
-        cart.line_items.each do |item|
-             item.cart_id = nil
-        end
-
+        session[:cart_id] = nil   
         format.html { redirect_to support_confirm_path }
-        OrderNotifier.received(@order).deliver
+
 
         format.json { render :show, status: :ok, location: @order }
       else

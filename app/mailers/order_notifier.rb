@@ -8,7 +8,7 @@ class OrderNotifier < ApplicationMailer
   # rails/mailers/notifier/
   def received(order)
     
-    @order = order
+    @order = Order.first
     @delivery = Delivery.all
     mail to: @order.email, subject: 'Заказ в Teelab.ru'
   end

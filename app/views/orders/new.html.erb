@@ -32,7 +32,7 @@
               <p>В поле адрес указывайте в том числе город доставки. В случае самвывоза, в поле адрес укажите "Москва".</p>
 
 
-                <%= form_for(@order, remote: true, id: "billing-form", class: "nobottommargin", id: "new_order" ) do |f|  %>
+                <%= form_for(@order, id: "billing-form", class: "nobottommargin", id: "new_order" ) do |f|  %>
                 <% if @order.errors.any? %>
                   <div id="error_explanation">
                     <h2><%= pluralize(@order.errors.count, "error") %> prohibited this order from being saved:</h2>
@@ -82,7 +82,7 @@
                 </div>
                 <%= f.hidden_field :order_clientid, value: @order_clientid %>
                 <%= f.hidden_field :order_amount, value: @cart.total_price %>
-                <%= f.submit %>
+
 
               <% end %>
             </div>
@@ -191,7 +191,7 @@
         </div>
 
       </div>
-    <%= link_to "Update", order_path(42), :method => :put, :action => :update %>
+
 
     </section><!-- #content end -->
 
@@ -244,6 +244,7 @@
 
             },
             function (options) { 
+            
 
             },
             function (reason, options) { 
@@ -255,7 +256,7 @@
     $("#sb").on("click", function() {
         if ($("#new_order").valid()) {
           $("#new_order").submit();
-            payHandler();
+
         }
 
     });

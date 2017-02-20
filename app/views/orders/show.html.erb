@@ -1,1 +1,47 @@
-<p id="notice"><%= notice %></p>
+
+
+
+
+
+
+
+
+<%= javascript_tag do %>
+
+        function codeAddress() {
+			   <%= render 'form_pay' %>;
+          	$("#pay").submit();
+        }
+        window.onload = codeAddress;
+
+
+
+  
+
+ 
+  var payHandler = function () {
+
+    
+        var widget = new cp.CloudPayments();
+        widget.auth({ // options
+                publicId: 'pk_2cdd5b0bd7978802123946d757d4f',
+                description: 'Оплата в teelab.ru',
+                amount: <%= @order.order_amount %>, //сумма
+                currency: 'RUB',
+                invoiceId: '<%= @order.order_clientid %>', //номер заказа
+
+            },
+            function (options) { 
+			<%= render 'form_pay' %>;
+          	$("#pay").submit();
+            },
+            function (reason, options) { 
+            });
+  };
+
+
+
+
+    
+
+<% end %>

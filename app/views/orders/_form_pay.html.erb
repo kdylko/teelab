@@ -1,0 +1,13 @@
+ <%= form_for(@order, id: "pay") do |f|  %>
+
+
+
+    <div class="field">
+      <%= f.hidden_field :pay, value: "paid" %>
+    </div>
+
+        <div class="field">
+      <%= f.submit 'Pay' %>
+    </div>
+
+ <% end %>

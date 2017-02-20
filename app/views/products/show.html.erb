@@ -37,7 +37,7 @@
                       <div class="slider-wrap" data-lightbox="gallery">
 
                         <% @product.images.each do |image| %>
-                          <div class="slide" data-thumb="images/shop/thumbs/dress/3.jpg"><%= image_tag image.photo(:medium), alt: @product.title %></div>
+                          <div class="slide" data-thumb="<%= image.photo(:thumb) %>"><%= image_tag image.photo(:medium), alt: @product.title %></div>
 
                         <% end %>
                       </div>
@@ -56,13 +56,7 @@
 
                 <!-- Product Single - Rating
                 ============================================= -->
-                <div class="product-rating">
-                  <i class="icon-star3"></i>
-                  <i class="icon-star3"></i>
-                  <i class="icon-star3"></i>
-                  <i class="icon-star-half-full"></i>
-                  <i class="icon-star-empty"></i>
-                </div><!-- Product Single - Rating End -->
+
 
                 <div class="clear"></div>
                 <div class="line"></div>
@@ -71,10 +65,12 @@
                 ============================================= -->
                 <%= form_tag({controller: "line_items", action: "create"}, method: "post", enctype: "multipart/form-data", remote: true, class: "fcart nobottommargin clearfix") do %>
                     <%= hidden_field_tag :product_id,  @product.id %>
-                    <%= select_tag "size_id", options_from_collection_for_select(@size, "id", "name"), class: " btn btn-default dropdown-toggle" %>
-                    <% if @product.colors.present? %>
-                          <%= select_tag "colorid", options_from_collection_for_select(@product.colors, "id", "name"), class: "qty" %>
-                    <% end %>
+                    <div class="white-section col-md-6">
+                      <%= select_tag "size_id", options_from_collection_for_select(@size, "id", "name"), class: "selectpicker" %>
+                      <% if @product.colors.present? %>
+                            <%= select_tag "colorid", options_from_collection_for_select(@product.colors, "id", "name"), class: "selectpicker" %>
+                      <% end %>
+                    </div>  
                     <%= submit_tag "Добавить в корзину", remote: true, :onclick => "alert('Товар успешно добавлен в корзину')", class: "add-to-cart button nomarginn" %>
                 <% end %>
 
@@ -89,7 +85,9 @@
                 <% if @product.style.description.present? %>
                   <p><%= @product.style.description %></p> <br>
                 <% end %>
-
+                <% if @product.instagram_name.present? %>
+                <p>Designed by <%= @product.instagram_name %>  &nbsp  <%= link_to "https://www.instagram.com/#{@product.instagram_name}" do %> <%= image_tag @product.avatar_url, size: "40x40", style: "border-radius:50%;" %> <% end %></p>
+                <% end %>
                 <!-- Product Single - Short Description End -->
 
 
@@ -100,7 +98,7 @@
 
               <div class="col_one_fifth col_last">
 
-                <a href="#" title="Brand Logo" class="hidden-xs"><img class="image_fade" src="images/shop/brand.jpg" alt="Brand Logo"></a>
+                <a href="#" title="Brand Logo" class="hidden-xs"><%= image_tag 'logo_n.png', class: "image_fade", alt: "Canvas Logo" %></a>
 
                 <div class="divider divider-center"><i class="icon-circle-blank"></i></div>
 
