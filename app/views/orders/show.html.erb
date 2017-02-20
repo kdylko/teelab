@@ -1,22 +1,17 @@
 
 
-
-
-
+<div id="render">
+</div>
 
 
 
 <%= javascript_tag do %>
 
         function codeAddress() {
-			   <%= render 'form_pay' %>;
-          	$("#pay").submit();
+        payHandler();
         }
         window.onload = codeAddress;
 
-
-
-  
 
  
   var payHandler = function () {
@@ -32,16 +27,12 @@
 
             },
             function (options) { 
-			<%= render 'form_pay' %>;
-          	$("#pay").submit();
+             $("#render").html("<%= escape_javascript render('form_pay')%>");
+  			     $("#edit_order_<%= @order.id %>").submit();
             },
             function (reason, options) { 
+            history.go(-1);
             });
   };
-
-
-
-
-    
 
 <% end %>

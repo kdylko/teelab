@@ -71,7 +71,7 @@ class OrdersController < ApplicationController
         Cart.destroy(session[:cart_id])
         session[:cart_id] = nil   
         format.html { redirect_to support_confirm_path }
-
+        OrderNotifier.received(@order).deliver
 
         format.json { render :show, status: :ok, location: @order }
       else
