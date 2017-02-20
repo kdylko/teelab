@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/activeadmin/activeadmin.git
-  revision: 7ff122d580835d70cfc424bc251e70ab0ec51b3d
+  revision: 13ab1d63605570356a15aaeec74dadb0a0eb4a46
   specs:
     activeadmin (1.0.0.pre4)
       arbre (~> 1.0, >= 1.0.2)
@@ -214,7 +214,7 @@ GEM
     mysql2 (0.4.5)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
-    net-ssh (4.0.1)
+    net-ssh (4.1.0)
     nokogiri (1.7.0.1)
       mini_portile2 (~> 2.1.0)
     orm_adapter (0.5.0)
