@@ -359,7 +359,6 @@ DEPENDENCIES
   jquery-ui-rails
   jquery-validation-rails
   less-rails
-  libv8 (= 3.16.14.17)
   meta-tags
   mysql2
   owlcarousel-rails
