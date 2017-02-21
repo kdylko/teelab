@@ -48,7 +48,7 @@ gem 'inky-rb', require: 'inky'
 gem 'premailer-rails'
 
 # bootstrap
-
+gem 'libv8', '~> 3.16', '= 3.16.14.17'
 gem "therubyracer"
 gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
 gem "twitter-bootstrap-rails"
@@ -80,9 +80,9 @@ gem 'activeadmin', github: 'activeadmin'
 
 # Use Capistrano for deployment
 gem 'capistrano-rails', group: :development
-gem 'capistrano-rvm'
+gem 'capistrano-rvm', group: :development
 gem 'capistrano-passenger'
-gem 'rvm-capistrano'
+gem 'capistrano-rvm'
 gem 'capistrano'
 gem 'capistrano-secrets-yml'
 gem 'capistrano-linked-files'

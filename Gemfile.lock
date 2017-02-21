@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/activeadmin/activeadmin.git
-  revision: 13ab1d63605570356a15aaeec74dadb0a0eb4a46
+  revision: e9c65ab9c00345ddca4677ff81ca2082f18c2462
   specs:
     activeadmin (1.0.0.pre4)
       arbre (~> 1.0, >= 1.0.2)
@@ -275,8 +275,6 @@ GEM
     ref (2.0.0)
     responders (2.3.0)
       railties (>= 4.2.0, < 5.1)
-    rvm-capistrano (1.5.0)
-      capistrano (>= 2.15.4)
     sass (3.4.23)
     sass-rails (5.0.6)
       railties (>= 4.0.0, < 6)
@@ -361,6 +359,7 @@ DEPENDENCIES
   jquery-ui-rails
   jquery-validation-rails
   less-rails
+  libv8 (~> 3.16, = 3.16.14.17)
   meta-tags
   mysql2
   owlcarousel-rails
@@ -368,7 +367,6 @@ DEPENDENCIES
   premailer-rails
   quiet_assets
   rails (= 4.2.6)
-  rvm-capistrano
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   spring
