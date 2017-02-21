@@ -49,7 +49,7 @@ gem 'premailer-rails'
 
 # bootstrap
 gem 'libv8', '~> 3.16', '= 3.16.14.17'
-gem "therubyracer"
+gem 'therubyracer', :platform => :ruby
 gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
 gem "twitter-bootstrap-rails"
 gem "font-awesome-rails"
