@@ -1807,7 +1807,7 @@ only screen and (                min-resolution: 2dppx) {
 	.dark .owl-carousel.owl-loading,
 	.dark .preloader,
 	.dark .preloader2,
-	.dark .form-process { background-image: url('../images/preloader-dark@2x.gif'); }
+	.dark .form-process { background-image: url('/assets/preloader-dark@2x.gif'); }
 
 	.widget_recent_comments li {
 		background-image: url("../images/icons/widget-comment@2x.png");
@@ -1827,7 +1827,7 @@ only screen and (                min-resolution: 2dppx) {
 		background-size: 4px 20px;
 	}
 
-	.dark .widget_recent_comments li { background-image: url("../images/icons/widget-comment-dark@2x.png"); }
+	.dark .widget_recent_comments li { background-image: url("/assets/icons/widget-comment-dark@2x.png"); }
 
 	.dark .widget_nav_menu li a,
 	.dark .widget_links li a,
@@ -1837,7 +1837,7 @@ only screen and (                min-resolution: 2dppx) {
 	.dark .widget_categories li a,
 	.dark .widget_pages li a,
 	.dark .widget_rss li a,
-	.dark .widget_recent_comments li a { background-image: url("../images/icons/widget-link-dark@2x.png"); }
+	.dark .widget_recent_comments li a { background-image: url("/assets/icons/widget-link-dark@2x.png"); }
 
 }
 
