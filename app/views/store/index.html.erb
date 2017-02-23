@@ -44,7 +44,7 @@
                   </div>
                 </div>
               <div class="product-desc center">
-                <div class="product-title"><h3><a href="#"><%= product.title %></a></h3><h3><a href="#"><%= product.style.name %></a></h3></div>
+                <div class="product-title"><h3><%= link_to store_path(product.id) do %><%= product.title %><% end %></h3><h3></h3></div>
                 <div class="product-price"><ins><%= product.price %> руб.</ins></div>
 
               </div>
