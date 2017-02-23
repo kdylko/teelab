@@ -7875,7 +7875,7 @@ body:not(.device-touch) .button.button-full strong {
 	padding: 2px;
 	z-index: -1;
 	box-shadow: none;
-	background-image: url('<%= asset_url 'iconalt.svg' %>');
+	background-image: url();
 	background-position: center center;
 	background-size: 100% 100%;
 	-webkit-transition: -webkit-transform 0.5s, opacity 0.5s, background-color 0.5s;
@@ -8213,7 +8213,7 @@ body:not(.device-touch) .social-icon {
 }
 
 .i-alt {
-	background-image: url('<%= asset_url 'iconalt.svg' %>');
+	background-image: url();
 	background-position: center center;
 	background-size: 100% 100%;
 }
