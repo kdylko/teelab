@@ -1088,7 +1088,7 @@ body #side-panel.dark #side-panel-trigger-close a {
 .dark .widget_pages li a,
 .dark .widget_rss li a {
 	color: #CCC;
-	background-image: url("widget-link-dark.png");
+	background-image: url(' <%= asset_url 'widget-link-dark.png' %>');
 }
 
 .dark .widget_nav_menu li a:hover,
