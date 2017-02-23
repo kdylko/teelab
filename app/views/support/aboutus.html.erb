@@ -56,7 +56,7 @@
 
 						<div class="masonry-thumbs col-6" id="section-works" data-big="3" data-lightbox="gallery">
 							<% @product.each_with_index do |product,index| %>
-							<% if index < 13 %>
+							<% if index < 15 %>
 							<a href="<%= product.images.first.photo(:medium) %>" data-lightbox="gallery-item">
 							<%= image_tag product.images.first.photo(:thumb), alt: "Gallery Thumb 1" %></a>
 							<% end %>

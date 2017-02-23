@@ -35,11 +35,7 @@
                       <%= image_tag product.images.first.photo(:medium), alt: "Checked Short Dress" %>
                     <% end %>
                   <% end %>
-                  <%= link_to store_path(product.id) do %>
-                    <% if product.images.present? %>
-                      <%= image_tag product.images.second.photo(:medium), alt: "Checked Short Dress" %>
-                    <% end %>
-                  <% end %>
+
 
 
                   <div class="product-overlay">
