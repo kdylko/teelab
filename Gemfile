@@ -48,9 +48,7 @@ gem 'inky-rb', require: 'inky'
 gem 'premailer-rails'
 
 # bootstrap
-gem 'therubyracer'
-gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
-gem "twitter-bootstrap-rails"
+gem 'bootstrap-sass', '~> 3.3.6'
 gem "font-awesome-rails"
 
 # SEO
