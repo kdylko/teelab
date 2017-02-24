@@ -1775,7 +1775,7 @@ body:not(.device-sm):not(.device-xs):not(.device-xxs) #header.transparent-header
 	float: left;
 	margin-right: 15px;
 	width: 48px !important;
-	height: 48px !important;
+	height: 62px !important;
 	border: 2px solid #EEE;
 	-webkit-transition: border-color .2s linear;
 	-o-transition: border-color .2s linear;
@@ -1786,7 +1786,7 @@ body:not(.device-sm):not(.device-xs):not(.device-xxs) #header.transparent-header
 .top-cart-item-image img {
 	display: block;
 	width: 44px !important;
-	height: 44px !important;
+	height: 59px !important;
 }
 
 .top-cart-item-image:hover { border-color: #1ABC9C; }
@@ -6159,7 +6159,7 @@ body:not(.device-touch):not(.device-xs):not(.device-xxs) .product-overlay a {
 .cart-product-thumbnail img {
 	display: block;
 	width: 64px;
-	height: 64px;
+	height: 85px;
 	border: 2px solid #EEE;
 }
 

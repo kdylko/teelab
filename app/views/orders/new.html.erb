@@ -29,7 +29,7 @@
             <div class="col-md-6">
               <h3>Адрес Доставки</h3>
 
-              <p>В поле адрес указывайте в том числе город доставки. В случае самвывоза, в поле адрес укажите "Москва".</p>
+              <p>В поле адрес указывайте в том числе город доставки. В случае самовывоза, в поле адрес укажите "Москва".</p>
 
 
                 <%= form_for(@order, id: "billing-form", class: "nobottommargin", id: "new_order" ) do |f|  %>
@@ -65,13 +65,13 @@
                 </div>
 
                 <div class="col_half">
-                  <label for="billing-form-email">Email Address:</label>
+                  <label for="billing-form-email">Email:</label>
 
                   <%= f.text_field :email, :placeholder=>'email@email.com',:required => true , :pattern =>  "[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$", id: "billing-form-email", class: "sm-form-control" %>
                 </div>
 
                 <div class="col_half col_last">
-                  <label for="billing-form-phone">Phone:</label>
+                  <label for="billing-form-phone">Телефон:</label>
 
                   <%= f.text_field :phone, :placeholder=>'+7 909 909 0909', :required => true, :pattern =>  "^([0|\+[0-9]{1,5})?([1-9][0-9]{9})$", id: "billing-form-phone", class: "sm-form-control" %>
                 </div>
@@ -95,9 +95,9 @@
                   <thead>
                     <tr>
                       <th class="cart-product-thumbnail">&nbsp;</th>
-                      <th class="cart-product-name">Product</th>
-                      <th class="cart-product-quantity">Quantity</th>
-                      <th class="cart-product-subtotal">Total</th>
+                      <th class="cart-product-name">Товар</th>
+                      <th class="cart-product-quantity">Количество</th>
+                      <th class="cart-product-subtotal">Стоимость</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -132,7 +132,7 @@
               <br>
               <br>
               <div class="table-responsive">
-                <h4>Всего</h4>
+                <h4>Расчет стоимости</h4>
 
                 <table class="table cart">
                   <tbody>
