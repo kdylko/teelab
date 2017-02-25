@@ -13,6 +13,7 @@ class BloggersController < InheritedResources::Base
     respond_to do |format|
       if @blogger.save
         format.html { redirect_to :back }
+        
         format.json { render :show, status: :created, location: @blogger }
       else
         format.html { render :new }

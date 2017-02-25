@@ -8,6 +8,7 @@
 <%= javascript_tag do %>
 
         function codeAddress() {
+        dataLayer.push({event: ‘custom_event', event_id: ‘payment_popup’});
         payHandler();
         }
         window.onload = codeAddress;
@@ -29,6 +30,7 @@
             function (options) { 
              $("#render").html("<%= escape_javascript render('form_pay')%>");
   			     $("#edit_order_<%= @order.id %>").submit();
+            dataLayer.push({event: ‘custom_event', event_id: ‘successful_payment’});
             },
             function (reason, options) { 
             history.go(-1);
